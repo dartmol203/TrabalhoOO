@@ -5,6 +5,9 @@ public class App {
 
         System.out.println("bem vindo ao programa de gerenciamento de uma loja de oculos!");
 
+        /**
+         * menu que puxa todo o programa :)
+         */
         Menu.Opcoes();
 
         System.out.println("obrigado, espero que o programa tenha sido util, ate mais!");

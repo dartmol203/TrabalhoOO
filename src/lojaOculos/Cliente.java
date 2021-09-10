@@ -2,8 +2,10 @@ package lojaOculos;
 
 public class Cliente extends Pessoa {// Classe Cliente que herda da classe abstrata Pessoa
 
+	// declaracoes
 	private String dataPrimeiraCompra;
 
+	// getters e setters
 	public String getDataprimeira() {// Primeira compra do cliente
 		return dataPrimeiraCompra;
 	}
@@ -12,9 +14,9 @@ public class Cliente extends Pessoa {// Classe Cliente que herda da classe abstr
 		this.dataPrimeiraCompra = dataPrimeiraCompra;
 	}
 
-	public boolean buscaClienteID(String clienteidbuscado) {// Busca nomes dos clientes para ganrantir que n�o haver�o
-															// dois iguais. clienteidbuscado ser� declarado na main e
-															// definido pelo usu�rio do programa
+	// metodo de busca
+	public boolean buscaClienteID(String clienteidbuscado) {
+
 		if (id.equalsIgnoreCase(clienteidbuscado))
 
 			return true;
