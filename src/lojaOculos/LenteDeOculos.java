@@ -1,6 +1,8 @@
 package lojaOculos;
 
 public class LenteDeOculos {
+
+    // declaracoes
     private double grauLente;
     private double valorLente;
     private int idLente;
@@ -12,82 +14,83 @@ public class LenteDeOculos {
     private String dataProducao;
     private String idArmacao;
 
-    public double getGrau(){
+    // getters e setters
+    public double getGrau() {
 
         return grauLente;
     }
 
-    public void setGrau(double grauLente){
+    public void setGrau(double grauLente) {
         this.grauLente = grauLente;
     }
-    
-    public int getId(){
+
+    public int getId() {
 
         return idLente;
     }
 
-    public void setId( int idLente){
-        
+    public void setId(int idLente) {
+
         this.idLente = idLente;
     }
 
-    public String getFormato(){
+    public String getFormato() {
 
         return formatoLente;
     }
-    
-    public void setFormato(String formatoLente){
-        
+
+    public void setFormato(String formatoLente) {
+
         this.formatoLente = formatoLente;
     }
 
-    public String getIndMedica(){
+    public String getIndMedica() {
 
         return indMedica;
     }
-    
-    public void setIndMedica(String indMedica){
-        
+
+    public void setIndMedica(String indMedica) {
+
         this.indMedica = indMedica;
     }
 
-    public String getFocoLente(){
+    public String getFocoLente() {
 
         return focoLente;
     }
-    
-    public void setFocoLente(String focoLente){
-        
+
+    public void setFocoLente(String focoLente) {
+
         this.focoLente = focoLente;
     }
 
-    public String getLaboratorio(){
+    public String getLaboratorio() {
 
         return laboratorio;
     }
-    
-    public void setLaboratorio( String laboratorio){
-        
+
+    public void setLaboratorio(String laboratorio) {
+
         this.laboratorio = laboratorio;
     }
 
-    public boolean getprotecaoUV(){
+    public boolean getprotecaoUV() {
 
         return protecaoUV;
     }
-    
-    public void setprotecaoUV( boolean protecaoUV){
-        
+
+    public void setprotecaoUV(boolean protecaoUV) {
+
         this.protecaoUV = protecaoUV;
     }
 
-    public String getDataProducao(){
+    public String getDataProducao() {
 
         return dataProducao;
     }
-    
-    public void setDataProducao( String dataProducao){
-        
+
+    public void setDataProducao(String dataProducao) {
+
         this.dataProducao = dataProducao;
     }
 
@@ -107,12 +110,13 @@ public class LenteDeOculos {
         this.idArmacao = idArmacao;
     }
 
-    public boolean buscaLenteID(int lenteBuscada) {//Busca identifica��es das lentes
-		if (idLente == lenteBuscada)
-	        return true;
-	     
-		else
-	    	return false;
-	}
+    // metodo de busca
+    public boolean buscaLenteID(int lenteBuscada) {// Busca identifica��es das lentes
+        if (idLente == lenteBuscada)
+            return true;
+
+        else
+            return false;
+    }
 
 }

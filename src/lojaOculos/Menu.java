@@ -3,9 +3,15 @@ package lojaOculos;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * classe para interacao do usuario
+ */
 public class Menu {
     static Scanner ler = new Scanner(System.in).useLocale(Locale.US);;
 
+    /**
+     * menu geral do programa, encerra ele e abre caminho pras outras areas dele
+     */
     public static void Opcoes() {
 
         Loja[] loja = new Loja[1]; // passivel de cadastro de novas lojas
@@ -65,6 +71,12 @@ public class Menu {
 
     }
 
+    /**
+     * menu que mostra as opcoes disponiveis para se interagir com a classe e
+     * informacoes loja
+     * 
+     * @param loja
+     */
     public static void Loja(Loja loja) {
         int opcMenuLoja = 0;
         do {
@@ -98,6 +110,12 @@ public class Menu {
 
     }
 
+    /**
+     * menu que mostra as opcoes disponiveis para se interagir com a classe e
+     * informacoes cliente
+     * 
+     * @param loja
+     */
     public static void Cliente(Loja loja) {
         int opcMenuCliente = 0;
         do {
@@ -129,6 +147,12 @@ public class Menu {
         } while (opcMenuCliente != 9);
     }
 
+    /**
+     * menu que mostra as opcoes disponiveis para se interagir com a classe e
+     * informacoes clientes
+     * 
+     * @param loja
+     */
     public static void Funcionarios(Loja loja) {
         int opcMenuFuncionarios = 0;
         do {
@@ -162,6 +186,12 @@ public class Menu {
         } while (opcMenuFuncionarios != 9);
     }
 
+    /**
+     * menu que mostra as opcoes disponiveis para se interagir com a classe e
+     * informacoes de estoque
+     * 
+     * @param loja
+     */
     public static void Estoque(Loja loja) {
         int opcMenuEstoque = 0;
         do {
@@ -194,6 +224,12 @@ public class Menu {
         } while (opcMenuEstoque != 9);
     }
 
+    /**
+     * menu que mostra as opcoes disponiveis para se interagir com a classe e
+     * informacoes vendas
+     * 
+     * @param loja
+     */
     public static void Vendas(Loja loja) {
         int opcMenuVendas = 0;
         do {
@@ -210,12 +246,15 @@ public class Menu {
 
             switch (opcMenuVendas) {
                 case 1:
+                    Cruds.cadastroVendas(loja);
                     break;
                 case 2:
                     Cruds.infoVenda(loja);
                     break;
-                case 9:
+                case 3:
                     Cruds.buscaVenda(loja);
+                    break;
+                case 9:
                     break;
                 default:
                     System.out.println("opcao invalida, por favor digite um valor valido:");
@@ -225,6 +264,12 @@ public class Menu {
 
     }
 
+    /**
+     * menu que mostra as opcoes disponiveis para se interagir com a classe e
+     * informacoes lentes
+     * 
+     * @param loja
+     */
     public static void Lentes(Loja loja) {
         int opcMenuLentes = 0;
         do {

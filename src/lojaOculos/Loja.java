@@ -4,24 +4,26 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Loja {
+
+  // declaracoes
   static Scanner ler = new Scanner(System.in).useLocale(Locale.US);;
 
-  private int cep;
-  private int telefone;
   private VendaDeOculos[] historicoVendas = new VendaDeOculos[50];
   private String nomeLoja;
   private Armacao[] estoqueArmacao = new Armacao[50];
   private Cliente[] clientes = new Cliente[50];
   private Funcionario[] funcionarios = new Funcionario[10];
   private LenteDeOculos[] lentes = new LenteDeOculos[50];
-
   private boolean lojaCadastrada;
+  private int cep;
+  private int telefone;
   private int qntClientes = 0;
   private int qntFuncionarios = 0;
   private int qntVendas = 0;
   private int qntArmacao = 0;
   private int qntLentes = 0;
 
+  // getters e setters
   public int getCep() {
     return cep;
   }
@@ -36,14 +38,6 @@ public class Loja {
 
   public void setTelefone(int telefone) {
     this.telefone = telefone;
-  }
-
-  public VendaDeOculos[] getHistoricoVendas() {
-    return historicoVendas;
-  }
-
-  public void setHistoricoVendas(VendaDeOculos[] historicoVendas) {
-    this.historicoVendas = historicoVendas;
   }
 
   public String getNomeLoja() {
@@ -86,30 +80,6 @@ public class Loja {
     this.qntVendas = qntVendas;
   }
 
-  public Armacao[] getEstoqueArmacao() {
-    return estoqueArmacao;
-  }
-
-  public void setEstoqueArmacao(Armacao[] estoqueArmacao) {
-    this.estoqueArmacao = estoqueArmacao;
-  }
-
-  public Cliente[] getClientes() {
-    return clientes;
-  }
-
-  public void setClientes(Cliente[] clientes) {
-    this.clientes = clientes;
-  }
-
-  public Funcionario[] getFuncionarios() {
-    return funcionarios;
-  }
-
-  public void setFuncionarios(Funcionario[] funcionarios) {
-    this.funcionarios = funcionarios;
-  }
-
   public int getQntArmacao() {
     return qntArmacao;
   }
@@ -126,6 +96,7 @@ public class Loja {
     this.qntLentes = qntLentes;
   }
 
+  // metodos do CRUD aplicados
   public static Loja preCadastro(Loja loja) {
 
     loja.cep = 87654321;
@@ -652,6 +623,70 @@ public class Loja {
     } while (opcMenu != 9);
   }
 
+  public Loja cadastroVenda(Loja loja) {
+
+    loja.historicoVendas[getQntVendas()] = new VendaDeOculos();
+    loja.lentes[getQntLentes()] = new LenteDeOculos();
+
+    System.out.println("por favor, digite o id da venda: ");
+    loja.historicoVendas[getQntVendas()].setIdVenda(ler.nextLine());
+
+    System.out.println("por favor, digite o id do cliente relacionado: ");
+    loja.historicoVendas[getQntVendas()].setIdCliente(ler.nextLine());
+
+    System.out.println("por favor, digite o id do funcionario relacionado: ");
+    loja.historicoVendas[getQntVendas()].setIdFuncionario(ler.nextLine());
+
+    System.out.println("por favor, digite o id da lente: ");
+    loja.historicoVendas[getQntVendas()].setIdLente(ler.nextInt());
+    ler.nextLine();
+
+    System.out.println("por favor, digite a indicacao medica:");
+    loja.lentes[getQntLentes()].setIndMedica(ler.nextLine());
+
+    System.out.println("por favor, digite o tipo de foco:");
+    loja.lentes[getQntLentes()].setFocoLente(ler.nextLine());
+
+    System.out.println("por favor, digite o grau da lente:");
+    loja.lentes[getQntLentes()].setGrau(ler.nextDouble());
+
+    System.out.println("por favor, digite a protecao uv: 1- sim 0- nao");
+    int uV = ler.nextInt();
+    ler.nextLine();
+    if (uV == 1) {
+      loja.lentes[getQntLentes()].setprotecaoUV(true);
+    } else {
+      loja.lentes[getQntLentes()].setprotecaoUV(false);
+    }
+
+    System.out.println("por favor, digite o id de armacao:");
+    loja.lentes[getQntLentes()].setIdArmacao(ler.nextLine());
+
+    System.out.println("por favor, digite o formato da lente:");
+    loja.lentes[getQntLentes()].setFormato(ler.nextLine());
+
+    System.out.println("por favor, digite o laboratorio:");
+    loja.lentes[getQntLentes()].setLaboratorio(ler.nextLine());
+
+    System.out.println("por favor, digite o valor da lente:");
+    loja.lentes[getQntLentes()].setValorLente(ler.nextDouble());
+    ler.nextLine();
+
+    System.out.println("por favor, digite a data de producao:");
+    loja.lentes[getQntLentes()].setDataProducao(ler.nextLine());
+
+    System.out.println("por favor, digite o id da armacao: ");
+    loja.historicoVendas[getQntVendas()].setIdArmacao(ler.nextLine());
+
+    System.out.println("por favor, digite o valor final da venda: ");
+    loja.historicoVendas[getQntVendas()].setValorFinal(ler.nextDouble());
+
+    setQntVendas(getQntVendas() + 1);
+    setQntLentes(getQntLentes() + 1);
+
+    return loja;
+  }
+
   public void showVenda(Loja loja) {
     for (int i = 0; i < qntVendas; i++) {
       System.out.println("--------------------------------------");
@@ -691,7 +726,7 @@ public class Loja {
       System.out.println("--------------------------------------");
       menuFindVenda(loja, posicaoId);
     } else {
-      System.out.println("nao foi encontrado nenhuma armacao com esse id");
+      System.out.println("nao foi encontrado nenhuma Venda com esse id");
     }
   }
 
@@ -880,6 +915,7 @@ public class Loja {
     } while (opcMenu != 99);
   }
 
+  // to string q mostra informacoes de Loja
   @Override
   public String toString() {
     return " o CEP da loja " + nomeLoja + " e: " + cep + "\n o numero de telefone da loja e: " + telefone + "\n tem "

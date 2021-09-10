@@ -1,10 +1,13 @@
 package lojaOculos;
 
 public class VendaDeOculos {
+
+    // declaracoes
     private double valorFinal;
     private String idCliente, idFuncionario, idArmacao, idVenda;
     private int idLente;
 
+    // getters e setters
     public String getIdVenda() {
         return idVenda;
     }
@@ -53,9 +56,9 @@ public class VendaDeOculos {
         this.idArmacao = idArmacao;
     }
 
-    public boolean buscaVendaID(String vendaidbuscado) {// Busca nomes dos funcion�rios para ganrantir que n�o
-                                                        // haver�o dois iguais. funcionarioidbuscado ser�
-                                                        // declarado na main e definido pelo usu�rio do programa
+    // metodo de busca
+    public boolean buscaVendaID(String vendaidbuscado) {
+
         if (idVenda.equalsIgnoreCase(vendaidbuscado))
             return true;
         else

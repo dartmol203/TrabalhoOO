@@ -2,9 +2,11 @@ package lojaOculos;
 
 public class Funcionario extends Pessoa {// Classe Funcion�rio que herda da classe abstrata Pessoa
 
+	// declaracoes
 	private double salario;
 	private String dataContratacao;
 
+	// getters e setters
 	public double getSalario() {// Valor do sal�rio
 		return salario;
 	}
@@ -21,14 +23,7 @@ public class Funcionario extends Pessoa {// Classe Funcion�rio que herda da cl
 		this.dataContratacao = dataContratacao;
 	}
 
-	/**
-	 * Busca nomes dos funcion�rios para ganrantir que n�o haver�o dois iguais.
-	 * funcionarioidbuscado ser� declarado na main e definido pelo usu�rio do
-	 * programa
-	 * 
-	 * @param funcionarioidbuscado
-	 * @return
-	 */
+	// metodo de busca
 	public boolean buscaFuncionarioID(String funcionarioidbuscado) {
 		if (id.equalsIgnoreCase(funcionarioidbuscado))
 			return true;
