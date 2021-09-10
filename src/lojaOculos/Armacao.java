@@ -2,9 +2,11 @@ package lojaOculos;
 
 public class Armacao {// Classe arma��o
 
+	// declaracoes
 	private String marcaArmacao, matearmacao, modelorosto, idArmacao;
 	private double medidaaro, valorArmacao;
 
+	// gettes e setters
 	public String getMarcaArmacao() {// Marca da arma��o
 		return marcaArmacao;
 	}
@@ -53,9 +55,9 @@ public class Armacao {// Classe arma��o
 		this.valorArmacao = valorArmacao;
 	}
 
-	public boolean buscaArmacaoID(String armacaoidbuscado) {// Busca identifica��es das armac��es para ganrantir que n�o
-															// haver�o dois iguais. armacaoidbuscado ser� declarado na
-															// main e definido pelo usu�rio do programa
+	// metodo de busca
+	public boolean buscaArmacaoID(String armacaoidbuscado) {
+
 		if (idArmacao.equalsIgnoreCase(armacaoidbuscado))
 			return true;
 

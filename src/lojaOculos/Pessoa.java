@@ -2,9 +2,11 @@ package lojaOculos;
 
 public class Pessoa {// classe abstrata Pessoa
 
+	// declaracoes
 	protected String nome, endereco, id, cpf, dataaniversario;
 	protected long telefone;
 
+	// getters e setters
 	public String getNome() {// Nome da pessoa
 		return nome;
 	}

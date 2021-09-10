@@ -1,6 +1,8 @@
 package lojaOculos;
 
 public class LenteDeOculos {
+
+    // declaracoes
     private double grauLente;
     private double valorLente;
     private int idLente;
@@ -12,6 +14,7 @@ public class LenteDeOculos {
     private String dataProducao;
     private String idArmacao;
 
+    // getters e setters
     public double getGrau() {
 
         return grauLente;
@@ -107,6 +110,7 @@ public class LenteDeOculos {
         this.idArmacao = idArmacao;
     }
 
+    // metodo de busca
     public boolean buscaLenteID(int lenteBuscada) {// Busca identifica��es das lentes
         if (idLente == lenteBuscada)
             return true;

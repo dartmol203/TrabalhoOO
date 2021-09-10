@@ -1,6 +1,7 @@
 package lojaOculos;
 
 public class Cruds {
+    // CRUD de loja
     public static void cadastroLoja(Loja loja) {
         if (loja.isLojaCadastrada()) {
             System.out.println("desculpe, ja tem uma loja cadastrada!");
@@ -27,6 +28,7 @@ public class Cruds {
         }
     }
 
+    // CRUD de Cliente
     public static void cadastroCliente(Loja loja) {
         loja.cadastroCliente(loja);
     }
@@ -39,6 +41,7 @@ public class Cruds {
         loja.findCliente(loja);
     }
 
+    // CRUD de funcionario
     public static void cadastroFuncionario(Loja loja) {
         loja.cadastroFuncionario(loja);
     }
@@ -51,6 +54,7 @@ public class Cruds {
         loja.findFuncionario(loja);
     }
 
+    // CRUD de Armacoes
     public static void cadastroArmacao(Loja loja) {
         loja.cadastroArmacao(loja);
     }
@@ -63,6 +67,7 @@ public class Cruds {
         loja.findArmacao(loja);
     }
 
+    // CRUD de vendas
     public static void cadastroVendas(Loja loja) {
         loja.cadastroVenda(loja);
     }
@@ -75,6 +80,7 @@ public class Cruds {
         loja.findVenda(loja);
     }
 
+    // CRUD de lentes
     public static void infoLente(Loja loja) {
         loja.showLente(loja);
     }
@@ -82,4 +88,5 @@ public class Cruds {
     public static void buscaLente(Loja loja) {
         loja.findLente(loja);
     }
+
 }

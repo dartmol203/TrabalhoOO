@@ -4,24 +4,26 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Loja {
+
+  // declaracoes
   static Scanner ler = new Scanner(System.in).useLocale(Locale.US);;
 
-  private int cep;
-  private int telefone;
   private VendaDeOculos[] historicoVendas = new VendaDeOculos[50];
   private String nomeLoja;
   private Armacao[] estoqueArmacao = new Armacao[50];
   private Cliente[] clientes = new Cliente[50];
   private Funcionario[] funcionarios = new Funcionario[10];
   private LenteDeOculos[] lentes = new LenteDeOculos[50];
-
   private boolean lojaCadastrada;
+  private int cep;
+  private int telefone;
   private int qntClientes = 0;
   private int qntFuncionarios = 0;
   private int qntVendas = 0;
   private int qntArmacao = 0;
   private int qntLentes = 0;
 
+  // getters e setters
   public int getCep() {
     return cep;
   }
@@ -94,6 +96,7 @@ public class Loja {
     this.qntLentes = qntLentes;
   }
 
+  // metodos do CRUD aplicados
   public static Loja preCadastro(Loja loja) {
 
     loja.cep = 87654321;
@@ -912,6 +915,7 @@ public class Loja {
     } while (opcMenu != 99);
   }
 
+  // to string q mostra informacoes de Loja
   @Override
   public String toString() {
     return " o CEP da loja " + nomeLoja + " e: " + cep + "\n o numero de telefone da loja e: " + telefone + "\n tem "

@@ -1,10 +1,13 @@
 package lojaOculos;
 
 public class VendaDeOculos {
+
+    // declaracoes
     private double valorFinal;
     private String idCliente, idFuncionario, idArmacao, idVenda;
     private int idLente;
 
+    // getters e setters
     public String getIdVenda() {
         return idVenda;
     }
@@ -53,6 +56,7 @@ public class VendaDeOculos {
         this.idArmacao = idArmacao;
     }
 
+    // metodo de busca
     public boolean buscaVendaID(String vendaidbuscado) {
 
         if (idVenda.equalsIgnoreCase(vendaidbuscado))
