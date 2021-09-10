@@ -3,21 +3,19 @@ package lojaOculos;
 import java.util.Locale;
 import java.util.Scanner;
 
-
 public class Menu {
     static Scanner ler = new Scanner(System.in).useLocale(Locale.US);;
 
-    public static void Opcoes(){
-        
+    public static void Opcoes() {
+
         Loja[] loja = new Loja[1]; // passivel de cadastro de novas lojas
-        //int qntLojas = 0;
-        loja[0]= new Loja();
+        // int qntLojas = 0;
+        loja[0] = new Loja();
         loja[0] = Loja.preCadastro(loja[0]);
 
-        
         int opcMenu;
 
-        do{
+        do {
             System.out.println("essas são as opçoes disponiveis no momento:");
             System.out.println("------------------------------");
             System.out.println("1-  opcoes da loja");
@@ -31,8 +29,8 @@ public class Menu {
             System.out.println("por favor digite a opcao que desejar: ");
             opcMenu = ler.nextInt();
             ler.nextLine();
-        
-            switch(opcMenu){
+
+            switch (opcMenu) {
                 case 1:
                     Loja(loja[0]);
                     break;
@@ -63,13 +61,13 @@ public class Menu {
                 default:
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
-        }while(opcMenu != 99);
+        } while (opcMenu != 99);
 
     }
 
-    public static void Loja(Loja loja){
-        int opcMenuLoja=0;
-        do{
+    public static void Loja(Loja loja) {
+        int opcMenuLoja = 0;
+        do {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar loja ");
             System.out.println("2- ver informacoes da loja");
@@ -77,11 +75,11 @@ public class Menu {
             System.out.println("9- voltar para o menu anterior");
             System.out.println("--------------------------------------");
             System.out.println("por favor digite a opcao que desejar: ");
-            
+
             opcMenuLoja = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuLoja){
+            switch (opcMenuLoja) {
                 case 1:
                     Cruds.cadastroLoja(loja);
                     break;
@@ -96,13 +94,13 @@ public class Menu {
                 default:
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
-        } while (opcMenuLoja!= 9);
-        
+        } while (opcMenuLoja != 9);
+
     }
 
-    public static void Cliente(Loja loja){
-        int opcMenuCliente=0;
-        do{
+    public static void Cliente(Loja loja) {
+        int opcMenuCliente = 0;
+        do {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar Clientes");
             System.out.println("2- ver informacoes dos clientes");
@@ -114,7 +112,7 @@ public class Menu {
             opcMenuCliente = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuCliente){
+            switch (opcMenuCliente) {
                 case 1:
                     Cruds.cadastroCliente(loja);
                     break;
@@ -128,12 +126,12 @@ public class Menu {
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
 
-        }while ( opcMenuCliente !=9);
+        } while (opcMenuCliente != 9);
     }
 
-    public static void Funcionarios(Loja loja){
-        int opcMenuFuncionarios=0;
-        do{
+    public static void Funcionarios(Loja loja) {
+        int opcMenuFuncionarios = 0;
+        do {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar funcionarios");
             System.out.println("2- ver informacoes dos funcionarios");
@@ -145,7 +143,7 @@ public class Menu {
             opcMenuFuncionarios = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuFuncionarios){
+            switch (opcMenuFuncionarios) {
                 case 1:
                     Cruds.cadastroFuncionario(loja);
                     break;
@@ -161,12 +159,12 @@ public class Menu {
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
 
-        }while( opcMenuFuncionarios !=9);
+        } while (opcMenuFuncionarios != 9);
     }
 
-    public static void Estoque(Loja loja){
-        int opcMenuEstoque=0;
-        do{
+    public static void Estoque(Loja loja) {
+        int opcMenuEstoque = 0;
+        do {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar armacoes de oculos");
             System.out.println("2- ver informacoes das armacoes");
@@ -178,7 +176,7 @@ public class Menu {
             opcMenuEstoque = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuEstoque){
+            switch (opcMenuEstoque) {
                 case 1:
                     Cruds.cadastroArmacao(loja);
                     break;
@@ -193,15 +191,16 @@ public class Menu {
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
 
-        }while( opcMenuEstoque !=9);
+        } while (opcMenuEstoque != 9);
     }
 
-    public static void Vendas(Loja loja){
-        int opcMenuVendas=0;
-        do{
+    public static void Vendas(Loja loja) {
+        int opcMenuVendas = 0;
+        do {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar vendas");
             System.out.println("2- ver informacoes das vendas");
+            System.out.println("3- buscar venda por id");
             System.out.println("9- voltar para o menu anterior");
             System.out.println("--------------------------------------");
             System.out.println("por favor digite a opcao que desejar: ");
@@ -209,24 +208,26 @@ public class Menu {
             opcMenuVendas = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuVendas){
+            switch (opcMenuVendas) {
                 case 1:
                     break;
                 case 2:
+                    Cruds.infoVenda(loja);
                     break;
                 case 9:
+                    Cruds.buscaVenda(loja);
                     break;
                 default:
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
 
-        }while( opcMenuVendas!=9);
+        } while (opcMenuVendas != 9);
 
     }
-    
-    public static void Lentes(Loja loja){
-        int opcMenuLentes=0;
-        do{
+
+    public static void Lentes(Loja loja) {
+        int opcMenuLentes = 0;
+        do {
             System.out.println("--------------------------------------");
             System.out.println("1- ver informacoes dos pedidos de lente");
             System.out.println("2- buscar lentes por id");
@@ -237,7 +238,7 @@ public class Menu {
             opcMenuLentes = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuLentes){
+            switch (opcMenuLentes) {
                 case 1:
                     Cruds.infoLente(loja);
                     break;
@@ -250,78 +251,7 @@ public class Menu {
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
 
-        }while(opcMenuLentes !=9);
+        } while (opcMenuLentes != 9);
 
     }
-/*------------------------------------------------------------//
-    public static void cadastroLoja(Loja loja){
-        if(loja.isLojaCadastrada()){
-            System.out.println("desculpe, ja tem uma loja cadastrada!");
-        }else{
-            loja.cadastroLoja(loja);
-        }
-        
-    }
-
-    public static void infoLoja(Loja loja){
-        if(loja.isLojaCadastrada()){
-            System.out.println(loja.toString());
-        } else{
-            System.out.println("nao tem nenhuma loja cadastrada para se mostrar informacoes");
-        }
-        
-    }
-
-    public static void editLoja(Loja loja){
-        if(loja.isLojaCadastrada()){
-            loja = loja.editarLoja(loja);
-        } else{
-            System.out.println("nao tem nenhuma loja cadastrada para se editar informacoes");
-        }
-    }
-
-    public static void cadastroCliente(Loja loja){
-        loja.cadastroCliente(loja);
-    }
-
-    public static void infoCliente(Loja loja){
-        loja.showClientes(loja);
-    }
-
-    public static void buscaCliente(Loja loja){
-        loja.findCliente(loja);
-    }
-
-    public static void cadastroFuncionario(Loja loja){
-        loja.cadastroFuncionario(loja);
-    }
-
-    public static void infoFuncionario(Loja loja){
-        loja.showFuncionarios(loja);
-    }
-
-    public static void buscaFuncionario(Loja loja){
-        loja.findFuncionario(loja);
-    }
-
-    public static void cadastroArmacao(Loja loja){
-        loja.cadastroArmacao(loja);
-    }
-
-    public static void infoArmacao(Loja loja){
-        loja.showArmacoes(loja);
-    }
-
-    public static void buscaArmacao(Loja loja){
-        loja.findArmacao(loja);
-    }
-
-    public static void infoLente(Loja loja){
-        loja.showLente(loja);
-    }
-
-    public static void buscaLente(Loja loja){
-        loja.findLente(loja);
-    }
-*/
 }

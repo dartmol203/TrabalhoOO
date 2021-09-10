@@ -1,12 +1,11 @@
 package lojaOculos;
 
-
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Loja {
   static Scanner ler = new Scanner(System.in).useLocale(Locale.US);;
-  
+
   private int cep;
   private int telefone;
   private VendaDeOculos[] historicoVendas = new VendaDeOculos[50];
@@ -17,42 +16,42 @@ public class Loja {
   private LenteDeOculos[] lentes = new LenteDeOculos[50];
 
   private boolean lojaCadastrada;
-  private int qntClientes=0;
+  private int qntClientes = 0;
   private int qntFuncionarios = 0;
-  private int qntVendas=0;
+  private int qntVendas = 0;
   private int qntArmacao = 0;
   private int qntLentes = 0;
 
   public int getCep() {
-  return cep;
+    return cep;
   }
 
   public void setCep(int cep) {
-  this.cep = cep;
+    this.cep = cep;
   }
 
   public int getTelefone() {
-  return telefone;
+    return telefone;
   }
 
   public void setTelefone(int telefone) {
-  this.telefone = telefone;
+    this.telefone = telefone;
   }
 
   public VendaDeOculos[] getHistoricoVendas() {
-  return historicoVendas;
+    return historicoVendas;
   }
 
   public void setHistoricoVendas(VendaDeOculos[] historicoVendas) {
-  this.historicoVendas = historicoVendas;
+    this.historicoVendas = historicoVendas;
   }
 
   public String getNomeLoja() {
-      return nomeLoja;
+    return nomeLoja;
   }
 
   public void setNomeLoja(String nomeLoja) {
-      this.nomeLoja = nomeLoja;
+    this.nomeLoja = nomeLoja;
   }
 
   public boolean isLojaCadastrada() {
@@ -88,29 +87,29 @@ public class Loja {
   }
 
   public Armacao[] getEstoqueArmacao() {
-  return estoqueArmacao;
+    return estoqueArmacao;
   }
 
   public void setEstoqueArmacao(Armacao[] estoqueArmacao) {
-  this.estoqueArmacao = estoqueArmacao;
+    this.estoqueArmacao = estoqueArmacao;
   }
 
   public Cliente[] getClientes() {
-  return clientes;
+    return clientes;
   }
 
   public void setClientes(Cliente[] clientes) {
-  this.clientes = clientes;
+    this.clientes = clientes;
   }
 
   public Funcionario[] getFuncionarios() {
-  return funcionarios;
-  } 
+    return funcionarios;
+  }
 
   public void setFuncionarios(Funcionario[] funcionarios) {
-  this.funcionarios = funcionarios;
+    this.funcionarios = funcionarios;
   }
-  
+
   public int getQntArmacao() {
     return qntArmacao;
   }
@@ -127,82 +126,92 @@ public class Loja {
     this.qntLentes = qntLentes;
   }
 
-  public static Loja preCadastro(Loja loja){
-    
+  public static Loja preCadastro(Loja loja) {
+
     loja.cep = 87654321;
     loja.telefone = 12345678;
     loja.nomeLoja = "oticas wanderer";
     loja.setLojaCadastrada(true);
-    
-    for(int i = 0; i<=9; i++){
+
+    for (int i = 0; i <= 9; i++) {
       loja.clientes[i] = new Cliente();
-      loja.clientes[i].setCPF("111.111.111-" + i*10);; 
-      loja.clientes[i].setNome("cliente" + (i + 1));;
-      loja.clientes[i].setTelefone(111111111*i);
-      loja.clientes[i].setEndereco( "endereco" +(i+1));;
-      loja.clientes[i].setID("id" + (i+1)); ;
-      loja.clientes[i].setDataaniver("01/0"+(i+1)+"/2001");;
+      loja.clientes[i].setCPF("111.111.111-" + i * 10);
+      ;
+      loja.clientes[i].setNome("cliente" + (i + 1));
+      ;
+      loja.clientes[i].setTelefone(111111111 * i);
+      loja.clientes[i].setEndereco("endereco" + (i + 1));
+      ;
+      loja.clientes[i].setID("id" + (i + 1));
+      ;
+      loja.clientes[i].setDataaniver("01/0" + (i + 1) + "/2001");
+      ;
       loja.clientes[i].setDataprimeira("01/10/2021");
     }
 
-    for(int i = 0; i<=4; i++){
+    for (int i = 0; i <= 4; i++) {
       loja.funcionarios[i] = new Funcionario();
-      loja.funcionarios[i].setCPF("111.111.111-" + i*10);; 
-      loja.funcionarios[i].setNome("funcionario" + (i + 1));;
-      loja.funcionarios[i].setTelefone(111111111*i);
-      loja.funcionarios[i].setEndereco( "endereco" +(i+1));;
-      loja.funcionarios[i].setID("id" + (i+1)); ;
-      loja.funcionarios[i].setDataaniver("01/0"+(i+1)+"/2001");;
+      loja.funcionarios[i].setCPF("111.111.111-" + i * 10);
+      ;
+      loja.funcionarios[i].setNome("funcionario" + (i + 1));
+      ;
+      loja.funcionarios[i].setTelefone(111111111 * i);
+      loja.funcionarios[i].setEndereco("endereco" + (i + 1));
+      ;
+      loja.funcionarios[i].setID("id" + (i + 1));
+      ;
+      loja.funcionarios[i].setDataaniver("01/0" + (i + 1) + "/2001");
+      ;
       loja.funcionarios[i].setDatacontrac("30/9/2021");
-      loja.funcionarios[i].setSalario( 1500.95);
+      loja.funcionarios[i].setSalario(1500.95);
     }
     loja.setQntClientes(10);
     loja.setQntFuncionarios(5);
 
-    for(int i = 0; i <=4; i++){
+    for (int i = 0; i <= 4; i++) {
       loja.estoqueArmacao[i] = new Armacao();
-      loja.estoqueArmacao[i].setMarcaArmacao("marca"+(i+1));
-      loja.estoqueArmacao[i].setMatArmacao("material armacao" +(1+i));
-      loja.estoqueArmacao[i].setIDarmacao("idArmacao"+(1+i));
-      loja.estoqueArmacao[i].setModeloArmacao("modelorosto"+(i+1));
-      loja.estoqueArmacao[i].setMedidaaro(10+0.1*i);
-      loja.estoqueArmacao[i].setValorArmacao(500 + 15.15*(i+1));
+      loja.estoqueArmacao[i].setMarcaArmacao("marca" + (i + 1));
+      loja.estoqueArmacao[i].setMatArmacao("material armacao" + (1 + i));
+      loja.estoqueArmacao[i].setIDarmacao("idArmacao" + (1 + i));
+      loja.estoqueArmacao[i].setModeloArmacao("modelorosto" + (i + 1));
+      loja.estoqueArmacao[i].setMedidaaro(10 + 0.1 * i);
+      loja.estoqueArmacao[i].setValorArmacao(500 + 15.15 * (i + 1));
 
     }
 
-    for(int i = 0; i<=4; i++){
+    for (int i = 0; i <= 4; i++) {
       loja.lentes[i] = new LenteDeOculos();
-      loja.lentes[i].setDataProducao("01/0"+(i+1)+"/2022");
+      loja.lentes[i].setDataProducao("01/0" + (i + 1) + "/2022");
       loja.lentes[i].setFocoLente("monofocal");
       loja.lentes[i].setFormato("quadrada");
-      loja.lentes[i].setGrau(0.5*(i+1));
-      loja.lentes[i].setId(500+i);
+      loja.lentes[i].setGrau(0.5 * (i + 1));
+      loja.lentes[i].setId(500 + i);
       loja.lentes[i].setIdArmacao(loja.estoqueArmacao[i].getIDarmacao());
       loja.lentes[i].setIndMedica("correcao de estrabismo");
       loja.lentes[i].setLaboratorio("Hoya");
-      loja.lentes[i].setValorLente(500*(i+1.1));
+      loja.lentes[i].setValorLente(500 * (i + 1.1));
       loja.lentes[i].setprotecaoUV(true);
 
     }
 
-    for(int i = 0; i<=4; i++){
+    for (int i = 0; i <= 4; i++) {
       loja.historicoVendas[i] = new VendaDeOculos();
-      loja.historicoVendas[i].setIdCliente("idC" + (i+1));
-      loja.historicoVendas[i].setIdFuncionario("idF" + (i+1));
+      loja.historicoVendas[i].setIdCliente("idC" + (i + 1));
+      loja.historicoVendas[i].setIdFuncionario("idF" + (i + 1));
       loja.historicoVendas[i].setIdLente(loja.lentes[i].getId());
-      loja.historicoVendas[i].setIdArmacao("idArmacao"+(1+i));
+      loja.historicoVendas[i].setIdArmacao("idArmacao" + (1 + i));
       loja.historicoVendas[i].setValorFinal(loja.lentes[i].getValorLente() + loja.estoqueArmacao[i].getValorArmacao());
-
+      loja.historicoVendas[i].setIdVenda("idVenda" + (i + 1));
     }
 
     loja.setQntVendas(5);
     loja.setQntArmacao(5);
     loja.setQntLentes(5);
-    
+
     return loja;
   }
 
-  public Loja cadastroLoja(Loja loja){
+  public Loja cadastroLoja(Loja loja) {
     System.out.println("vamos cadastrar a sua loja!");
     System.out.println("por favor digite o nome da loja:");
     loja.setNomeLoja(ler.nextLine());
@@ -217,13 +226,13 @@ public class Loja {
     return loja;
   }
 
-  public Loja editarLoja(Loja loja){
+  public Loja editarLoja(Loja loja) {
     int opcMenuEdit = 0;
 
     System.out.println("essas sao as informacoes atuais:");
     System.out.println(loja.toString());
     System.out.println("gostaria de alterar qual informacao? digite o numero desejado");
-    do{
+    do {
       System.out.println("-------------------------------------------------------");
       System.out.println("1- nome da loja ");
       System.out.println("2- CEP");
@@ -232,38 +241,39 @@ public class Loja {
       System.out.println("9- encerrar as alteracoes");
       System.out.println("-------------------------------------------------------");
       System.out.println("por favor digite a opcao que desejar: ");
-      
+
       opcMenuEdit = ler.nextInt();
       ler.nextLine();
 
-      switch (opcMenuEdit){
-          case 1:
-            System.out.println("por favor, digite o novo nome:");
-            loja.setNomeLoja(ler.nextLine());          
-            break;
-          case 2:
-            System.out.println("por favor, digite o novo CEP:");
-            loja.setCep(ler.nextInt());
-            ler.nextLine();
-            break;
-          case 3:
-            System.out.println("por favor, digite o novo telefone:");
-            loja.setTelefone(ler.nextInt());
-            ler.nextLine();ler.nextLine();
-            break;
-          case 9:
-            System.out.println("essas sao as novas informacoes:");
-            loja.toString();
-            break;
-          default:
-            System.out.println("opcao invalida, por favor digite um valor valido:");
+      switch (opcMenuEdit) {
+        case 1:
+          System.out.println("por favor, digite o novo nome:");
+          loja.setNomeLoja(ler.nextLine());
+          break;
+        case 2:
+          System.out.println("por favor, digite o novo CEP:");
+          loja.setCep(ler.nextInt());
+          ler.nextLine();
+          break;
+        case 3:
+          System.out.println("por favor, digite o novo telefone:");
+          loja.setTelefone(ler.nextInt());
+          ler.nextLine();
+          ler.nextLine();
+          break;
+        case 9:
+          System.out.println("essas sao as novas informacoes:");
+          loja.toString();
+          break;
+        default:
+          System.out.println("opcao invalida, por favor digite um valor valido:");
       }
-  } while (opcMenuEdit!= 9);
+    } while (opcMenuEdit != 9);
 
     return loja;
   }
 
-  public Loja cadastroCliente(Loja loja){
+  public Loja cadastroCliente(Loja loja) {
 
     loja.clientes[getQntClientes()] = new Cliente();
     System.out.println("por favor, digite o nome do cliente:");
@@ -282,13 +292,13 @@ public class Loja {
     System.out.println("por favor, digite a data de primeira compra: (dd/mm/aaaa)");
     loja.clientes[getQntClientes()].setDataprimeira(ler.nextLine());
 
-    setQntClientes(getQntClientes()+1);
+    setQntClientes(getQntClientes() + 1);
 
     return loja;
   }
 
-  public void showClientes(Loja loja){
-    for(int i=0; i<getQntClientes(); i++){
+  public void showClientes(Loja loja) {
+    for (int i = 0; i < getQntClientes(); i++) {
       System.out.println("--------------------------------------");
       System.out.println("nome            : " + loja.clientes[i].getNome());
       System.out.println("CPF             : " + loja.clientes[i].getCPF());
@@ -301,23 +311,23 @@ public class Loja {
     }
   }
 
-  public void findCliente(Loja loja){
-    
+  public void findCliente(Loja loja) {
+
     String idProcurado;
-    int flag = 0, posicaoId=0;
+    int flag = 0, posicaoId = 0;
 
     System.out.println("por favor, digite o id que deseja procurar: ");
     idProcurado = ler.nextLine();
 
-    for(int i = 0; i < getQntClientes(); i++){
-      if(loja.clientes[i].buscaClienteID(idProcurado)){
+    for (int i = 0; i < getQntClientes(); i++) {
+      if (loja.clientes[i].buscaClienteID(idProcurado)) {
         System.out.println("achei!");
         posicaoId = i;
         flag = 1;
-      } 
+      }
     }
 
-    if(flag==1){
+    if (flag == 1) {
       System.out.println("--------------------------------------");
       System.out.println("nome            : " + loja.clientes[posicaoId].getNome());
       System.out.println("CPF             : " + loja.clientes[posicaoId].getCPF());
@@ -328,15 +338,15 @@ public class Loja {
       System.out.println("primeira compra : " + loja.clientes[posicaoId].getDataprimeira());
       System.out.println("--------------------------------------");
       menuFindCliente(loja, posicaoId);
-    } else{
+    } else {
       System.out.println("nao foi encontrado nenhum cliente com esse id");
     }
   }
 
-  public void menuFindCliente(Loja loja, int posicaoId){
+  public void menuFindCliente(Loja loja, int posicaoId) {
     int opcMenu;
     System.out.println("gostaria de alterar alguma informacao? digite o numero desejado");
-    do{
+    do {
       System.out.println("-------------------------------------------------------");
       System.out.println("1- nome ");
       System.out.println("2- CPF");
@@ -348,49 +358,49 @@ public class Loja {
       System.out.println("9- encerrar as alteracoes");
       System.out.println("-------------------------------------------------------");
       System.out.println("por favor digite a opcao que desejar: ");
-      
+
       opcMenu = ler.nextInt();
       ler.nextLine();
 
-      switch (opcMenu){
-          case 1:
-            System.out.println("por favor, digite o novo nome:");
-            loja.clientes[posicaoId].setNome(ler.nextLine());    
-            break;
-          case 2:
-            System.out.println("por favor, digite o novo cpf:");
-            loja.clientes[posicaoId].setCPF(ler.nextLine());
-            break;
-          case 3:
-            System.out.println("por favor, digite o novo telefone:");
-            loja.clientes[posicaoId].setTelefone(ler.nextInt());
-            ler.nextLine();
-            break;
-          case 4:
-            System.out.println("por favor, digite o novo endereco:");
-            loja.clientes[posicaoId].setEndereco(ler.nextLine());
-            break;
-          case 5:
-            System.out.println("por favor, digite o novo ID:");
-            loja.clientes[posicaoId].setID(ler.nextLine());
-            break;
-          case 6:
-            System.out.println("por favor, digite a nova data de aniversario: (dd/mm/aaaa)");
-            loja.clientes[posicaoId].setDataaniver(ler.nextLine());
-            break;
-          case 7:
-            System.out.println("por favor, digite a nova data de primeira compra: (dd/mm/aaaa)");
-            loja.clientes[posicaoId].setDataprimeira(ler.nextLine());
-            break;
-          case 9:
-            break;
-          default:
-            System.out.println("opcao invalida, por favor digite um valor valido:");
+      switch (opcMenu) {
+        case 1:
+          System.out.println("por favor, digite o novo nome:");
+          loja.clientes[posicaoId].setNome(ler.nextLine());
+          break;
+        case 2:
+          System.out.println("por favor, digite o novo cpf:");
+          loja.clientes[posicaoId].setCPF(ler.nextLine());
+          break;
+        case 3:
+          System.out.println("por favor, digite o novo telefone:");
+          loja.clientes[posicaoId].setTelefone(ler.nextInt());
+          ler.nextLine();
+          break;
+        case 4:
+          System.out.println("por favor, digite o novo endereco:");
+          loja.clientes[posicaoId].setEndereco(ler.nextLine());
+          break;
+        case 5:
+          System.out.println("por favor, digite o novo ID:");
+          loja.clientes[posicaoId].setID(ler.nextLine());
+          break;
+        case 6:
+          System.out.println("por favor, digite a nova data de aniversario: (dd/mm/aaaa)");
+          loja.clientes[posicaoId].setDataaniver(ler.nextLine());
+          break;
+        case 7:
+          System.out.println("por favor, digite a nova data de primeira compra: (dd/mm/aaaa)");
+          loja.clientes[posicaoId].setDataprimeira(ler.nextLine());
+          break;
+        case 9:
+          break;
+        default:
+          System.out.println("opcao invalida, por favor digite um valor valido:");
       }
-    } while (opcMenu!= 9);
+    } while (opcMenu != 9);
   }
 
-  public Loja cadastroFuncionario(Loja loja){
+  public Loja cadastroFuncionario(Loja loja) {
 
     loja.funcionarios[getQntFuncionarios()] = new Funcionario();
     System.out.println("por favor, digite o nome do funcionario:");
@@ -411,13 +421,13 @@ public class Loja {
     System.out.println("por favor, digite o salario desse funcionario:");
     loja.funcionarios[getQntFuncionarios()].setSalario(ler.nextDouble());
 
-    setQntFuncionarios(getQntFuncionarios()+1);
+    setQntFuncionarios(getQntFuncionarios() + 1);
 
     return loja;
   }
 
-  public void showFuncionarios(Loja loja){
-    for(int i=0; i<getQntFuncionarios(); i++){
+  public void showFuncionarios(Loja loja) {
+    for (int i = 0; i < getQntFuncionarios(); i++) {
       System.out.println("--------------------------------------");
       System.out.println("nome             : " + loja.funcionarios[i].getNome());
       System.out.println("CPF              : " + loja.funcionarios[i].getCPF());
@@ -431,23 +441,23 @@ public class Loja {
     }
   }
 
-  public void findFuncionario(Loja loja){
+  public void findFuncionario(Loja loja) {
 
     String idProcurado;
-    int flag = 0, posicaoId=0;
+    int flag = 0, posicaoId = 0;
 
     System.out.println("por favor, digite o id que deseja procurar: ");
     idProcurado = ler.nextLine();
 
-    for(int i = 0; i < getQntFuncionarios(); i++){
-      if(loja.funcionarios[i].buscaFuncionarioID(idProcurado)){
+    for (int i = 0; i < getQntFuncionarios(); i++) {
+      if (loja.funcionarios[i].buscaFuncionarioID(idProcurado)) {
         System.out.println("achei!");
         posicaoId = i;
         flag = 1;
-      } 
+      }
     }
 
-    if(flag==1){
+    if (flag == 1) {
       System.out.println("--------------------------------------");
       System.out.println("nome             : " + loja.funcionarios[posicaoId].getNome());
       System.out.println("CPF              : " + loja.funcionarios[posicaoId].getCPF());
@@ -459,15 +469,15 @@ public class Loja {
       System.out.println("salario          : " + loja.funcionarios[posicaoId].getSalario());
       System.out.println("--------------------------------------");
       menuFindFuncionario(loja, posicaoId);
-    } else{
+    } else {
       System.out.println("nao foi encontrado nenhum funcionario com esse id");
     }
   }
 
-  public void menuFindFuncionario(Loja loja, int posicaoId){
+  public void menuFindFuncionario(Loja loja, int posicaoId) {
     int opcMenu;
     System.out.println("gostaria de alterar alguma informacao? digite o numero desejado");
-    do{
+    do {
       System.out.println("-------------------------------------------------------");
       System.out.println("1- nome ");
       System.out.println("2- CPF");
@@ -480,14 +490,14 @@ public class Loja {
       System.out.println("9- encerrar as alteracoes");
       System.out.println("-------------------------------------------------------");
       System.out.println("por favor digite a opcao que desejar: ");
-      
+
       opcMenu = ler.nextInt();
       ler.nextLine();
 
-      switch (opcMenu){
+      switch (opcMenu) {
         case 1:
           System.out.println("por favor, digite o novo nome:");
-          loja.funcionarios[posicaoId].setNome(ler.nextLine());    
+          loja.funcionarios[posicaoId].setNome(ler.nextLine());
           break;
         case 2:
           System.out.println("por favor, digite o novo cpf:");
@@ -524,10 +534,10 @@ public class Loja {
         default:
           System.out.println("opcao invalida, por favor digite um valor valido:");
       }
-    } while (opcMenu!= 9);
+    } while (opcMenu != 9);
   }
 
-  public Loja cadastroArmacao(Loja loja){
+  public Loja cadastroArmacao(Loja loja) {
     loja.estoqueArmacao[getQntArmacao()] = new Armacao();
     System.out.println("por favor, digite a marca da armacao:");
     loja.estoqueArmacao[getQntArmacao()].setMarcaArmacao(ler.nextLine());
@@ -541,59 +551,59 @@ public class Loja {
     loja.estoqueArmacao[getQntArmacao()].setMedidaaro(ler.nextDouble());
     System.out.println("por favor, digite o preco da armacao:");
     loja.estoqueArmacao[getQntArmacao()].setValorArmacao(ler.nextDouble());
-    setQntArmacao(getQntArmacao()+1);
+    setQntArmacao(getQntArmacao() + 1);
 
     return loja;
   }
 
-  public void showArmacoes(Loja loja){
-    for(int i=0; i<getQntArmacao(); i++){
+  public void showArmacoes(Loja loja) {
+    for (int i = 0; i < getQntArmacao(); i++) {
       System.out.println("--------------------------------------");
-      System.out.println("marca      : "+ loja.estoqueArmacao[i].getMarcaArmacao());
-      System.out.println("material   : "+ loja.estoqueArmacao[i].getMatArmacao());
-      System.out.println("id         : "+ loja.estoqueArmacao[i].getIDarmacao());
-      System.out.println("modelo     : "+ loja.estoqueArmacao[i].getModeloArmacao());
-      System.out.println("medida     : "+ loja.estoqueArmacao[i].getMedidaaro());
-      System.out.println("preco      : "+ loja.estoqueArmacao[i].getValorArmacao());
+      System.out.println("marca      : " + loja.estoqueArmacao[i].getMarcaArmacao());
+      System.out.println("material   : " + loja.estoqueArmacao[i].getMatArmacao());
+      System.out.println("id         : " + loja.estoqueArmacao[i].getIDarmacao());
+      System.out.println("modelo     : " + loja.estoqueArmacao[i].getModeloArmacao());
+      System.out.println("medida     : " + loja.estoqueArmacao[i].getMedidaaro());
+      System.out.println("preco      : " + loja.estoqueArmacao[i].getValorArmacao());
       System.out.println("--------------------------------------");
 
     }
   }
 
-  public void findArmacao(Loja loja){
+  public void findArmacao(Loja loja) {
     String idProcurado;
-    int flag = 0, posicaoId=0;
+    int flag = 0, posicaoId = 0;
 
     System.out.println("por favor, digite o id que deseja procurar: ");
     idProcurado = ler.nextLine();
 
-    for(int i = 0; i < getQntArmacao(); i++){
-      if(loja.estoqueArmacao[i].buscaArmacaoID(idProcurado)){
+    for (int i = 0; i < getQntArmacao(); i++) {
+      if (loja.estoqueArmacao[i].buscaArmacaoID(idProcurado)) {
         System.out.println("achei!");
         posicaoId = i;
         flag = 1;
-      } 
+      }
     }
 
-    if(flag==1){
+    if (flag == 1) {
       System.out.println("--------------------------------------");
-      System.out.println("marca      : "+ loja.estoqueArmacao[posicaoId].getMarcaArmacao());
-      System.out.println("material   : "+ loja.estoqueArmacao[posicaoId].getMatArmacao());
-      System.out.println("id         : "+ loja.estoqueArmacao[posicaoId].getIDarmacao());
-      System.out.println("modelo     : "+ loja.estoqueArmacao[posicaoId].getModeloArmacao());
-      System.out.println("medida     : "+ loja.estoqueArmacao[posicaoId].getMedidaaro());
-      System.out.println("preco      : "+ loja.estoqueArmacao[posicaoId].getValorArmacao());
+      System.out.println("marca      : " + loja.estoqueArmacao[posicaoId].getMarcaArmacao());
+      System.out.println("material   : " + loja.estoqueArmacao[posicaoId].getMatArmacao());
+      System.out.println("id         : " + loja.estoqueArmacao[posicaoId].getIDarmacao());
+      System.out.println("modelo     : " + loja.estoqueArmacao[posicaoId].getModeloArmacao());
+      System.out.println("medida     : " + loja.estoqueArmacao[posicaoId].getMedidaaro());
+      System.out.println("preco      : " + loja.estoqueArmacao[posicaoId].getValorArmacao());
       System.out.println("--------------------------------------");
       menuFindArmacao(loja, posicaoId);
-    } else{
+    } else {
       System.out.println("nao foi encontrado nenhuma armacao com esse id");
     }
   }
 
-  public void menuFindArmacao(Loja loja, int posicaoId){
+  public void menuFindArmacao(Loja loja, int posicaoId) {
     int opcMenu;
     System.out.println("gostaria de alterar alguma informacao? digite o numero desejado");
-    do{
+    do {
       System.out.println("-------------------------------------------------------");
       System.out.println("1- marca ");
       System.out.println("2- material");
@@ -604,14 +614,14 @@ public class Loja {
       System.out.println("9- encerrar as alteracoes");
       System.out.println("-------------------------------------------------------");
       System.out.println("por favor digite a opcao que desejar: ");
-      
+
       opcMenu = ler.nextInt();
       ler.nextLine();
 
-      switch (opcMenu){
+      switch (opcMenu) {
         case 1:
           System.out.println("por favor, digite a nova marca:");
-          loja.estoqueArmacao[posicaoId].setMarcaArmacao(ler.nextLine());    
+          loja.estoqueArmacao[posicaoId].setMarcaArmacao(ler.nextLine());
           break;
         case 2:
           System.out.println("por favor, digite o novo material:");
@@ -639,11 +649,106 @@ public class Loja {
         default:
           System.out.println("opcao invalida, por favor digite um valor valido:");
       }
-    } while (opcMenu!= 9);
+    } while (opcMenu != 9);
   }
 
-  public void showLente(Loja loja){
-    for(int i = 0; i<qntLentes; i++){
+  public void showVenda(Loja loja) {
+    for (int i = 0; i < qntVendas; i++) {
+      System.out.println("--------------------------------------");
+      System.out.println("id venda       : " + loja.historicoVendas[i].getIdVenda());
+      System.out.println("id cliente     : " + loja.historicoVendas[i].getIdCliente());
+      System.out.println("id funcionario : " + loja.historicoVendas[i].getIdFuncionario());
+      System.out.println("id lente       : " + loja.historicoVendas[i].getIdLente());
+      System.out.println("id armacao     : " + loja.historicoVendas[i].getIdArmacao());
+      System.out.println("valor final    : " + loja.historicoVendas[i].getValorFinal());
+      System.out.println("--------------------------------------");
+    }
+  }
+
+  public void findVenda(Loja loja) {
+    String idProcurado;
+    int flag = 0, posicaoId = 0;
+
+    System.out.println("por favor, digite o id que deseja procurar: ");
+    idProcurado = ler.nextLine();
+
+    for (int i = 0; i < getQntArmacao(); i++) {
+      if (loja.historicoVendas[i].buscaVendaID(idProcurado)) {
+        System.out.println("achei!");
+        posicaoId = i;
+        flag = 1;
+      }
+    }
+
+    if (flag == 1) {
+      System.out.println("--------------------------------------");
+      System.out.println("id venda       : " + loja.historicoVendas[posicaoId].getIdVenda());
+      System.out.println("id cliente     : " + loja.historicoVendas[posicaoId].getIdCliente());
+      System.out.println("id funcionario : " + loja.historicoVendas[posicaoId].getIdFuncionario());
+      System.out.println("id lente       : " + loja.historicoVendas[posicaoId].getIdLente());
+      System.out.println("id armacao     : " + loja.historicoVendas[posicaoId].getIdArmacao());
+      System.out.println("valor final    : " + loja.historicoVendas[posicaoId].getValorFinal());
+      System.out.println("--------------------------------------");
+      menuFindVenda(loja, posicaoId);
+    } else {
+      System.out.println("nao foi encontrado nenhuma armacao com esse id");
+    }
+  }
+
+  public void menuFindVenda(Loja loja, int posicaoId) {
+    int opcMenu;
+    System.out.println("gostaria de alterar alguma informacao? digite o numero desejado");
+    do {
+      System.out.println("-------------------------------------------------------");
+      System.out.println("1- id venda ");
+      System.out.println("2- id cliente");
+      System.out.println("3- id funcionario");
+      System.out.println("4- id lente");
+      System.out.println("5- id armacao");
+      System.out.println("6- valor final");
+      System.out.println("9- encerrar as alteracoes");
+      System.out.println("-------------------------------------------------------");
+      System.out.println("por favor digite a opcao que desejar: ");
+
+      opcMenu = ler.nextInt();
+      ler.nextLine();
+
+      switch (opcMenu) {
+        case 1:
+          System.out.println("por favor, digite o novo id de venda:");
+          loja.historicoVendas[posicaoId].setIdVenda(ler.nextLine());
+          break;
+        case 2:
+          System.out.println("por favor, digite o novo id de cliente:");
+          loja.historicoVendas[posicaoId].setIdCliente(ler.nextLine());
+          break;
+        case 3:
+          System.out.println("por favor, digite o novo id de funcionario:");
+          loja.historicoVendas[posicaoId].setIdFuncionario(ler.nextLine());
+          break;
+        case 4:
+          System.out.println("por favor, digite o novo id lente:");
+          loja.historicoVendas[posicaoId].setIdLente(ler.nextInt());
+          ler.nextLine();
+          break;
+        case 5:
+          System.out.println("por favor, digite o novo id de armacao:");
+          loja.historicoVendas[posicaoId].setIdArmacao(ler.nextLine());
+          break;
+        case 6:
+          System.out.println("por favor, digite o novo preco:");
+          loja.historicoVendas[posicaoId].setValorFinal(ler.nextDouble());
+          break;
+        case 9:
+          break;
+        default:
+          System.out.println("opcao invalida, por favor digite um valor valido:");
+      }
+    } while (opcMenu != 9);
+  }
+
+  public void showLente(Loja loja) {
+    for (int i = 0; i < qntLentes; i++) {
       System.out.println("--------------------------------------");
       System.out.println("id                : " + loja.lentes[i].getId());
       System.out.println("indicacao medica  : " + loja.lentes[i].getIndMedica());
@@ -659,23 +764,23 @@ public class Loja {
     }
   }
 
-  public void findLente(Loja loja){
+  public void findLente(Loja loja) {
     int idProcurado;
-    int flag = 0, posicaoId=0;
+    int flag = 0, posicaoId = 0;
 
     System.out.println("por favor, digite o id que deseja procurar: ");
     idProcurado = ler.nextInt();
     ler.nextLine();
 
-    for(int i = 0; i < getQntLentes(); i++){
-      if(loja.lentes[i].buscaLenteID(idProcurado)){
+    for (int i = 0; i < getQntLentes(); i++) {
+      if (loja.lentes[i].buscaLenteID(idProcurado)) {
         System.out.println("achei!");
         posicaoId = i;
         flag = 1;
-      } 
+      }
     }
 
-    if(flag==1){
+    if (flag == 1) {
       System.out.println("--------------------------------------");
       System.out.println("id                : " + loja.lentes[posicaoId].getId());
       System.out.println("indicacao medica  : " + loja.lentes[posicaoId].getIndMedica());
@@ -689,16 +794,16 @@ public class Loja {
       System.out.println("data Producao     : " + loja.lentes[posicaoId].getDataProducao());
       System.out.println("--------------------------------------");
       menuFindLente(loja, posicaoId);
-    } else{
+    } else {
       System.out.println("nao foi encontrado nenhuma lente com esse id");
     }
   }
 
-  public void menuFindLente(Loja loja, int posicaoId){
+  public void menuFindLente(Loja loja, int posicaoId) {
     int opcMenu;
     int uV;
     System.out.println("gostaria de alterar alguma informacao? digite o numero desejado");
-    do{
+    do {
       System.out.println("-------------------------------------------------------");
       System.out.println("1-  id                 ");
       System.out.println("2-  indicacao medica   ");
@@ -713,15 +818,15 @@ public class Loja {
       System.out.println("99- encerrar as alteracoes");
       System.out.println("-------------------------------------------------------");
       System.out.println("por favor digite a opcao que desejar: ");
-      
+
       opcMenu = ler.nextInt();
       ler.nextLine();
 
-      switch (opcMenu){
+      switch (opcMenu) {
         case 1:
           System.out.println("por favor, digite o novo id:");
-          loja.lentes[posicaoId].setId(ler.nextInt());   
-          ler.nextLine(); 
+          loja.lentes[posicaoId].setId(ler.nextInt());
+          ler.nextLine();
           break;
         case 2:
           System.out.println("por favor, digite a nova indicacao:");
@@ -740,9 +845,9 @@ public class Loja {
           System.out.println("por favor, digite a nova protecao uv: 1- sim 0- nao");
           uV = ler.nextInt();
           ler.nextLine();
-          if(uV== 1){  
+          if (uV == 1) {
             loja.lentes[posicaoId].setprotecaoUV(true);
-          }else{  
+          } else {
             loja.lentes[posicaoId].setprotecaoUV(false);
           }
           break;
@@ -772,16 +877,14 @@ public class Loja {
         default:
           System.out.println("opcao invalida, por favor digite um valor valido:");
       }
-    } while (opcMenu!= 99);
+    } while (opcMenu != 99);
   }
-  
 
   @Override
   public String toString() {
-    return " o CEP da loja "+nomeLoja+" e: " + cep  + "\n o numero de telefone da loja e: "
-     + telefone +"\n tem " + qntClientes + " clientes cadastrados "+ "\n tem "
-     + qntFuncionarios + " funcionarios cadastrados \n tem " + qntVendas
-     + " vendas cadastradas";
+    return " o CEP da loja " + nomeLoja + " e: " + cep + "\n o numero de telefone da loja e: " + telefone + "\n tem "
+        + qntClientes + " clientes cadastrados " + "\n tem " + qntFuncionarios + " funcionarios cadastrados \n tem "
+        + qntVendas + " vendas cadastradas";
   }
-  
+
 }
