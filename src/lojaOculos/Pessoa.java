@@ -20,7 +20,7 @@ public class Pessoa {//classe abstrata Pessoa
 		this.endereco = endereco;
 	}
 	public String getID() {//Identifica��o da pessoa
-		return endereco;
+		return id;
 	}
 	public void setID(String id) {//Identifica��o  da pessoa
 		this.id = id;

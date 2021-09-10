@@ -4,14 +4,14 @@ package lojaOculos;
 
 public class Funcionario extends Pessoa{//Classe Funcion�rio que herda da classe abstrata Pessoa
 	
-	private float salario;
+	private double salario;
 	private String dataContratacao;
 
 	
-	public float getSalario() {//Valor do sal�rio
+	public double getSalario() {//Valor do sal�rio
 		return salario;
 	}
-	public void setSalario(float salario) {//Valor do sal�rio
+	public void setSalario(double salario) {//Valor do sal�rio
 		this.salario = salario;
 	}
 	public String getDatacontrac() {//Data da contrata��o

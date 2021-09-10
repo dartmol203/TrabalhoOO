@@ -107,4 +107,12 @@ public class LenteDeOculos {
         this.idArmacao = idArmacao;
     }
 
+    public boolean buscaLenteID(int lenteBuscada) {//Busca identifica��es das lentes
+		if (idLente == lenteBuscada)
+	        return true;
+	     
+		else
+	    	return false;
+	}
+
 }
