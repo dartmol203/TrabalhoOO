@@ -1,11 +1,10 @@
 package lojaOculos;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     static Scanner ler = new Scanner(System.in);
-    static boolean lojaCadastrada = false;
+    
     public static void main(String[] args) throws Exception {
         //declaraçoes
 
@@ -22,6 +21,10 @@ public class App {
         
         Loja[] loja = new Loja[1]; // passivel de cadastro de novas lojas
         //int qntLojas = 0;
+        loja[0]= new Loja();
+        loja[0] = Loja.preCadastro(loja[0]);
+
+        
         int opcMenu;
 
         do{
@@ -37,6 +40,7 @@ public class App {
             System.out.println("------------------------------");
             System.out.println("por favor digite a opcao que desejar: ");
             opcMenu = ler.nextInt();
+            ler.nextLine();
         
             switch(opcMenu){
                 case 1:
@@ -79,17 +83,23 @@ public class App {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar loja ");
             System.out.println("2- ver informacoes da loja");
+            System.out.println("3- editar informacoes da loja");
             System.out.println("9- voltar para o menu anterior");
             System.out.println("--------------------------------------");
             System.out.println("por favor digite a opcao que desejar: ");
             
             opcMenuLoja = ler.nextInt();
+            ler.nextLine();
 
             switch (opcMenuLoja){
                 case 1:
                     cadastroLoja(loja);
                     break;
                 case 2:
+                    infoLoja(loja);
+                    break;
+                case 3:
+                    editLoja(loja);
                     break;
                 case 9:
                     break;
@@ -106,16 +116,22 @@ public class App {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar Clientes");
             System.out.println("2- ver informacoes dos clientes");
+            System.out.println("3- editar informacoes de clientes");
+            System.out.println("4- deletar clientes");
+            System.out.println("5- buscar clientes por ID");
             System.out.println("9- voltar para o menu anterior");
             System.out.println("--------------------------------------");
             System.out.println("por favor digite a opcao que desejar: ");
 
             opcMenuCliente = ler.nextInt();
+            ler.nextLine();
 
             switch (opcMenuCliente){
                 case 1:
+                    cadastroCliente(loja);
                     break;
                 case 2:
+                    infoCliente(loja);
                     break;
                 case 9:
                     break;
@@ -137,6 +153,7 @@ public class App {
             System.out.println("por favor digite a opcao que desejar: ");
 
             opcMenuFuncionarios = ler.nextInt();
+            ler.nextLine();
 
             switch (opcMenuFuncionarios){
                 case 1:
@@ -163,6 +180,7 @@ public class App {
             System.out.println("por favor digite a opcao que desejar: ");
 
             opcMenuEstoque = ler.nextInt();
+            ler.nextLine();
 
             switch (opcMenuEstoque){
                 case 1:
@@ -189,6 +207,7 @@ public class App {
             System.out.println("por favor digite a opcao que desejar: ");
 
             opcMenuVendas = ler.nextInt();
+            ler.nextLine();
 
             switch (opcMenuVendas){
                 case 1:
@@ -215,6 +234,7 @@ public class App {
             System.out.println("por favor digite a opcao que desejar: ");
 
             opcMenuLentes = ler.nextInt();
+            ler.nextLine();
 
             switch (opcMenuLentes){
                 case 1:
@@ -232,11 +252,36 @@ public class App {
     }
 
     private static void cadastroLoja(Loja loja){
-        if(lojaCadastrada){
-            System.out.println("tem loja cadastrada");
+        if(loja.isLojaCadastrada()){
+            System.out.println("desculpe, ja tem uma loja cadastrada!");
         }else{
-            System.out.println("nao tem loja cadastrada");
+            loja.cadastroLoja(loja);
         }
-        lojaCadastrada = true;
+        
+    }
+
+    private static void infoLoja(Loja loja){
+        if(loja.isLojaCadastrada()){
+            System.out.println(loja.toString());
+        } else{
+            System.out.println("nao tem nenhuma loja cadastrada para se mostrar informacoes");
+        }
+        
+    }
+
+    private static void editLoja(Loja loja){
+        if(loja.isLojaCadastrada()){
+            loja = loja.editarLoja(loja);
+        } else{
+            System.out.println("nao tem nenhuma loja cadastrada para se editar informacoes");
+        }
+    }
+
+    private static void cadastroCliente(Loja loja){
+        loja.cadastroCliente(loja);
+    }
+
+    private static void infoCliente(Loja loja){
+        loja.showClientes(loja);
     }
 }

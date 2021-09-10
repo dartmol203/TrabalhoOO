@@ -1,16 +1,16 @@
 package lojaOculos;
 
-import java.util.Date;
+
 
 
 public class Cliente extends Pessoa{//Classe Cliente que herda da classe abstrata Pessoa
 	
-	private Date dataPrimeiraCompra;
+	private String dataPrimeiraCompra;
 	
-	public Date getDataprimeira() {//Primeira compra do cliente
+	public String getDataprimeira() {//Primeira compra do cliente
 		return dataPrimeiraCompra;
 	}
-	public void setDataprimeira(Date dataPrimeiraCompra) {//Primeira compra do cliente
+	public void setDataprimeira(String dataPrimeiraCompra) {//Primeira compra do cliente
 		this.dataPrimeiraCompra = dataPrimeiraCompra;
 	}
 	

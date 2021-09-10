@@ -1,12 +1,10 @@
 package lojaOculos;
 
-import java.util.Date;
 
 public class Pessoa {//classe abstrata Pessoa
 	
-	protected String nome,endereco,id;
-	protected int cpf,telefone;
-	protected Date dataaniversario;
+	protected String nome,endereco,id,cpf,dataaniversario;
+	protected long telefone;
 
 	
 	public String getNome() {//Nome da pessoa
@@ -27,22 +25,22 @@ public class Pessoa {//classe abstrata Pessoa
 	public void setID(String id) {//Identifica��o  da pessoa
 		this.id = id;
 	}
-	public int getTelefone() {//telefone da pessoa
+	public long getTelefone() {//telefone da pessoa
 		return telefone;
 	}
-	public void setTelefone(int telefone) {//telefone da pessoa
+	public void setTelefone(long telefone) {//telefone da pessoa
 		this.telefone = telefone;
 	}
-	public int getCPF() {//CPF da pessoa
+	public String getCPF() {//CPF da pessoa
 		return cpf;
 	}
-	public void setCPF(int cpf) {//CPF da pessoa
+	public void setCPF(String cpf) {//CPF da pessoa
 		this.cpf = cpf;
 	}
-	public Date getDataaniver() {//Anivers�rio da pessoa
+	public String getDataaniver() {//Anivers�rio da pessoa
 		return dataaniversario;
 	}
-	public void setDataaniver(Date dataaniversario) {//Anivers�rio da pessoa
+	public void setDataaniver(String dataaniversario) {//Anivers�rio da pessoa
 		this.dataaniversario = dataaniversario;
 	}
 	

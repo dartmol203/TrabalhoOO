@@ -1,9 +1,7 @@
 package lojaOculos;
 
-import java.util.Date;
-
 public class LenteDeOculos {
-    private float grauLente;
+    private double grauLente;
     private double valorLente;
     private int idLente;
     private String formatoLente;
@@ -11,15 +9,15 @@ public class LenteDeOculos {
     private String focoLente;
     private String laboratorio;
     private boolean protecaoUV;
-    private Date dataProducao;
-    //private armacaoDeOculos oculos;
+    private String dataProducao;
+    private String idArmacao;
 
-    public float getGrau(){
+    public double getGrau(){
 
         return grauLente;
     }
 
-    public void setGrau(float grauLente){
+    public void setGrau(double grauLente){
         this.grauLente = grauLente;
     }
     
@@ -83,12 +81,12 @@ public class LenteDeOculos {
         this.protecaoUV = protecaoUV;
     }
 
-    public Date getDataProducao(){
+    public String getDataProducao(){
 
         return dataProducao;
     }
     
-    public void setDataProducao( Date dataProducao){
+    public void setDataProducao( String dataProducao){
         
         this.dataProducao = dataProducao;
     }
@@ -101,17 +99,12 @@ public class LenteDeOculos {
         this.valorLente = valorLente;
     }
 
-    /*public armacaoDeOculos getArmacaoDeOculos(){
-
-        return oculos;
+    public String getIdArmacao() {
+        return idArmacao;
     }
-    
-    public void setArmacaoDeOculos( armacaoDeOculos oculos){
-        
-        this.oculos = oculos;
-    }
-    */
 
-    
+    public void setIdArmacao(String idArmacao) {
+        this.idArmacao = idArmacao;
+    }
 
 }

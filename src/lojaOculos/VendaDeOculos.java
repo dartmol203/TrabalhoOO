@@ -2,41 +2,49 @@ package lojaOculos;
 
 public class VendaDeOculos {
     private double valorFinal;
-    private double valorArmacao;
-    //private Cliente.id idCliente;
-    //private Funcionario.id idFuncionario;
-    private LenteDeOculos dadosLente;
+    private String idCliente, idFuncionario, idArmacao;
+    private int idLente;
 
     public double getValorFinal() {
         return valorFinal;
     }
     
-    public void setValosrFinal(double valorFinal) {
+    public void setValorFinal(double valorFinal) {
         this.valorFinal = valorFinal;
     }
-    
-    public double getValorArmacao() {
-        return valorArmacao;
-    }
-    
-    public void setValorArmacao(double valorArmacao) {
-        this.valorArmacao = valorArmacao;
-    }
-    /*
-    public Cliente.id getIdCliente() {
+
+    public String getIdCliente() {
         return idCliente;
     }
-    
-    public void setIdCliente(Cliente.id idCliente) {
+
+    public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
-    
-    public Funcionario.id getIdFuncionario() {
+
+    public String getIdFuncionario() {
         return idFuncionario;
     }
-    
-    public void setIdFuncionario(Funcionario.id idFuncionario) {
+
+    public void setIdFuncionario(String idFuncionario) {
         this.idFuncionario = idFuncionario;
     }
-    */
+
+    public int getIdLente() {
+        return idLente;
+    }
+
+    public void setIdLente(int idLente) {
+        this.idLente = idLente;
+    }
+
+    public String getIdArmacao() {
+        return idArmacao;
+    }
+
+    public void setIdArmacao(String idArmacao) {
+        this.idArmacao = idArmacao;
+    }
+
+    
+    
 }
