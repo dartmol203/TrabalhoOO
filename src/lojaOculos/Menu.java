@@ -50,7 +50,7 @@ public class Menu {
                     break;
 
                 case 4:
-                    Estoque(loja[0]);
+                    Armacao(loja[0]);
                     break;
 
                 case 5:
@@ -192,8 +192,8 @@ public class Menu {
      * 
      * @param loja
      */
-    public static void Estoque(Loja loja) {
-        int opcMenuEstoque = 0;
+    public static void Armacao(Loja loja) {
+        int opcMenuArmacao = 0;
         do {
             System.out.println("--------------------------------------");
             System.out.println("1- cadastrar armacoes de oculos");
@@ -203,10 +203,10 @@ public class Menu {
             System.out.println("--------------------------------------");
             System.out.println("por favor digite a opcao que desejar: ");
 
-            opcMenuEstoque = ler.nextInt();
+            opcMenuArmacao = ler.nextInt();
             ler.nextLine();
 
-            switch (opcMenuEstoque) {
+            switch (opcMenuArmacao) {
                 case 1:
                     Cruds.cadastroArmacao(loja);
                     break;
@@ -221,7 +221,7 @@ public class Menu {
                     System.out.println("opcao invalida, por favor digite um valor valido:");
             }
 
-        } while (opcMenuEstoque != 9);
+        } while (opcMenuArmacao != 9);
     }
 
     /**
