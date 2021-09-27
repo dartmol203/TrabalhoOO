@@ -11,6 +11,15 @@ public class Cruds {
 
     }
 
+    public static String[] getNomeLoja(Loja loja) {
+        String[] s = new String[1];
+        for (int i = 0; i < 1; i++) {
+            s[i] = loja.getNomeLoja();
+        }
+
+        return s;
+    }
+
     public static void infoLoja(Loja loja) {
         if (loja.isLojaCadastrada()) {
             System.out.println(loja.toString());

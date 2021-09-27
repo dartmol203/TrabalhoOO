@@ -8,13 +8,14 @@ import java.util.Scanner;
  */
 public class Menu {
     static Scanner ler = new Scanner(System.in).useLocale(Locale.US);;
+    private static Loja[] loja = new Loja[1];
 
     /**
      * menu geral do programa, encerra ele e abre caminho pras outras areas dele
      */
     public static void Opcoes() {
 
-        Loja[] loja = new Loja[1]; // passivel de cadastro de novas lojas
+        // passivel de cadastro de novas lojas
         // int qntLojas = 0;
         loja[0] = new Loja();
         loja[0] = Loja.preCadastro(loja[0]);
@@ -299,4 +300,5 @@ public class Menu {
         } while (opcMenuLentes != 9);
 
     }
+
 }
