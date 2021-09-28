@@ -4,105 +4,150 @@ import modelo.*;
 
 public class ControleDados {
 	private Dados d = new Dados();
-
+	
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
-
+	
 	public Dados getDados() {
 		return d;
 	}
-
 	public void setDados(Dados d) {
 		this.d = d;
 	}
 
-	public Aluno[] getAlunos() {
-		return this.d.getAlunos();
+	public Cliente[] getClientes() {
+		return this.d.getClientes();
 	}
-
-	public int getQtdAlunos() {
-		return this.d.getQtdAlunos();
+	
+	public int getQtdClientes() {
+		return this.d.getQtdClientes();
 	}
-
-	public int getQtdProfs() {
-		return this.d.getQtdProfs();
+	
+	public int getQtdFuncionarios() {
+		return this.d.getQtdFuncionarios();
 	}
-
-	public Professor[] getProfessores() {
-		return this.d.getProfs();
+	
+	public Funcionario[] getFuncionarios() {
+		return this.d.getFuncionarios();
 	}
+	
+	public int getQtdArmacao() {
+		return this.d.getQtdArmacao();
+	}
+	
+	public Armacao[] getArmacao() {
+		return this.d.getArmacao();
+	}
+	
 
-	public boolean inserirEditarProf(String[] dadosProfs) {
-		if (!dadosProfs[3].matches("[0-9]+") || !dadosProfs[4].matches("[0-9]+") || !dadosProfs[5].matches("[0-9]+")
-				|| !dadosProfs[6].matches("[0-9]+")) {
+
+	public boolean inserirEditarFuncionarios(String[] dadosFuncionarios) {
+		if(!dadosFuncionarios[3].matches("[0-9]+") || !dadosFuncionarios[4].matches("[0-9]+") || 
+				!dadosFuncionarios[5].matches("[0-9]+") || !dadosFuncionarios[6].matches("[0-9]+")) {
 			return false;
 		} else {
-			Professor p = new Professor(dadosProfs[1], dadosProfs[2], Double.parseDouble(dadosProfs[7]),
-					Integer.parseInt(dadosProfs[3]), Integer.parseInt(dadosProfs[4]),
-					new Telefone(Integer.parseInt(dadosProfs[5]), Integer.parseInt(dadosProfs[6])));
-			d.inserirEditaProf(p, Integer.parseInt(dadosProfs[0]));
-			return true;
+				Funcionario p = new Funcionario(dadosFuncionarios[1],dadosFuncionarios[2], Double.parseDouble(dadosFuncionarios[7]), 
+						Integer.parseInt(dadosFuncionarios[3]), Integer.parseInt(dadosFuncionarios[4]), 
+						new Telefone(Integer.parseInt(dadosFuncionarios[5]), Integer.parseInt(dadosFuncionarios[6])));
+				d.inserirEditarFuncionarios(p, Integer.parseInt(dadosFuncionarios[0]));
+				return true;
 		}
 	}
 
-	// a posicao 0 do vetor dadosAlunos indica onde os dados devem ser inseridos
-	public boolean inserirEditarAluno(String[] dadosAlunos) {
-		if (!dadosAlunos[3].matches("[0-9]+") || !dadosAlunos[4].matches("[0-9]+") || !dadosAlunos[5].matches("[0-9]+")
-				|| !dadosAlunos[6].matches("[0-9]+")) {
+	public boolean inserirEditarClientes(String[] dadosClientes) {
+		if(!dadosClientes[3].matches("[0-9]+") || !dadosClientes[4].matches("[0-9]+") || 
+				!dadosClientes[5].matches("[0-9]+") || !dadosClientes[6].matches("[0-9]+")) {
 			return false;
 		} else {
-			Aluno a = new Aluno(dadosAlunos[1], dadosAlunos[2], dadosAlunos[7], Integer.parseInt(dadosAlunos[3]),
-					Integer.parseInt(dadosAlunos[4]),
-					new Telefone(Integer.parseInt(dadosAlunos[5]), Integer.parseInt(dadosAlunos[6])));
-			d.inserirEditarAluno(a, Integer.parseInt(dadosAlunos[0]));
+				Cliente c = new Cliente(dadosClientes[1], dadosClientes[2],dadosClientes[7], Integer.parseInt(dadosClientes[3]), 
+						Integer.parseInt(dadosClientes[4]), new Telefone(Integer.parseInt(dadosClientes[5]),
+								Integer.parseInt(dadosClientes[6])));
+				d.inserirEditarClientes(c, Integer.parseInt(dadosClientes[0]));
+				return true;
+		}
+	}
+	
+	public boolean inserirEditarArmacao(String[] dadosArmacao) {
+		if(!dadosArmacao[3].matches("[0-9]+") || !dadosArmacao[4].matches("[0-9]+") || !dadosArmacao[5].matches("[0-9]+")) {
+			return false;
+		} else {
+				Armacao a = new Armacao(dadosArmacao[6],dadosArmacao[1], dadosArmacao[2],Double.parseDouble(dadosArmacao[5]), Integer.parseInt(dadosArmacao[4]),Integer.parseInt(dadosArmacao[3]));
+				d.inserirEditarArmacao(a, Integer.parseInt(dadosArmacao[0]));
+				return true;
+		}
+	}
+	
+	public boolean removerCliente(int i) {
+
+		String clienteRemovido = d.getClientes()[i].getNome();
+	
+		
+		if(i == (d.getQtdClientes() - 1)) { // O Clientes a ser removido está no final do array
+			d.setQtdClientes(d.getQtdClientes() - 1);
+			d.getClientes()[d.getQtdClientes()] = null;
+			return true;
+		} else { // o Cliente a ser removido está no meio do array
+			int cont = 0;
+			while(d.getClientes()[cont].getNome().compareTo(clienteRemovido) != 0) {
+				cont++;
+			}
+			//Rotina swap
+			for(int j = cont; j < d.getQtdClientes() - 1; j++) {
+				d.getClientes()[j] = null;
+				d.getClientes()[j] = d.getClientes()[j+1];
+			}
+			d.getClientes()[d.getQtdClientes()] = null;
+			d.setQtdClientes(d.getQtdClientes() - 1);
 			return true;
 		}
 	}
+	
+	public boolean removerFuncionarios(int i) {
 
-	public boolean removerAluno(int i) {
+		String funcionarioRemovido = d.getFuncionarios()[i].getNome();
 
-		String alunoRemovido = d.getAlunos()[i].getNome();
 
-		if (i == (d.getQtdAlunos() - 1)) { // O aluno a ser removido estï¿½ no final do array
-			d.setQtdAlunos(d.getQtdAlunos() - 1);
-			d.getAlunos()[d.getQtdAlunos()] = null;
+		if(i == (d.getQtdFuncionarios() - 1)) { // O funcionario a ser removido está no final do array
+			d.setQtdFuncionarios(d.getQtdFuncionarios() - 1);
+			d.getFuncionarios()[d.getQtdFuncionarios()] = null;
 			return true;
-		} else { // o aluno a ser removido estï¿½ no meio do array
+		} else { // o funcionario a ser removido está no meio do array
 			int cont = 0;
-			while (d.getAlunos()[cont].getNome().compareTo(alunoRemovido) != 0) {
+			while(d.getFuncionarios()[cont].getNome().compareTo(funcionarioRemovido) != 0)
 				cont++;
+			//Rotina swap
+			for(int j = cont; j < d.getQtdFuncionarios() - 1; j++) {
+				d.getFuncionarios()[j] = null;
+				d.getFuncionarios()[j] = d.getFuncionarios()[j+1];
 			}
-			// Rotina swap
-			for (int j = cont; j < d.getQtdAlunos() - 1; j++) {
-				d.getAlunos()[j] = null;
-				d.getAlunos()[j] = d.getAlunos()[j + 1];
-			}
-			d.getAlunos()[d.getQtdAlunos()] = null;
-			d.setQtdAlunos(d.getQtdAlunos() - 1);
+			d.getFuncionarios()[d.getQtdFuncionarios()] = null;
+			d.setQtdFuncionarios(d.getQtdFuncionarios() - 1);
 			return true;
 		}
 	}
+	
+	public boolean removerArmacao(int i) {
 
-	public boolean removerProfessor(int i) {
-
-		String profRemovido = d.getProfs()[i].getNome();
-
-		if (i == (d.getQtdProfs() - 1)) { // O prof a ser removido estï¿½ no final do array
-			d.setQtdProfs(d.getQtdProfs() - 1);
-			d.getProfs()[d.getQtdProfs()] = null;
+		String armacaoRemovida = d.getArmacao()[i].getNomeArmacao();
+	
+		
+		if(i == (d.getQtdArmacao() - 1)) { // A Armacao a ser removida está no final do array
+			d.setQtdArmacao(d.getQtdArmacao() - 1);
+			d.getArmacao()[d.getQtdArmacao()] = null;
 			return true;
-		} else { // o prof a ser removido estï¿½ no meio do array
+		} else { // a Armacao a ser removido está no meio do array
 			int cont = 0;
-			while (d.getProfs()[cont].getNome().compareTo(profRemovido) != 0)
+			while(d.getArmacao()[cont].getNomeArmacao().compareTo(armacaoRemovida) != 0) {
 				cont++;
-			// Rotina swap
-			for (int j = cont; j < d.getQtdProfs() - 1; j++) {
-				d.getProfs()[j] = null;
-				d.getProfs()[j] = d.getProfs()[j + 1];
 			}
-			d.getProfs()[d.getQtdProfs()] = null;
-			d.setQtdProfs(d.getQtdProfs() - 1);
+			//Rotina swap
+			for(int j = cont; j < d.getQtdArmacao() - 1; j++) {
+				d.getArmacao()[j] = null;
+				d.getArmacao()[j] = d.getArmacao()[j+1];
+			}
+			d.getArmacao()[d.getQtdArmacao()] = null;
+			d.setQtdArmacao(d.getQtdArmacao() - 1);
 			return true;
 		}
 	}

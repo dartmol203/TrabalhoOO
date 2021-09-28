@@ -3,11 +3,12 @@ package modelo;
 
 
 public class Dados {
-	private  Aluno[] alunos = new Aluno[50];
-	private int qtdAlunos = 0;
-
-	private Professor[] profs = new Professor[50];
-	private int qtdProfs = 0;
+	private  Cliente[] clientes = new Cliente[50];
+	private int qtdClientes = 0;
+	private Funcionario[] funcionarios = new Funcionario[50];
+	private int qtdFuncionarios = 0;
+	private Armacao[] armacao = new Armacao[50];
+	private int qtdArmacao = 0;
 	private Telefone[] tels = new Telefone[50];
 	private int qtdTels = 0;
 
@@ -16,58 +17,80 @@ public class Dados {
 	public void fillWithSomeData() {
 		for(int i = 0; i < 5; i++) {
 			tels[i] = new Telefone((i+1)*100, (i+1)*1000000);
-			alunos[i] = new Aluno("Cliente"+i, "Endereco"+i,"01/0" + (i + 1) + "/2001" , (i+1)*123456, (i+1)*112233, 
+			clientes[i] = new Cliente("Cliente"+i, "Endereco"+i,"01/0" + (i + 1) + "/2001" , (i+1)*123456, (i+1)*112233, 
 					tels[i]);
-			profs[i] = new Professor("Funcionario"+i, "Endereco"+i, (i+1)*1000, (i+1)*654321, 
+			funcionarios[i] = new Funcionario("Funcionario"+i, "Endereco"+i, (i+1)*1000, (i+1)*654321, 
 					(i+1)*332211, tels[i]);	
+			armacao[i] = new Armacao("Armacao"+i,"Marca"+i,"Material"+i,(i+1)*50,(i+1)*10,(i+1)*654321);
 		}
 		
-		qtdAlunos = 5;
-		qtdProfs = 5;
+		qtdClientes = 5;
+		qtdFuncionarios = 5;
+		qtdArmacao = 5;
 		qtdTels = 5;
 
 	}
 	
-	public Aluno[] getAlunos() {
-		return alunos;
+	public Cliente[] getClientes() {
+		return clientes;
 	}
 	
-	public void setAlunos(Aluno[] alunos) {
-		this.alunos = alunos;
+	public void setClientes(Cliente[] clientes) {
+		this.clientes = clientes;
 	}
 	
-	public void inserirEditarAluno(Aluno a, int pos) {
-		this.alunos[pos] = a;
-		if(pos == qtdAlunos) qtdAlunos++;
+	public void inserirEditarClientes(Cliente c, int pos) {
+		this.clientes[pos] = c;
+		if(pos == qtdClientes) qtdClientes++;
 	}
 	
-	public int getQtdAlunos() {
-		return qtdAlunos;
+	public int getQtdClientes() {
+		return qtdClientes;
 	}
-	public void setQtdAlunos(int qtdAlunos) {
-		this.qtdAlunos = qtdAlunos;
+	public void setQtdClientes(int qtdClientes) {
+		this.qtdClientes = qtdClientes;
 	}
 
-	public Professor[] getProfs() {
-		return profs;
+	public Funcionario[] getFuncionarios() {
+		return funcionarios;
 	}
 	
-	public void setProfs(Professor[] profs) {
-		this.profs = profs;
+	public void setFuncionarios(Funcionario[] Funcionarios) {
+		this.funcionarios = Funcionarios;
 	}
 	
-	public void inserirEditaProf(Professor p, int pos) {
-		this.profs[pos] = p;
-		if(pos == qtdProfs) qtdProfs++;
+	public void inserirEditarFuncionarios(Funcionario p, int pos) {
+		this.funcionarios[pos] = p;
+		if(pos == qtdFuncionarios) qtdFuncionarios++;
 	}
 	
+	public int getQtdFuncionarios() {
+		return qtdFuncionarios;
+	}
+	public void setQtdFuncionarios(int qtdFuncionarios) {
+		this.qtdFuncionarios = qtdFuncionarios;
+	}
 	
-	public int getQtdProfs() {
-		return qtdProfs;
+	public Armacao[] getArmacao() {
+		return armacao;
 	}
-	public void setQtdProfs(int qtdProfs) {
-		this.qtdProfs = qtdProfs;
+	
+	public void setArmacao(Armacao[] armacoes) {
+		this.armacao = armacoes;
 	}
+	
+	public void inserirEditarArmacao(Armacao a, int pos) {
+		this.armacao[pos] = a;
+		if(pos == qtdArmacao) qtdArmacao++;
+	}
+	
+	public int getQtdArmacao() {
+		return qtdArmacao;
+	}
+	public void setQtdArmacao(int qtdArmacoes) {
+		this.qtdArmacao = qtdArmacoes;
+	}
+	
 	public Telefone[] getTels() {
 		return tels;
 	}
@@ -80,6 +103,5 @@ public class Dados {
 	public void setQtdTels(int qtdTels) {
 		this.qtdTels = qtdTels;
 	}
-
-
+	
 }
