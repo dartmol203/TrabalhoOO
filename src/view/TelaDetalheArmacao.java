@@ -155,21 +155,25 @@ public class TelaDetalheArmacao implements ActionListener {
 		}
 
 		if (src == botaoExcluir) {
-			boolean res = false;
+			boolean res;
 
-			if (opcao == 1) {// exclui armacao
-				res = dados.removerArmacao(posicao);
-				if (res)
-					mensagemSucessoExclusao();
-				else
-					mensagemErroExclusaoArmacao();
-			}
+			// exclui armacao
+
+			res = dados.removerArmacao(posicao);
+
+			if (res) {
+
+				mensagemSucessoExclusao();
+
+			} else
+				mensagemErroExclusaoArmacao();
 
 		}
 
 	}
 
 	public void mensagemSucessoExclusao() {
+
 		JOptionPane.showMessageDialog(null, "Os dados foram excluidos com sucesso!", null,
 				JOptionPane.INFORMATION_MESSAGE);
 		janela.dispose();

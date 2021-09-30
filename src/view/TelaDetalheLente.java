@@ -220,13 +220,11 @@ public class TelaDetalheLente implements ActionListener {
         if (src == botaoExcluir) {
             boolean res = false;
 
-            if (opcao == 1) {// exclui armacao
-                res = dados.removerLente(posicao);
-                if (res)
-                    mensagemSucessoExclusao();
-                else
-                    mensagemErroExclusaoArmacao();
-            }
+            res = dados.removerLente(posicao);
+            if (res)
+                mensagemSucessoExclusao();
+            else
+                mensagemErroExclusaoArmacao();
 
         }
 

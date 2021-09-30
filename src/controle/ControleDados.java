@@ -137,7 +137,6 @@ public class ControleDados {
 	}
 
 	public boolean removerArmacao(int i) {
-
 		String armacaoRemovida = d.getArmacao()[i].getNomeArmacao();
 
 		if (i == (d.getQtdArmacao() - 1)) { // A Armacao a ser removida est� no final do array
@@ -146,6 +145,7 @@ public class ControleDados {
 			return true;
 		} else { // a Armacao a ser removido est� no meio do array
 			int cont = 0;
+
 			while (d.getArmacao()[cont].getNomeArmacao().compareTo(armacaoRemovida) != 0) {
 				cont++;
 			}
@@ -183,9 +183,6 @@ public class ControleDados {
 		if (!novoDado[5].matches("[0-9]+") || !novoDado[6].matches("[0-9.]+") || !novoDado[7].matches("[0-9.]+")
 				|| !novoDado[11].matches("[0-9]+")) {
 
-			for (int i = 0; i < 12; i++) {
-				System.out.println(novoDado[i]);
-			}
 			return false;
 		} else {
 			Lente l = new Lente(Double.parseDouble(novoDado[7]), Double.parseDouble(novoDado[6]),
@@ -197,7 +194,27 @@ public class ControleDados {
 
 	}
 
-	public boolean removerLente(int posicao) {
-		return false;
+	public boolean removerLente(int i) {
+		String LenteRemovida = d.getLentes()[i].getApelidoLente();
+
+		if (i == (d.getQntLentes() - 1)) { // A lente a ser removida est� no final do array
+			d.setQntLentes(d.getQntLentes() - 1);
+			d.getLentes()[d.getQntLentes()] = null;
+			return true;
+		} else { // a lente a ser removido est� no meio do array
+			int cont = 0;
+
+			while (d.getLentes()[cont].getApelidoLente().compareTo(LenteRemovida) != 0) {
+				cont++;
+			}
+			// Rotina swap
+			for (int j = cont; j < d.getQntLentes() - 1; j++) {
+				d.getLentes()[j] = null;
+				d.getLentes()[j] = d.getLentes()[j + 1];
+			}
+			d.getLentes()[d.getQntLentes()] = null;
+			d.setQntLentes(d.getQntLentes() - 1);
+			return true;
+		}
 	}
 }
