@@ -2,8 +2,8 @@ package modelo;
 
 public class Venda {
     private double valorFinal;
-    private String idCliente, idFuncionario, idArmacao, apelidoVenda;
-    private int idLente, idVenda;
+    private String apelidoVenda;
+    private int idLente, idCliente, idArmacao, idFuncionario, idVenda;
 
     public String getApelidoVenda() {
         return apelidoVenda;
@@ -29,27 +29,27 @@ public class Venda {
         this.valorFinal = valorFinal;
     }
 
-    public String getIdCliente() {
+    public int getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(String idCliente) {
+    public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
 
-    public String getIdFuncionario() {
+    public int getIdFuncionario() {
         return idFuncionario;
     }
 
-    public void setIdFuncionario(String idFuncionario) {
+    public void setIdFuncionario(int idFuncionario) {
         this.idFuncionario = idFuncionario;
     }
 
-    public String getIdArmacao() {
+    public int getIdArmacao() {
         return idArmacao;
     }
 
-    public void setIdArmacao(String idArmacao) {
+    public void setIdArmacao(int idArmacao) {
         this.idArmacao = idArmacao;
     }
 
@@ -59,6 +59,17 @@ public class Venda {
 
     public void setIdLente(int idLente) {
         this.idLente = idLente;
+    }
+
+    public Venda(double valorFinal, int idCliente, int idFuncionario, int idArmacao, String apelidoVenda, int idLente,
+            int idVenda) {
+        this.valorFinal = valorFinal;
+        this.idCliente = idCliente;
+        this.idFuncionario = idFuncionario;
+        this.idArmacao = idArmacao;
+        this.apelidoVenda = apelidoVenda;
+        this.idLente = idLente;
+        this.idVenda = idVenda;
     }
 
     // metodo de busca

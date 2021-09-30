@@ -217,4 +217,21 @@ public class ControleDados {
 			return true;
 		}
 	}
+
+	public Venda[] getVendas() {
+		return this.d.getVendas();
+	}
+
+	public int getQntVendas() {
+		return this.d.getQntVendas();
+	}
+
+	public boolean inserirEditarVenda(String[] novoDado) {
+		return false;
+	}
+
+	public boolean removerVenda(int posicao) {
+		return false;
+	}
+
 }

@@ -131,7 +131,6 @@ public class TelaMenu implements ActionListener {
 		if (src == loja)
 			new TelaLoja().mostrarLoja(dados);
 		if (src == venda)
-			JOptionPane.showMessageDialog(null, "Ainda precisam ser implementadas as funcionalidades\n", null,
-					JOptionPane.INFORMATION_MESSAGE);
+			new TelaVenda().mostrarDadosV(dados, 1);
 	}
 }

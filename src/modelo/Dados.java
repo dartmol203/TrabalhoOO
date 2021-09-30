@@ -16,6 +16,8 @@ public class Dados {
 	private int qntLojas = 0;
 	private Lente[] lentes = new Lente[50];
 	private int qntLentes;
+	private Venda[] vendas = new Venda[50];
+	private int qntVendas;
 
 	public void fillWithSomeData() {
 		for (int i = 0; i < 5; i++) {
@@ -28,6 +30,8 @@ public class Dados {
 					(i + 1) * 654321);
 			lentes[i] = new Lente((i + 1) * 0.1, 50.0 * (i + 1), i + 1, "redonda", "hipermetropia", "monofocal", "hoya",
 					true, "03/07/2025", (i + 1) * 654321, "lente" + (i + 1));
+			vendas[i] = new Venda(500 * i, (i + 1) * 123456, (i + 1) * 332211, (i + 1) * 654321, "venda" + (i + 1),
+					i + 1, i + 1);
 		}
 
 		// lojas.add(new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new
@@ -40,6 +44,7 @@ public class Dados {
 		qtdTels = 5;
 		qntLojas = 1;
 		qntLentes = 5;
+		qntVendas = 5;
 
 	}
 
@@ -168,6 +173,18 @@ public class Dados {
 		this.lentes[parseInt] = l;
 		if (parseInt == qntLentes)
 			qntLentes++;
+	}
+
+	public void setQntVendas(int qntVendas) {
+		this.qntVendas = qntVendas;
+	}
+
+	public int getQntVendas() {
+		return qntLentes;
+	}
+
+	public Venda[] getVendas() {
+		return vendas;
 	}
 
 }
