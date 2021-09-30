@@ -109,11 +109,11 @@ public class TelaDetalheArmacao implements ActionListener {
 
 		this.janela.setLayout(null);
 		janela.getContentPane().setBackground(Color.DARK_GRAY);
-		janela.setLocationRelativeTo(null);
-		janela.setResizable(false);
 
 		this.janela.setSize(500, 300);
 		this.janela.setVisible(true);
+		janela.setLocationRelativeTo(null);
+		janela.setResizable(false);
 
 		botaoSalvar.addActionListener(this);
 		botaoExcluir.addActionListener(this);
@@ -123,7 +123,7 @@ public class TelaDetalheArmacao implements ActionListener {
 		Object src = e.getSource();
 		if (src == botaoSalvar) {
 			try {
-				boolean res = true;
+				boolean res;
 				if (opcao == 1) // cadastro de nova armacao
 					novoDado[0] = Integer.toString(dados.getQtdArmacao());
 				else // edicao de dado existente
@@ -136,6 +136,9 @@ public class TelaDetalheArmacao implements ActionListener {
 				novoDado[6] = valorNomeArmacao.getText();
 
 				if (opcao == 1) {
+					novoDado[5] = valorValorArmacao.getText();
+					res = dados.inserirEditarArmacao(novoDado);
+				} else {
 					novoDado[5] = valorValorArmacao.getText();
 					res = dados.inserirEditarArmacao(novoDado);
 				}

@@ -78,7 +78,7 @@ public class ControleDados {
 
 	public boolean inserirEditarArmacao(String[] dadosArmacao) {
 		if (!dadosArmacao[3].matches("[0-9]+") || !dadosArmacao[4].matches("[0-9]+")
-				|| !dadosArmacao[5].matches("[0-9]+")) {
+				|| !dadosArmacao[5].matches("[0-9.]+")) {
 			return false;
 		} else {
 			Armacao a = new Armacao(dadosArmacao[6], dadosArmacao[1], dadosArmacao[2],
@@ -171,11 +171,33 @@ public class ControleDados {
 		}
 	}
 
-	public Lente[] getApelidoLente() {
-		return this.d.getApelidoLente();
-	}
-
 	public int getQntLentes() {
 		return this.d.getQntLentes();
+	}
+
+	public Lente[] getLentes() {
+		return this.d.getLentes();
+	}
+
+	public boolean inserirEditarLente(String[] novoDado) {
+		if (!novoDado[5].matches("[0-9]+") || !novoDado[6].matches("[0-9.]+") || !novoDado[7].matches("[0-9.]+")
+				|| !novoDado[11].matches("[0-9]+")) {
+
+			for (int i = 0; i < 12; i++) {
+				System.out.println(novoDado[i]);
+			}
+			return false;
+		} else {
+			Lente l = new Lente(Double.parseDouble(novoDado[7]), Double.parseDouble(novoDado[6]),
+					Integer.parseInt(novoDado[5]), novoDado[4], novoDado[8], novoDado[3], novoDado[9],
+					Boolean.parseBoolean(novoDado[10]), novoDado[2], Integer.parseInt(novoDado[11]), novoDado[1]);
+			d.inserirEditarlente(l, Integer.parseInt(novoDado[0]));
+			return true;
+		}
+
+	}
+
+	public boolean removerLente(int posicao) {
+		return false;
 	}
 }

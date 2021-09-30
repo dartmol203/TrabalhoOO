@@ -31,7 +31,8 @@ public class Lente {
      * @param idArmacao
      */
     public Lente(double grauLente, double valorLente, int idLente, String formatoLente, String indMedica,
-            String focoLente, String laboratorio, boolean protecaoUV, String dataProducao, int idArmacao) {
+            String focoLente, String laboratorio, boolean protecaoUV, String dataProducao, int idArmacao,
+            String apelidoLente) {
 
         this.grauLente = grauLente;
         this.valorLente = valorLente;
@@ -43,6 +44,7 @@ public class Lente {
         this.protecaoUV = protecaoUV;
         this.dataProducao = dataProducao;
         this.idArmacao = idArmacao;
+        this.apelidoLente = apelidoLente;
     }
 
     // getters e setters

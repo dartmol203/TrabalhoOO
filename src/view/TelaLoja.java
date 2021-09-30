@@ -30,7 +30,7 @@ public class TelaLoja implements ActionListener, ListSelectionListener {
         listaLojasCadastradas.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         listaLojasCadastradas.setVisibleRowCount(10);
 
-        refreshLoja.setBounds(200, 177, 100, 30);
+        refreshLoja.setBounds(150, 177, 100, 30);
 
         janela.setLayout(null);
         janela.getContentPane().setBackground(Color.DARK_GRAY);

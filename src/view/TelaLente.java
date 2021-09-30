@@ -10,6 +10,7 @@ public class TelaLente implements ActionListener, ListSelectionListener {
 
     private JFrame janela;
     private JLabel titulo;
+    private JButton cadastroLente;
     private JButton refreshLente;
     private static ControleDados dados;
     private JList<String> listaLentesCadastradas;
@@ -23,18 +24,19 @@ public class TelaLente implements ActionListener, ListSelectionListener {
         listaLentesCadastradas = new JList<String>(listaLentes);
         janela = new JFrame("Lentes");
         titulo = new JLabel("Lentes Cadastradas");
+        cadastroLente = new JButton("Cadastrar");
         refreshLente = new JButton("Refresh");
 
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         titulo.setForeground(Color.WHITE);
         titulo.setBounds(90, 10, 250, 30);
-        listaLentesCadastradas.setBounds(20, 50, 350, 120);
+        listaLentesCadastradas.setBounds(20, 50, 350, 250);
         listaLentesCadastradas.setBackground(Color.WHITE);
         listaLentesCadastradas.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         listaLentesCadastradas.setVisibleRowCount(10);
 
-        cadastroLente.setBounds(70, 177, 100, 30);
-        refreshLente.setBounds(200, 177, 100, 30);
+        cadastroLente.setBounds(70, 320, 100, 30);
+        refreshLente.setBounds(200, 320, 100, 30);
 
         janela.setLayout(null);
         janela.getContentPane().setBackground(Color.DARK_GRAY);
@@ -44,7 +46,7 @@ public class TelaLente implements ActionListener, ListSelectionListener {
         janela.add(cadastroLente);
         janela.add(refreshLente);
 
-        janela.setSize(400, 250);
+        janela.setSize(400, 420);
         janela.setVisible(true);
         janela.setLocationRelativeTo(null);
         janela.setResizable(false);
@@ -60,14 +62,13 @@ public class TelaLente implements ActionListener, ListSelectionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
 
-        // Cadastro de nova Armacao
-        if (src == cadastroLente)
-            new TelaDetalheArmacao().inserirEditar(1, dados, this, 0);
-
         // Atualiza a lista de nomes das armacoes mostrada no JList
         if (src == refreshLente) {
-            listaLentesCadastradas.setListData(new ControleArmacao(dados).getNomeArmacao());
+            listaLentesCadastradas.setListData(new ControleLente(dados).getApelidoLente());
             listaLentesCadastradas.updateUI();
+        }
+        if (src == cadastroLente) {
+            new TelaDetalheLente().inserirEditar(1, dados, this, 0);
         }
 
     }
@@ -77,7 +78,7 @@ public class TelaLente implements ActionListener, ListSelectionListener {
         Object src = e.getSource();
 
         if (e.getValueIsAdjusting() && src == listaLentesCadastradas) {
-            new TelaDetalheArmacao().inserirEditar(2, dados, this, listaLentesCadastradas.getSelectedIndex());
+            new TelaDetalheLente().inserirEditar(2, dados, this, listaLentesCadastradas.getSelectedIndex());
         }
     }
 

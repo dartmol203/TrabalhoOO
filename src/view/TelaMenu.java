@@ -123,8 +123,7 @@ public class TelaMenu implements ActionListener {
 			new TelaPessoa().mostrarDados(dados, 2);
 
 		if (src == lente)
-			JOptionPane.showMessageDialog(null, "Ainda precisam ser implementadas as funcionalidades\n", null,
-					JOptionPane.INFORMATION_MESSAGE);
+			new TelaLente().mostrarDadosLentes(dados);
 
 		if (src == armacao)
 			new TelaArmacao().mostrarDadosA(dados, 1);

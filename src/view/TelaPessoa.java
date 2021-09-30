@@ -33,13 +33,13 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 				titulo.setFont(new Font("Arial", Font.BOLD, 20));
 				titulo.setForeground(Color.WHITE);
 				titulo.setBounds(90, 10, 250, 30);
-				listaClientesCadastrados.setBounds(20, 50, 350, 120);
+				listaClientesCadastrados.setBounds(20, 50, 350, 250);
 				listaClientesCadastrados.setBackground(Color.WHITE);
 				listaClientesCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 				listaClientesCadastrados.setVisibleRowCount(10);
 
-				cadastroCliente.setBounds(70, 177, 100, 30);
-				refreshCliente.setBounds(200, 177, 100, 30);
+				cadastroCliente.setBounds(70, 320, 100, 30);
+				refreshCliente.setBounds(200, 320, 100, 30);
 
 				janela.setLayout(null);
 				janela.getContentPane().setBackground(Color.DARK_GRAY);
@@ -49,7 +49,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 				janela.add(cadastroCliente);
 				janela.add(refreshCliente);
 
-				janela.setSize(400, 250);
+				janela.setSize(400, 420);
 				janela.setVisible(true);
 				janela.setLocationRelativeTo(null);
 				janela.setResizable(false);
@@ -72,13 +72,13 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 				titulo.setFont(new Font("Arial", Font.BOLD, 20));
 				titulo.setForeground(Color.WHITE);
 				titulo.setBounds(90, 10, 250, 30);
-				listaFuncionariosCadastrados.setBounds(20, 50, 350, 120);
+				listaFuncionariosCadastrados.setBounds(20, 50, 350, 250);
 				listaFuncionariosCadastrados.setBackground(Color.WHITE);
 				listaFuncionariosCadastrados.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 				listaFuncionariosCadastrados.setVisibleRowCount(10);
 
-				cadastroFuncionario.setBounds(70, 177, 100, 30);
-				refreshFuncionario.setBounds(200, 177, 100, 30);
+				cadastroFuncionario.setBounds(70, 320, 100, 30);
+				refreshFuncionario.setBounds(200, 320, 100, 30);
 
 				janela.setLayout(null);
 				janela.getContentPane().setBackground(Color.DARK_GRAY);
@@ -88,7 +88,7 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 				janela.add(cadastroFuncionario);
 				janela.add(refreshFuncionario);
 
-				janela.setSize(400, 250);
+				janela.setSize(400, 420);
 				janela.setVisible(true);
 				janela.setResizable(false);
 				janela.setLocationRelativeTo(null);

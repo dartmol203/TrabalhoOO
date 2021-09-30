@@ -27,7 +27,7 @@ public class Dados {
 			armacao[i] = new Armacao("Armacao" + i, "Marca" + i, "Material" + i, (i + 1) * 50, (i + 1) * 10,
 					(i + 1) * 654321);
 			lentes[i] = new Lente((i + 1) * 0.1, 50.0 * (i + 1), i + 1, "redonda", "hipermetropia", "monofocal", "hoya",
-					true, "03/07/2025", (i + 1) * 654321);
+					true, "03/07/2025", (i + 1) * 654321, "lente" + (i + 1));
 		}
 
 		// lojas.add(new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new
@@ -162,6 +162,12 @@ public class Dados {
 
 	public void setQntLentes(int qntLentes) {
 		this.qntLentes = qntLentes;
+	}
+
+	public void inserirEditarlente(Lente l, int parseInt) {
+		this.lentes[parseInt] = l;
+		if (parseInt == qntLentes)
+			qntLentes++;
 	}
 
 }

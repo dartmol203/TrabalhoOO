@@ -34,13 +34,13 @@ public class TelaArmacao implements ActionListener, ListSelectionListener {
 				titulo.setFont(new Font("Arial", Font.BOLD, 20));
 				titulo.setForeground(Color.WHITE);
 				titulo.setBounds(90, 10, 250, 30);
-				listaArmacoesCadastradas.setBounds(20, 50, 350, 120);
+				listaArmacoesCadastradas.setBounds(20, 50, 350, 250);
 				listaArmacoesCadastradas.setBackground(Color.WHITE);
 				listaArmacoesCadastradas.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 				listaArmacoesCadastradas.setVisibleRowCount(10);
 
-				cadastroArmacao.setBounds(70, 177, 100, 30);
-				refreshArmacao.setBounds(200, 177, 100, 30);
+				cadastroArmacao.setBounds(70, 320, 100, 30);
+				refreshArmacao.setBounds(200, 320, 100, 30);
 
 				janela.setLayout(null);
 				janela.getContentPane().setBackground(Color.DARK_GRAY);
@@ -50,7 +50,7 @@ public class TelaArmacao implements ActionListener, ListSelectionListener {
 				janela.add(cadastroArmacao);
 				janela.add(refreshArmacao);
 
-				janela.setSize(400, 250);
+				janela.setSize(400, 420);
 				janela.setVisible(true);
 				janela.setLocationRelativeTo(null);
 				janela.setResizable(false);
