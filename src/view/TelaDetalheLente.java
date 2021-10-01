@@ -246,7 +246,7 @@ public class TelaDetalheLente implements ActionListener {
         JOptionPane.showMessageDialog(null,
                 "ERRO AO SALVAR OS DADOS!\n " + "Pode ter ocorrido o seguinte:  \n"
                         + "1. Nem todos os campos foram preenchidos \n"
-                        + "2. id da lente, id da armacao, valor da lente e/ou grau da lente n�o cont�m apenas n�meros",
+                        + "2. id da lente, id da armacao, valor da lente e/ou grau da lente nao contem apenas numeros",
                 null, JOptionPane.ERROR_MESSAGE);
     }
 

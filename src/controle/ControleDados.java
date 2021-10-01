@@ -227,11 +227,40 @@ public class ControleDados {
 	}
 
 	public boolean inserirEditarVenda(String[] novoDado) {
-		return false;
+		if (!novoDado[8].matches("[0-9.]+")) {
+
+			return false;
+		} else {
+			Venda v = new Venda(Double.parseDouble(novoDado[8]), novoDado[5], novoDado[3], novoDado[2], novoDado[6],
+					novoDado[4], Integer.parseInt(novoDado[1]));
+
+			d.inserirEditarVenda(v, Integer.parseInt(novoDado[0]));
+			return true;
+		}
 	}
 
 	public boolean removerVenda(int posicao) {
-		return false;
+		String vendaRemovida = d.getVendas()[posicao].getApelidoVenda();
+
+		if (posicao == (d.getQntVendas() - 1)) { // A lente a ser removida est� no final do array
+			d.setQntVendas(d.getQntVendas() - 1);
+			d.getVendas()[d.getQntVendas()] = null;
+			return true;
+		} else { // a lente a ser removido est� no meio do array
+			int cont = 0;
+
+			while (d.getVendas()[cont].getApelidoVenda().compareTo(vendaRemovida) != 0) {
+				cont++;
+			}
+			// Rotina swap
+			for (int j = cont; j < d.getQntVendas() - 1; j++) {
+				d.getVendas()[j] = null;
+				d.getVendas()[j] = d.getVendas()[j + 1];
+			}
+			d.getVendas()[d.getQntVendas()] = null;
+			d.setQntVendas(d.getQntVendas() - 1);
+			return true;
+		}
 	}
 
 }

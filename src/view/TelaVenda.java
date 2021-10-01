@@ -22,7 +22,7 @@ public class TelaVenda implements ListSelectionListener, ActionListener {
 
             case 1:
 
-                // Mostrar dados de Armacoes cadastrados (JList)
+                // Mostrar dados de Vendas cadastrados (JList)
                 listaNomes = new ControleVenda(dados).getApelidoVenda();
                 listaVendasCadastradas = new JList<String>(listaNomes);
                 janela = new JFrame("vendas");
@@ -60,20 +60,20 @@ public class TelaVenda implements ListSelectionListener, ActionListener {
                 break;
 
             default:
-                JOptionPane.showMessageDialog(null, "Op��o n�o encontrada!", null, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Opcao nao encontrada!", null, JOptionPane.ERROR_MESSAGE);
         }
 
     }
-    // Captura eventos relacionados aos bot�es da interface
+    // Captura eventos relacionados aos botoes da interface
 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
 
-        // Cadastro de nova Armacao
+        // Cadastro de nova venda
         if (src == cadastroVenda)
             new TelaDetalheVenda().inserirEditar(1, dados, this, 0);
 
-        // Atualiza a lista de nomes das armacoes mostrada no JList
+        // Atualiza a lista de nomes das vendas mostrada no JList
         if (src == refreshVenda) {
             listaVendasCadastradas.setListData(new ControleVenda(dados).getApelidoVenda());
             listaVendasCadastradas.updateUI();

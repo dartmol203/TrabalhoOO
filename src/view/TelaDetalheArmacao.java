@@ -189,7 +189,7 @@ public class TelaDetalheArmacao implements ActionListener {
 		JOptionPane.showMessageDialog(null,
 				"ERRO AO SALVAR OS DADOS!\n " + "Pode ter ocorrido o seguinte:  \n"
 						+ "1. Nem todos os campos foram preenchidos \n"
-						+ "2. medida, identificacao e/ou valor n�o cont�m apenas n�meros",
+						+ "2. medida, identificacao e/ou valor nao contem apenas numeros",
 				null, JOptionPane.ERROR_MESSAGE);
 	}
 

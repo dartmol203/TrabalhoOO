@@ -2,8 +2,8 @@ package modelo;
 
 public class Venda {
     private double valorFinal;
-    private String apelidoVenda;
-    private int idLente, idCliente, idArmacao, idFuncionario, idVenda;
+    private String apelidoVenda, nomeLente, nomeCliente, nomeArmacao, nomeFuncionario;
+    private int idVenda;
 
     public String getApelidoVenda() {
         return apelidoVenda;
@@ -29,46 +29,46 @@ public class Venda {
         this.valorFinal = valorFinal;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public String getNomeLente() {
+        return nomeLente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setNomeLente(String nomeLente) {
+        this.nomeLente = nomeLente;
     }
 
-    public int getIdFuncionario() {
-        return idFuncionario;
+    public String getNomeCliente() {
+        return nomeCliente;
     }
 
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
 
-    public int getIdArmacao() {
-        return idArmacao;
+    public String getNomeArmacao() {
+        return nomeArmacao;
     }
 
-    public void setIdArmacao(int idArmacao) {
-        this.idArmacao = idArmacao;
+    public void setNomeArmacao(String nomeArmacao) {
+        this.nomeArmacao = nomeArmacao;
     }
 
-    public int getIdLente() {
-        return idLente;
+    public String getNomeFuncionario() {
+        return nomeFuncionario;
     }
 
-    public void setIdLente(int idLente) {
-        this.idLente = idLente;
+    public void setNomeFuncionario(String nomeFuncionario) {
+        this.nomeFuncionario = nomeFuncionario;
     }
 
-    public Venda(double valorFinal, int idCliente, int idFuncionario, int idArmacao, String apelidoVenda, int idLente,
-            int idVenda) {
+    public Venda(double valorFinal, String idCliente, String idFuncionario, String idArmacao, String apelidoVenda,
+            String idLente, int idVenda) {
         this.valorFinal = valorFinal;
-        this.idCliente = idCliente;
-        this.idFuncionario = idFuncionario;
-        this.idArmacao = idArmacao;
+        this.nomeCliente = idCliente;
+        this.nomeFuncionario = idFuncionario;
+        this.nomeArmacao = idArmacao;
         this.apelidoVenda = apelidoVenda;
-        this.idLente = idLente;
+        this.nomeLente = idLente;
         this.idVenda = idVenda;
     }
 

@@ -235,7 +235,7 @@ public class TelaDetalhePessoa implements ActionListener {
 		JOptionPane.showMessageDialog(null,
 				"ERRO AO SALVAR OS DADOS!\n " + "Pode ter ocorrido um dos dois erros a seguir:  \n"
 						+ "1. Nem todos os campos foram preenchidos \n"
-						+ "2. CPF, identidade, DDD e telefone n�o cont�m apenas n�meros",
+						+ "2. CPF, identidade, DDD e telefone nao contem apenas numeros",
 				null, JOptionPane.ERROR_MESSAGE);
 	}
 

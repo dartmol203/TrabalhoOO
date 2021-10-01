@@ -17,18 +17,12 @@ public class TelaMenu implements ActionListener {
 	private static JButton venda = new JButton("Venda");
 	public static ControleDados dados = new ControleDados();
 
-	// Image Icliente = new
-	// ImageIcon(this.getClass().getResource("/cli.jpg")).getImage();
-	// Image Iloja = new
-	// ImageIcon(this.getClass().getResource("/lojan.png")).getImage();
-	// Image Ifuncionario = new
-	// ImageIcon(this.getClass().getResource("/func.png")).getImage();
-	// Image Ilente = new
-	// ImageIcon(this.getClass().getResource("/lente.jpg")).getImage();
-	// Image Iarmacao = new
-	// ImageIcon(this.getClass().getResource("/armacao.jpg")).getImage();
-	// Image Ivenda = new
-	// ImageIcon(this.getClass().getResource("/venda.png")).getImage();
+	Image Icliente = new ImageIcon(this.getClass().getResource("images/cli.jpg")).getImage();
+	Image Iloja = new ImageIcon(this.getClass().getResource("images/lojan.png")).getImage();
+	Image Ifuncionario = new ImageIcon(this.getClass().getResource("images/func.png")).getImage();
+	Image Ilente = new ImageIcon(this.getClass().getResource("images/lente.jpg")).getImage();
+	Image Iarmacao = new ImageIcon(this.getClass().getResource("images/armacao.jpg")).getImage();
+	Image Ivenda = new ImageIcon(this.getClass().getResource("images/venda.png")).getImage();
 
 	public TelaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -40,7 +34,7 @@ public class TelaMenu implements ActionListener {
 		loja.setFocusPainted(false);
 		loja.setVerticalTextPosition(SwingConstants.CENTER);
 		loja.setHorizontalTextPosition(SwingConstants.RIGHT);
-		// loja.setIcon(new ImageIcon(Iloja));
+		loja.setIcon(new ImageIcon(Iloja));
 		loja.setIconTextGap(20);
 
 		funcionario.setBounds(140, 100, 160, 30);
@@ -48,7 +42,7 @@ public class TelaMenu implements ActionListener {
 		funcionario.setFocusPainted(false);
 		funcionario.setVerticalTextPosition(SwingConstants.CENTER);
 		funcionario.setHorizontalTextPosition(SwingConstants.RIGHT);
-		// funcionario.setIcon(new ImageIcon(Ifuncionario));
+		funcionario.setIcon(new ImageIcon(Ifuncionario));
 		funcionario.setIconTextGap(5);
 
 		lente.setBounds(140, 150, 160, 30);
@@ -56,7 +50,7 @@ public class TelaMenu implements ActionListener {
 		lente.setFocusPainted(false);
 		lente.setVerticalTextPosition(SwingConstants.CENTER);
 		lente.setHorizontalTextPosition(SwingConstants.RIGHT);
-		// lente.setIcon(new ImageIcon(Ilente));
+		lente.setIcon(new ImageIcon(Ilente));
 		lente.setIconTextGap(5);
 
 		cliente.setBounds(140, 50, 160, 30);
@@ -64,7 +58,7 @@ public class TelaMenu implements ActionListener {
 		cliente.setFocusPainted(false);
 		cliente.setVerticalTextPosition(SwingConstants.CENTER);
 		cliente.setHorizontalTextPosition(SwingConstants.RIGHT);
-		// cliente.setIcon(new ImageIcon(Icliente));
+		cliente.setIcon(new ImageIcon(Icliente));
 		cliente.setIconTextGap(20);
 
 		armacao.setBounds(140, 200, 160, 30);
@@ -72,7 +66,7 @@ public class TelaMenu implements ActionListener {
 		armacao.setFocusPainted(false);
 		armacao.setVerticalTextPosition(SwingConstants.CENTER);
 		armacao.setHorizontalTextPosition(SwingConstants.RIGHT);
-		// armacao.setIcon(new ImageIcon(Iarmacao));
+		armacao.setIcon(new ImageIcon(Iarmacao));
 		armacao.setIconTextGap(20);
 
 		venda.setBounds(140, 300, 160, 30);
@@ -80,7 +74,7 @@ public class TelaMenu implements ActionListener {
 		venda.setFocusPainted(false);
 		venda.setVerticalTextPosition(SwingConstants.CENTER);
 		venda.setHorizontalTextPosition(SwingConstants.RIGHT);
-		// venda.setIcon(new ImageIcon(Ivenda));
+		venda.setIcon(new ImageIcon(Ivenda));
 		venda.setIconTextGap(20);
 
 		janela.setLayout(null);

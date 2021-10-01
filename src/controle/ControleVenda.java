@@ -32,20 +32,20 @@ public class ControleVenda {
         return vendas[i].getApelidoVenda();
     }
 
-    public int getIdLente(int i) {
-        return vendas[i].getIdLente();
+    public String getIdLente(int i) {
+        return vendas[i].getNomeLente();
     }
 
-    public int getIdCliente(int i) {
-        return vendas[i].getIdCliente();
+    public String getIdCliente(int i) {
+        return vendas[i].getNomeCliente();
     }
 
-    public int getIdArmacao(int i) {
-        return vendas[i].getIdArmacao();
+    public String getIdArmacao(int i) {
+        return vendas[i].getNomeArmacao();
     }
 
-    public int getIdFuncionario(int i) {
-        return vendas[i].getIdFuncionario();
+    public String getIdFuncionario(int i) {
+        return vendas[i].getNomeFuncionario();
     }
 
     public int getIdVenda(int i) {

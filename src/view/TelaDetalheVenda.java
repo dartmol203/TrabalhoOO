@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -15,13 +16,13 @@ public class TelaDetalheVenda implements ActionListener {
     private JFrame janela;
     private JLabel labelNomeVenda = new JLabel("Nome da Venda: ");
     private JTextField valorNomeVenda;
-    private JLabel labelIdLente = new JLabel("id Lente: ");
+    private JLabel labelIdLente = new JLabel("Lente: ");
     private JTextField valorIdLente;
-    private JLabel labelIdCliente = new JLabel("id Cliente: ");
+    private JLabel labelIdCliente = new JLabel("Cliente: ");
     private JTextField valorIdCliente;
-    private JLabel labelIdArmacao = new JLabel("Id Armacao: ");
+    private JLabel labelIdArmacao = new JLabel("Armacao: ");
     private JTextField valorIdArmacao;
-    private JLabel labelIdFuncionario = new JLabel("Id Funcionario: ");
+    private JLabel labelIdFuncionario = new JLabel("Funcionario: ");
     private JTextField valorIdFuncionario;
     private JLabel labelIdVenda = new JLabel("Id Venda: ");
     private JTextField valorIdVenda;
@@ -30,16 +31,28 @@ public class TelaDetalheVenda implements ActionListener {
     private JButton botaoExcluir = new JButton("Excluir");
     private JButton botaoSalvar = new JButton("Salvar");
     private String[] novoDado = new String[9];
+    private JComboBox<String> clientes = new JComboBox<String>();
+    private JComboBox<String> funcionarios = new JComboBox<String>();
+    private JComboBox<String> armacoes = new JComboBox<String>();
+    private JComboBox<String> lentes = new JComboBox<String>();
     private static ControleDados dados;
     private int posicao;
     private int opcao;
     private String s;
+    private String[] nomeClientes = new String[50];
+    private String[] nomeFuncionario = new String[50];
+    private String[] nomeArmacao = new String[50];
+    private String[] nomeLente = new String[50];
 
     public void inserirEditar(int op, ControleDados d, TelaVenda t, int pos) {
 
         opcao = op;
         posicao = pos;
         dados = d;
+        nomeClientes = new ControleCliente(dados).getNomeCliente();
+        nomeFuncionario = new ControleFuncionario(dados).getNomeProf();
+        nomeArmacao = new ControleArmacao(dados).getNomeArmacao();
+        nomeLente = new ControleLente(dados).getApelidoLente();
 
         if (op == 1)
             s = "Cadastro de Venda";
@@ -48,17 +61,17 @@ public class TelaDetalheVenda implements ActionListener {
 
         janela = new JFrame(s);
 
-        // Preenche dados com dados da armacao clicada
+        // Preenche dados com dados da venda clicada
         if (op == 2) {
             valorNomeVenda = new JTextField(dados.getVendas()[pos].getApelidoVenda(), 200);
             valorIdVenda = new JTextField(String.valueOf(dados.getVendas()[pos].getIdVenda()), 200);
-            valorIdArmacao = new JTextField(String.valueOf(dados.getVendas()[pos].getIdArmacao()), 200);
-            valorIdCliente = new JTextField(String.valueOf(dados.getVendas()[pos].getIdCliente()), 200);
-            valorIdFuncionario = new JTextField(String.valueOf(dados.getVendas()[pos].getIdCliente()), 200);
-            valorIdLente = new JTextField(String.valueOf(dados.getVendas()[pos].getIdLente()), 200);
+            valorIdArmacao = new JTextField(dados.getVendas()[pos].getNomeArmacao(), 200);
+            valorIdCliente = new JTextField(dados.getVendas()[pos].getNomeCliente(), 200);
+            valorIdFuncionario = new JTextField(dados.getVendas()[pos].getNomeFuncionario(), 200);
+            valorIdLente = new JTextField(dados.getVendas()[pos].getNomeLente(), 200);
             valorValorFinal = new JTextField(String.valueOf(dados.getVendas()[pos].getValorFinal()), 200);
 
-        } else { // N�o preenche com dados
+        } else { // Nao preenche com dados
             valorNomeVenda = new JTextField(200);
             valorIdVenda = new JTextField(200);
             valorIdArmacao = new JTextField(200);
@@ -66,8 +79,16 @@ public class TelaDetalheVenda implements ActionListener {
             valorIdFuncionario = new JTextField(200);
             valorIdLente = new JTextField(200);
             valorValorFinal = new JTextField(200);
+            clientes = new JComboBox<String>(nomeClientes);
+            funcionarios = new JComboBox<String>(nomeFuncionario);
+            lentes = new JComboBox<String>(nomeLente);
+            armacoes = new JComboBox<String>(nomeArmacao);
+            this.janela.add(clientes);
+            this.janela.add(funcionarios);
+            this.janela.add(lentes);
+            this.janela.add(armacoes);
 
-            botaoSalvar.setBounds(245, 200, 115, 30);
+            botaoSalvar.setBounds(245, 230, 115, 30);
         }
 
         labelIdVenda.setBounds(30, 50, 150, 25);
@@ -91,6 +112,16 @@ public class TelaDetalheVenda implements ActionListener {
         labelValorFinal.setBounds(30, 200, 150, 25);
         labelValorFinal.setForeground(Color.WHITE);
         valorValorFinal.setBounds(180, 200, 180, 25);
+
+        valorIdArmacao.setEditable(false);
+        valorIdCliente.setEditable(false);
+        valorIdFuncionario.setEditable(false);
+        valorIdLente.setEditable(false);
+
+        clientes.setBounds(180, 140, 180, 25);
+        lentes.setBounds(180, 170, 180, 25);
+        funcionarios.setBounds(180, 110, 180, 25);
+        armacoes.setBounds(180, 80, 180, 25);
 
         // Coloca botoes de excluir e salvar
         if (op == 2) {
@@ -132,20 +163,26 @@ public class TelaDetalheVenda implements ActionListener {
         if (src == botaoSalvar) {
             try {
                 boolean res;
-                if (opcao == 1) // cadastro de nova armacao
+                if (opcao == 1) {// cadastro de nova venda
                     novoDado[0] = Integer.toString(dados.getQtdArmacao());
-                else // edicao de dado existente
+                    novoDado[1] = valorIdVenda.getText();
+                    novoDado[2] = (String) armacoes.getSelectedItem();
+                    novoDado[3] = (String) funcionarios.getSelectedItem();
+                    novoDado[4] = (String) lentes.getSelectedItem();
+                    novoDado[6] = valorNomeVenda.getText();
+                    novoDado[8] = valorValorFinal.getText();
+                } else { // edicao de dado existente
                     novoDado[0] = Integer.toString(posicao);
-
-                novoDado[1] = valorIdVenda.getText();
-                novoDado[2] = valorIdArmacao.getText();
-                novoDado[3] = valorIdFuncionario.getText();
-                novoDado[4] = valorIdLente.getText();
-                novoDado[6] = valorNomeVenda.getText();
-                novoDado[8] = valorValorFinal.getText();
+                    novoDado[1] = valorIdVenda.getText();
+                    novoDado[2] = valorIdArmacao.getText();
+                    novoDado[3] = valorIdFuncionario.getText();
+                    novoDado[4] = valorIdLente.getText();
+                    novoDado[6] = valorNomeVenda.getText();
+                    novoDado[8] = valorValorFinal.getText();
+                }
 
                 if (opcao == 1) {
-                    novoDado[5] = valorIdCliente.getText();
+                    novoDado[5] = (String) clientes.getSelectedItem();
                     res = dados.inserirEditarVenda(novoDado);
                 } else {
                     novoDado[5] = valorIdCliente.getText();

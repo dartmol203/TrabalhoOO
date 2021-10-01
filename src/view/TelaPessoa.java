@@ -99,12 +99,12 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 				break;
 
 			default:
-				JOptionPane.showMessageDialog(null, "Op��o n�o encontrada!", null, JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Opcao nao encontrada!", null, JOptionPane.ERROR_MESSAGE);
 		}
 
 	}
 
-	// Captura eventos relacionados aos bot�es da interface
+	// Captura eventos relacionados aos botoes da interface
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 

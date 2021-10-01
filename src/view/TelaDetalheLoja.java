@@ -37,7 +37,7 @@ public class TelaDetalheLoja implements ActionListener {
 
         janela = new JFrame(s);
 
-        // Preenche dados com dados do cliente clicado
+        // Preenche dados com dados da loja clicado
         valorNome = new JTextField(dados.getLojas()[pos].getNomeLoja(), 200);
         valorEndereco = new JTextField(dados.getLojas()[pos].getEndereco(), 200);
         valorCEP = new JTextField(String.valueOf(dados.getLojas()[pos].getCep()), 200);
@@ -120,7 +120,7 @@ public class TelaDetalheLoja implements ActionListener {
         JOptionPane.showMessageDialog(null,
                 "ERRO AO SALVAR OS DADOS!\n " + "Pode ter ocorrido um dos dois erros a seguir:  \n"
                         + "1. Nem todos os campos foram preenchidos \n"
-                        + "2. CEP, DDD e telefone n�o cont�m apenas n�meros",
+                        + "2. CEP, DDD e telefone nao contem apenas numeros",
                 null, JOptionPane.ERROR_MESSAGE);
     }
 

@@ -19,7 +19,7 @@ public class TelaLente implements ActionListener, ListSelectionListener {
     public void mostrarDadosLentes(ControleDados d) {
         dados = d;
 
-        // Mostrar dados de Armacoes cadastrados (JList)
+        // Mostrar dados de lentes cadastrados (JList)
         listaLentes = new ControleLente(dados).getApelidoLente();
         listaLentesCadastradas = new JList<String>(listaLentes);
         janela = new JFrame("Lentes");
@@ -57,12 +57,12 @@ public class TelaLente implements ActionListener, ListSelectionListener {
 
     }
 
-    // Captura eventos relacionados aos bot�es da interface
+    // Captura eventos relacionados aos botoes da interface
 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
 
-        // Atualiza a lista de nomes das armacoes mostrada no JList
+        // Atualiza a lista de nomes das lentes mostrada no JList
         if (src == refreshLente) {
             listaLentesCadastradas.setListData(new ControleLente(dados).getApelidoLente());
             listaLentesCadastradas.updateUI();
