@@ -49,13 +49,25 @@ public class ControleDados {
 		return this.d.getLoja();
 	}
 
+	public Boolean validaCpf(String cpf) {
+		if (cpf.length() == 11 && !cpf.equals("00000000000") && !cpf.equals("11111111111") && !cpf.equals("22222222222")
+				&& !cpf.equals("33333333333") && !cpf.equals("44444444444") && !cpf.equals("55555555555")
+				&& !cpf.equals("66666666666") && !cpf.equals("77777777777") && !cpf.equals("88888888888")
+				&& !cpf.equals("99999999999")) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
 	public boolean inserirEditarFuncionarios(String[] dadosFuncionarios) {
 		if (!dadosFuncionarios[3].matches("[0-9]+") || !dadosFuncionarios[4].matches("[0-9]+")
 				|| !dadosFuncionarios[5].matches("[0-9]+") || !dadosFuncionarios[6].matches("[0-9]+")) {
 			return false;
 		} else {
 			Funcionario p = new Funcionario(dadosFuncionarios[1], dadosFuncionarios[2],
-					Double.parseDouble(dadosFuncionarios[7]), Integer.parseInt(dadosFuncionarios[3]),
+					Double.parseDouble(dadosFuncionarios[7]), dadosFuncionarios[3],
 					Integer.parseInt(dadosFuncionarios[4]),
 					new Telefone(Integer.parseInt(dadosFuncionarios[5]), Integer.parseInt(dadosFuncionarios[6])));
 			d.inserirEditarFuncionarios(p, Integer.parseInt(dadosFuncionarios[0]));
@@ -69,7 +81,7 @@ public class ControleDados {
 			return false;
 		} else {
 			Cliente c = new Cliente(dadosClientes[1], dadosClientes[2], dadosClientes[7],
-					Integer.parseInt(dadosClientes[3]), Integer.parseInt(dadosClientes[4]),
+					Integer.parseInt(dadosClientes[3]), dadosClientes[4],
 					new Telefone(Integer.parseInt(dadosClientes[5]), Integer.parseInt(dadosClientes[6])));
 			d.inserirEditarClientes(c, Integer.parseInt(dadosClientes[0]));
 			return true;

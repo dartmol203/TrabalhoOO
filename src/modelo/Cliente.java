@@ -1,17 +1,14 @@
 package modelo;
 
-
-
-public class Cliente extends Pessoa { 
+public class Cliente extends Pessoa {
 	private String dataPrimC;
 	private String endereco;
-	
-	public Cliente(){
+
+	public Cliente() {
 		super();
 	}
-	
-	
-	public Cliente(String n, String e, String dt, int id, int CPF, Telefone tel) {
+
+	public Cliente(String n, String e, String dt, int id, String CPF, Telefone tel) {
 		nome = n;
 		endereco = e;
 		dataPrimC = dt;
@@ -20,11 +17,9 @@ public class Cliente extends Pessoa {
 		this.numTel = tel;
 	}
 
-	public String toString() {	
+	public String toString() {
 		return "Nome do Cliente: " + nome;
 	}
-
-
 
 	public String getNome() {
 		return nome;
@@ -42,11 +37,11 @@ public class Cliente extends Pessoa {
 		this.numID = numID;
 	}
 
-	public int getCPF() {
+	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(int cPF) {
+	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
 
