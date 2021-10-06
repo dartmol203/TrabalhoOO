@@ -5,6 +5,8 @@ import modelo.*;
 public class ControleDados {
 	private Dados d = new Dados();
 
+	Validador v = new Validador();
+
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
@@ -54,7 +56,7 @@ public class ControleDados {
 				|| !dadosFuncionarios[5].matches("[0-9]+") || !dadosFuncionarios[6].matches("[0-9]+")) {
 			return false;
 		} else {
-			if (Validador.validaCpf(dadosFuncionarios[3]) && Validador.validaTelefone(
+			if (v.validaCpf(dadosFuncionarios[3]) && v.validaTelefone(
 					new Telefone(Integer.parseInt(dadosFuncionarios[5]), Integer.parseInt(dadosFuncionarios[6])))) {
 
 				Funcionario p = new Funcionario(dadosFuncionarios[1], dadosFuncionarios[2],
@@ -78,7 +80,7 @@ public class ControleDados {
 			return false;
 		} else {
 
-			if (Validador.validaCpf(dadosClientes[3]) && Validador.validaTelefone(
+			if (v.validaCpf(dadosClientes[3]) && v.validaTelefone(
 					new Telefone(Integer.parseInt(dadosClientes[5]), Integer.parseInt(dadosClientes[6])))) {
 
 				Cliente c = new Cliente(dadosClientes[1], dadosClientes[2], dadosClientes[7],
@@ -183,8 +185,8 @@ public class ControleDados {
 		if (!novoDado[3].matches("[0-9]+") || !novoDado[4].matches("[0-9]+") || !novoDado[5].matches("[0-9]+")) {
 			return false;
 		} else {
-			if (Validador.validaCep(Integer.parseInt(novoDado[3])) && Validador
-					.validaTelefone(new Telefone(Integer.parseInt(novoDado[4]), Integer.parseInt(novoDado[5])))) {
+			if (v.validaCep(Integer.parseInt(novoDado[3]))
+					&& v.validaTelefone(new Telefone(Integer.parseInt(novoDado[4]), Integer.parseInt(novoDado[5])))) {
 
 				Loja l = new Loja(novoDado[1], novoDado[2], Integer.parseInt(novoDado[3]),
 						new Telefone(Integer.parseInt(novoDado[4]), Integer.parseInt(novoDado[5])));
@@ -211,7 +213,7 @@ public class ControleDados {
 
 			return false;
 		} else {
-			if (Validador.validaData(novoDado[2])) {
+			if (v.validaData(novoDado[2])) {
 
 				Lente l = new Lente(Double.parseDouble(novoDado[7]), Double.parseDouble(novoDado[6]),
 						Integer.parseInt(novoDado[5]), novoDado[4], novoDado[8], novoDado[3], novoDado[9],

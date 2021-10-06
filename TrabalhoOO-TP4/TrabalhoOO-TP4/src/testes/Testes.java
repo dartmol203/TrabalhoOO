@@ -1,31 +1,23 @@
 package testes;
 
 /** Classe que verifica os dados da classe validador
- * @author Vinicius Assumpção e André Corréa 
- * @versão 1.0
+ * @author Vinicius Assumpï¿½ï¿½o e Andrï¿½ Corrï¿½a 
+ * @versï¿½o 1.0
  */
 import static org.junit.jupiter.api.Assertions.*;
 import controle.*;
 import org.junit.jupiter.api.Test;
 
-
-
-
-
 class Testes {
 
 	Validador v = new Validador();
-	
-	
+
 	@Test
 	void testValidaCpf() {
 		assertTrue(v.validaCpf("2365478954"));
 		assertFalse(v.validaCpf("22365478954"));
 		assertTrue(v.validaCpf("9999999999"));
-		
-		
-		
-		
+
 	}
 
 	@Test
@@ -40,7 +32,7 @@ class Testes {
 		assertTrue(v.validaData("23/08/2022"));
 		assertFalse(v.validaData("32/07/2025"));
 		assertFalse(v.validaData("30/07/2032"));
-		
+
 	}
 
 }
