@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento  de diferentes componentes da loja de �culos.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -96,6 +102,12 @@ public class TelaMenu implements ActionListener {
 
 	}
 
+	/**
+	 * Garante que a sele��o dos bot�es do menu estejam funcionando
+	 * 
+	 * @param args array que recebe dados da linha de comando, o que evita a
+	 *             execu��o em um ambiente equivocado
+	 */
 	public static void main(String[] args) {
 		TelaMenu menu = new TelaMenu();
 

@@ -21,10 +21,10 @@ public class Dados {
 
 	public void fillWithSomeData() {
 		for (int i = 0; i < 5; i++) {
-			tels[i] = new Telefone((i + 1) * 10, (i + 1) * 100000001);
+			tels[i] = new Telefone((i + 1) * 100, (i + 1) * 1000000);
 			clientes[i] = new Cliente("Cliente" + i, "Endereco" + i, "01/0" + (i + 1) + "/2001", (i + 1) * 123456,
-					(i + 1) + "1234567899", tels[i]);
-			funcionarios[i] = new Funcionario("Funcionario" + i, "Endereco" + i, (i + 1) * 1000, "1234567899" + (i + 1),
+					(i + 1) * 112233, tels[i]);
+			funcionarios[i] = new Funcionario("Funcionario" + i, "Endereco" + i, (i + 1) * 1000, (i + 1) * 654321,
 					(i + 1) * 332211, tels[i]);
 			armacao[i] = new Armacao("Armacao" + i, "Marca" + i, "Material" + i, (i + 1) * 50, (i + 1) * 10,
 					(i + 1) * 654321);
@@ -34,7 +34,9 @@ public class Dados {
 					"lente" + (i), i + 1);
 		}
 
-		loja[0] = new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new Telefone(61, 555555555));
+		// lojas.add(new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new
+		// Telefone(61, 55555555)));
+		loja[0] = new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new Telefone(61, 55555555));
 
 		qtdClientes = 5;
 		qtdFuncionarios = 5;

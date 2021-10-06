@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe de armazenamento de dados da venda
+ * 
+ * @author Vinicius Assump��o e Andr� Corr�a @vers�o 1.0
+ */
+
 public class Venda {
     private double valorFinal;
     private String apelidoVenda, nomeLente, nomeCliente, nomeArmacao, nomeFuncionario;
@@ -61,6 +67,19 @@ public class Venda {
         this.nomeFuncionario = nomeFuncionario;
     }
 
+    /**
+     * Defini��o de diferentes atributos da classe venda
+     * 
+     * @param valorFinal    double que indica valor final da venda
+     * @param idCliente     String que indica identifica��o do cliente relacionado
+     * @param idFuncionario String que indica identifica��o do funcion�rio
+     *                      relacionado
+     * @param idArmacao     String que indica identifica��o da arma��o relacionada
+     * @param apelidoVenda  String que indica identifica��o alternativa da venda
+     * @param idLente       String que indica identifica��o da lente relacionada
+     * @param idVenda       String que indica identifica��o da venda
+     */
+
     public Venda(double valorFinal, String idCliente, String idFuncionario, String idArmacao, String apelidoVenda,
             String idLente, int idVenda) {
         this.valorFinal = valorFinal;
@@ -72,7 +91,12 @@ public class Venda {
         this.idVenda = idVenda;
     }
 
-    // metodo de busca
+    /**
+     * Busca pelo id da venda registrada
+     * 
+     * @param vendaidbuscado
+     * @return verdadeiro ou falso,o que indica se a venda foi de fato cadastrada
+     */
     public boolean buscaVendaID(int vendaidbuscado) {
 
         if (idVenda == vendaidbuscado)

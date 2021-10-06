@@ -11,14 +11,15 @@ public class ControleFuncionario {
 		this.qtdFuncionarios = d.getQtdFuncionarios();
 	}
 
-	public String[] getNomeProf() {
+	public String[] getNomeFuncionario() {
 		String[] s = new String[qtdFuncionarios];
-		for(int i = 0; i < qtdFuncionarios; i++) {
+		for (int i = 0; i < qtdFuncionarios; i++) {
 			s[i] = p[i].getNome();
 		}
 
 		return s;
 	}
+
 	public int getQtd() {
 		return qtdFuncionarios;
 	}
@@ -27,7 +28,7 @@ public class ControleFuncionario {
 		this.qtdFuncionarios = qtd;
 	}
 
-	public String getNome(int i) {		
+	public String getNome(int i) {
 		return p[i].getNome();
 	}
 
@@ -45,13 +46,12 @@ public class ControleFuncionario {
 		return p[i].getNumTel();
 	}
 
-	
-	public double getSalario (int i) {
+	public double getSalario(int i) {
 		return p[i].getSalario();
 	}
-	
-	public String getEndereco(int i) {		
+
+	public String getEndereco(int i) {
 		return p[i].getEndereco();
-	}	
-	
+	}
+
 }

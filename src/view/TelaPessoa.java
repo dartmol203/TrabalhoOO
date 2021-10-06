@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento dos clientes e funcion�rios registrados da loja de �culos.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -18,11 +24,21 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private JList<String> listaFuncionariosCadastrados;
 	private String[] listaNomes = new String[50];
 
+	/**
+	 * Mostra na interface gr�fica da op��o selecionada os clientes e funcion�rios
+	 * cadastrados.Existem duas op��es: (1) clientes cadastrados (2) funcionarios
+	 * cadastrados
+	 * 
+	 * @param d  d inst�ncia de ControleDados, respons�vel por acessar dados
+	 *           armazenados na mesma.
+	 * @param op um int que indica a op��o selecionada.
+	 */
+
 	public void mostrarDados(ControleDados d, int op) {
 		dados = d;
 
 		switch (op) {
-			case 1:// Mostrar dados de alunos cadastrados (JList)
+			case 1:// Mostrar dados de clientes cadastrados (JList)
 				listaNomes = new ControleCliente(dados).getNomeCliente();
 				listaClientesCadastrados = new JList<String>(listaNomes);
 				janela = new JFrame("Clientes");
@@ -60,9 +76,9 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 
 				break;
 
-			case 2:// Mostrar dados de professores cadastrados (JList)
+			case 2:// Mostrar dados de funcionarios cadastrados (JList)
 
-				listaNomes = new ControleFuncionario(dados).getNomeProf();
+				listaNomes = new ControleFuncionario(dados).getNomeFuncionario();
 				listaFuncionariosCadastrados = new JList<String>(listaNomes);
 				janela = new JFrame("Funcionarios");
 				titulo = new JLabel("Funcionarios Cadastrados");
@@ -108,23 +124,23 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 
-		// Cadastro de novo aluno
+		// Cadastro de novo cliente
 		if (src == cadastroCliente)
 			new TelaDetalhePessoa().inserirEditar(1, dados, this, 0);
 
-		// Cadastro de novo professor
+		// Cadastro de novo funcionario
 		if (src == cadastroFuncionario)
 			new TelaDetalhePessoa().inserirEditar(2, dados, this, 0);
 
-		// Atualiza a lista de nomes de alunos mostrada no JList
+		// Atualiza a lista de nomes de clientes mostrada no JList
 		if (src == refreshCliente) {
 			listaClientesCadastrados.setListData(new ControleCliente(dados).getNomeCliente());
 			listaClientesCadastrados.updateUI();
 		}
 
-		// Atualiza a lista de nomes de professores mostrada no JList
+		// Atualiza a lista de nomes de funcionarios mostrada no JList
 		if (src == refreshFuncionario) {
-			listaFuncionariosCadastrados.setListData(new ControleFuncionario(dados).getNomeProf());
+			listaFuncionariosCadastrados.setListData(new ControleFuncionario(dados).getNomeFuncionario());
 			listaFuncionariosCadastrados.updateUI();
 		}
 

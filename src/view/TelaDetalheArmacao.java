@@ -34,6 +34,20 @@ public class TelaDetalheArmacao implements ActionListener {
 	private int opcao;
 	private String s;
 
+	/**
+	 * Mostra por meio de uma interface op��es de cadastro e customiza��o das
+	 * arma��es .Existem duas op��es: (1) Cadastro de uma nova arma��o (2) Detalhe
+	 * de arma��o
+	 * 
+	 * @param op  int que indica op��o selecionada
+	 * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+	 *            armazenados na mesma.
+	 * @param t   inst�ncia de TelaArma��o, respons�vel por acessar dados
+	 *            armazenados na mesma.
+	 * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+	 *            atributo a ser editado ou cadastrado
+	 */
+
 	public void inserirEditar(int op, ControleDados d, TelaArmacao t, int pos) {
 
 		opcao = op;

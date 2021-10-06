@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento da loja de �culos.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -13,6 +19,14 @@ public class TelaLoja implements ActionListener, ListSelectionListener {
     private ControleDados dados;
     private JList<String> listaLojasCadastradas;
     private String[] listaNomes = new String[50];
+
+    /**
+     * Mostra na interface gr�fica os dados de interesse do usu�rio a loja de �culos
+     * cadastrada.
+     * 
+     * @param dado inst�ncia de ControleDados, respons�vel por acessar dados
+     *             armazenados na mesma.
+     */
 
     public void mostrarLoja(ControleDados dado) {
         dados = dado;

@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento das vendas da loja de �culos, mas com maior especifidade.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,13 +50,26 @@ public class TelaDetalheVenda implements ActionListener {
     private String[] nomeArmacao = new String[50];
     private String[] nomeLente = new String[50];
 
+    /**
+     * Mostra por meio de uma interface op��es de cadastro e customiza��o das vendas
+     * .Existem duas op��es: (1) Cadastro de uma nova venda (2) Detalhe de venda
+     * 
+     * @param op  int que indica op��o selecionada
+     * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+     *            armazenados na mesma.
+     * @param t   inst�ncia de TelaVenda, respons�vel por acessar dados armazenados
+     *            na mesma.
+     * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+     *            atributo a ser editado ou cadastrado.
+     */
+
     public void inserirEditar(int op, ControleDados d, TelaVenda t, int pos) {
 
         opcao = op;
         posicao = pos;
         dados = d;
         nomeClientes = new ControleCliente(dados).getNomeCliente();
-        nomeFuncionario = new ControleFuncionario(dados).getNomeProf();
+        nomeFuncionario = new ControleFuncionario(dados).getNomeFuncionario();
         nomeArmacao = new ControleArmacao(dados).getNomeArmacao();
         nomeLente = new ControleLente(dados).getApelidoLente();
 

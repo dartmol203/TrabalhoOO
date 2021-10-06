@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento da loja de �culos.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -15,6 +21,14 @@ public class TelaLente implements ActionListener, ListSelectionListener {
     private static ControleDados dados;
     private JList<String> listaLentesCadastradas;
     private String[] listaLentes = new String[50];
+
+    /**
+     * Mostra na interface gr�fica os dados de interesse do usu�rio a lente
+     * cadastrada.
+     * 
+     * @param d inst�ncia de ControleDados, respons�vel por acessar dados
+     *          armazenados na mesma.
+     */
 
     public void mostrarDadosLentes(ControleDados d) {
         dados = d;

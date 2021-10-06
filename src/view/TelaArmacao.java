@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento das arma��es na loja de �culos registrada.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -15,6 +21,15 @@ public class TelaArmacao implements ActionListener, ListSelectionListener {
 	private static ControleDados dados;
 	private JList<String> listaArmacoesCadastradas;
 	private String[] listaNomes = new String[50];
+
+	/**
+	 * Mostra na interface gr�fica da op��o selecionada as arma��es cadastradas
+	 * .Existe uma op��o de escolha: (1)Arma��es cadastradas
+	 * 
+	 * @param d  inst�ncia de ControleDados, respons�vel por acessar dados
+	 *           armazenados na mesma.
+	 * @param op int que indica op��o selecionada
+	 */
 
 	public void mostrarDadosA(ControleDados d, int op) {
 		dados = d;

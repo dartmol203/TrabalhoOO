@@ -1,4 +1,11 @@
+
 package view;
+
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento das vendas realizadas na loja de �culos registrada.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
 
 import java.awt.*;
 import java.awt.event.*;
@@ -7,6 +14,7 @@ import javax.swing.event.*;
 import controle.*;
 
 public class TelaVenda implements ListSelectionListener, ActionListener {
+
     private JFrame janela;
     private JLabel titulo;
     private JButton cadastroVenda;
@@ -14,6 +22,15 @@ public class TelaVenda implements ListSelectionListener, ActionListener {
     private static ControleDados dados;
     private JList<String> listaVendasCadastradas;
     private String[] listaNomes = new String[50];
+
+    /**
+     * Mostra na interface gr�fica da op��o selecionada as vendas cadastradas de um
+     * produto.Existe uma op��o de escolha: (1)Vendas cadastradas
+     * 
+     * @param d  inst�ncia de ControleDados, respons�vel por acessar dados
+     *           armazenados na mesma.
+     * @param op um int que indica a op��o selecionada.
+     */
 
     public void mostrarDadosV(ControleDados d, int op) {
         dados = d;
@@ -64,6 +81,7 @@ public class TelaVenda implements ListSelectionListener, ActionListener {
         }
 
     }
+
     // Captura eventos relacionados aos botoes da interface
 
     public void actionPerformed(ActionEvent e) {

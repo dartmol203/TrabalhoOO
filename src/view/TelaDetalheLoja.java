@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento da loja de �culos registrada.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +33,18 @@ public class TelaDetalheLoja implements ActionListener {
     private static ControleDados dados;
     private int posicao;
     private String s;
+
+    /**
+     * Mostra por meio de uma interface gr�fica op��es de cadastro e customiza��o da
+     * loja.
+     * 
+     * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+     *            armazenados na mesma.
+     * @param l   inst�ncia de TelaLoja, respons�vel por acessar dados armazenados
+     *            na mesma.
+     * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+     *            atributo a ser editado ou cadastrado.
+     */
 
     public void inserirEditar(ControleDados d, TelaLoja l, int pos) {
 

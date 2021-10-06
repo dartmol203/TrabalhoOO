@@ -1,5 +1,11 @@
 package view;
 
+/**
+ * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento dos clientes e funcion�rios relacionados a loja de �culos registrada.
+ * @autor Vin�cius Assump��o e Andr� Corr�a
+ * @vers�o 1.0
+ */
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,6 +43,20 @@ public class TelaDetalhePessoa implements ActionListener {
 	private int opcao;
 	private String s;
 
+	/**
+	 * Mostra por meio de uma interface op��es de cadastro e customiza��o dos
+	 * clientes e funcion�rios .Existem quatro op��es: (1) Cadastro de cliente (2)
+	 * cadastro de funcion�rio (3) detalhe de cliente (4) detalhe de funcion�rio
+	 * 
+	 * @param op  int que indica op��o selecionada
+	 * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+	 *            armazenados na mesma.
+	 * @param p   inst�ncia de TelaPessoa, respons�vel por acessar dados armazenados
+	 *            na mesma.
+	 * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+	 *            atributo a ser editado ou cadastrado
+	 */
+
 	public void inserirEditar(int op, ControleDados d, TelaPessoa p, int pos) {
 
 		opcao = op;
@@ -60,7 +80,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorEnd = new JTextField(dados.getClientes()[pos].getEndereco(), 200);
 			valorDataC = new JTextField(dados.getClientes()[pos].getDataPrimC(), 200);
 			valorsalario = new JTextField(200);
-			valorCPF = new JTextField(dados.getClientes()[pos].getCPF(), 200);
+			valorCPF = new JTextField(String.valueOf(dados.getClientes()[pos].getCPF()), 200);
 			valorID = new JTextField(String.valueOf(dados.getClientes()[pos].getNumID()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getClientes()[pos].getNumTel().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getClientes()[pos].getNumTel().getNumero()), 10);
@@ -70,7 +90,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorsalario = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getSalario()), 200);
 			valorDataC = new JTextField(200);
 			valorEnd = new JTextField(dados.getFuncionarios()[pos].getEndereco(), 200);
-			valorCPF = new JTextField(dados.getFuncionarios()[pos].getCPF(), 200);
+			valorCPF = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getCPF()), 200);
 			valorID = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumID()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumTel().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumTel().getNumero()), 10);

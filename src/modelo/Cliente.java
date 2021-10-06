@@ -8,7 +8,7 @@ public class Cliente extends Pessoa {
 		super();
 	}
 
-	public Cliente(String n, String e, String dt, int id, String CPF, Telefone tel) {
+	public Cliente(String n, String e, String dt, int id, int CPF, Telefone tel) {
 		nome = n;
 		endereco = e;
 		dataPrimC = dt;
@@ -37,11 +37,11 @@ public class Cliente extends Pessoa {
 		this.numID = numID;
 	}
 
-	public String getCPF() {
+	public int getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(String cPF) {
+	public void setCPF(int cPF) {
 		CPF = cPF;
 	}
 
