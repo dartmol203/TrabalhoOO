@@ -2,15 +2,31 @@ package controle;
 
 import modelo.Lente;
 
+/**
+ * Classe de Controle de dados da lente
+ * 
+ * @author Andre Correa e Vinicius Assumpcao
+ * @version 1.0
+ */
 public class ControleLente {
     private Lente[] lentes;
     private int qntLentes;
 
+    /**
+     * metodo para salvar os dados de lente
+     * 
+     * @param d
+     */
     public ControleLente(ControleDados d) {
         lentes = d.getLentes();
         qntLentes = d.getQntLentes();
     }
 
+    /**
+     * metodo que retorna os nomes das lentes em um vetor de Strings
+     * 
+     * @return vetor com nomes das lentes
+     */
     public String[] getApelidoLente() {
         String[] apelido = new String[qntLentes];
         for (int i = 0; i < qntLentes; i++) {

@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe de modelo de armacao
+ * 
+ * @author Andre Correa e Vinicius Assumpcao
+ * @version 1.0
+ */
 public class Cliente extends Pessoa {
 	private String dataPrimC;
 	private String endereco;
@@ -8,6 +14,16 @@ public class Cliente extends Pessoa {
 		super();
 	}
 
+	/**
+	 * metodo construtor da classe Cliente
+	 * 
+	 * @param n   String nome do cliente
+	 * @param e   String endereco do cliente
+	 * @param dt  String data primeira Compra
+	 * @param id  int id do cliente
+	 * @param CPF int com o cpf do cliente
+	 * @param tel Telefone do cliente
+	 */
 	public Cliente(String n, String e, String dt, int id, int CPF, Telefone tel) {
 		nome = n;
 		endereco = e;

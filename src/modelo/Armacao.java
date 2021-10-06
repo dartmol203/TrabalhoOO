@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe de modelo de armacao
+ * 
+ * @author Andre Correa e Vinicius Assumpcao
+ * @version 1.0
+ */
 public class Armacao {
 	private String nomeArmacao;
 	private String marcaArmacao;
@@ -8,6 +14,16 @@ public class Armacao {
 	private int idArmacao;
 	private double valorArmacao;
 
+	/**
+	 * metodo construtor da classe armacao
+	 * 
+	 * @param n   String com nome da armacao
+	 * @param mar String com a marca da armacao
+	 * @param mta String com o material da armacao
+	 * @param va  double com o valor da armacao
+	 * @param ma  int com a medida do aro
+	 * @param id  int com o id da armacao
+	 */
 	public Armacao(String n, String mar, String mta, double va, int ma, int id) {
 		nomeArmacao = n;
 		this.marcaArmacao = mar;

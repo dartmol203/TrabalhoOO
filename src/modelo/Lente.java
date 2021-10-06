@@ -137,7 +137,7 @@ public class Lente {
     }
 
     // metodo de busca
-    public boolean buscaLenteID(int lenteBuscada) {// Busca identifica��es das lentes
+    public boolean buscaLenteID(int lenteBuscada) {// Busca identificacies das lentes
         if (idLente == lenteBuscada)
             return true;
 

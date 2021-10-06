@@ -2,9 +2,18 @@ package controle;
 
 import modelo.*;
 
+/**
+ * Classe de Controle de dados da armacao
+ * 
+ * @author Andre Correa e Vinicius Assumpcao
+ * @version 1.0
+ */
 public class ControleDados {
 	private Dados d = new Dados();
 
+	/**
+	 * metodo que inicializa os dados pre-cadastrados
+	 */
 	public ControleDados() {
 		d.fillWithSomeData();
 	}
@@ -49,6 +58,13 @@ public class ControleDados {
 		return this.d.getLoja();
 	}
 
+	/**
+	 * metodo que faz a validacao dos dados de funcionarios a fim de serem alterados
+	 * 
+	 * @param dadosFuncionarios vetor com os novos dados a serem verificados
+	 * @return true caso a alteracao tenha sido sucesso, false caso tenha falhado em
+	 *         algum dado
+	 */
 	public boolean inserirEditarFuncionarios(String[] dadosFuncionarios) {
 		if (!dadosFuncionarios[3].matches("[0-9]+") || !dadosFuncionarios[4].matches("[0-9]+")
 				|| !dadosFuncionarios[5].matches("[0-9]+") || !dadosFuncionarios[6].matches("[0-9]+")) {
@@ -63,6 +79,13 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a validacao dos dados de clientes a fim de serem alterados
+	 * 
+	 * @param dadosClientes vetor com os novos dados a serem verificados
+	 * @return true caso a alteracao tenha sido sucesso, false caso tenha falhado em
+	 *         algum dado
+	 */
 	public boolean inserirEditarClientes(String[] dadosClientes) {
 		if (!dadosClientes[3].matches("[0-9]+") || !dadosClientes[4].matches("[0-9]+")
 				|| !dadosClientes[5].matches("[0-9]+") || !dadosClientes[6].matches("[0-9]+")) {
@@ -76,6 +99,13 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a validacao dos dados de armacao a fim de serem alterados
+	 * 
+	 * @param dadosArmacao vetor com os novos dados a serem verificados
+	 * @return true caso a alteracao tenha sido sucesso, false caso tenha falhado em
+	 *         algum dado
+	 */
 	public boolean inserirEditarArmacao(String[] dadosArmacao) {
 		if (!dadosArmacao[3].matches("[0-9]+") || !dadosArmacao[4].matches("[0-9]+")
 				|| !dadosArmacao[5].matches("[0-9.]+")) {
@@ -89,15 +119,21 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a remocao dos dados de Clientes dos dados salvos
+	 * 
+	 * @param i int que indica a posicao do cliente a ser excluido
+	 * @return true caso a remocao tenha sido sucesso
+	 */
 	public boolean removerCliente(int i) {
 
 		String clienteRemovido = d.getClientes()[i].getNome();
 
-		if (i == (d.getQtdClientes() - 1)) { // O Clientes a ser removido est� no final do array
+		if (i == (d.getQtdClientes() - 1)) { // O Clientes a ser removido esta no final do array
 			d.setQtdClientes(d.getQtdClientes() - 1);
 			d.getClientes()[d.getQtdClientes()] = null;
 			return true;
-		} else { // o Cliente a ser removido est� no meio do array
+		} else { // o Cliente a ser removido esta no meio do array
 			int cont = 0;
 			while (d.getClientes()[cont].getNome().compareTo(clienteRemovido) != 0) {
 				cont++;
@@ -113,15 +149,21 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a remocao dos dados de funcionarios dos dados salvos
+	 * 
+	 * @param i int que indica a posicao do funcionario a ser excluido
+	 * @return true caso a remocao tenha sido sucesso
+	 */
 	public boolean removerFuncionarios(int i) {
 
 		String funcionarioRemovido = d.getFuncionarios()[i].getNome();
 
-		if (i == (d.getQtdFuncionarios() - 1)) { // O funcionario a ser removido est� no final do array
+		if (i == (d.getQtdFuncionarios() - 1)) { // O funcionario a ser removido esta no final do array
 			d.setQtdFuncionarios(d.getQtdFuncionarios() - 1);
 			d.getFuncionarios()[d.getQtdFuncionarios()] = null;
 			return true;
-		} else { // o funcionario a ser removido est� no meio do array
+		} else { // o funcionario a ser removido esta no meio do array
 			int cont = 0;
 			while (d.getFuncionarios()[cont].getNome().compareTo(funcionarioRemovido) != 0)
 				cont++;
@@ -136,14 +178,20 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a remocao dos dados de Armacoes dos dados salvos
+	 * 
+	 * @param i int que indica a posicao da Armacao a ser excluida
+	 * @return true caso a remocao tenha sido sucesso
+	 */
 	public boolean removerArmacao(int i) {
 		String armacaoRemovida = d.getArmacao()[i].getNomeArmacao();
 
-		if (i == (d.getQtdArmacao() - 1)) { // A Armacao a ser removida est� no final do array
+		if (i == (d.getQtdArmacao() - 1)) { // A Armacao a ser removida esta no final do array
 			d.setQtdArmacao(d.getQtdArmacao() - 1);
 			d.getArmacao()[d.getQtdArmacao()] = null;
 			return true;
-		} else { // a Armacao a ser removido est� no meio do array
+		} else { // a Armacao a ser removido esta no meio do array
 			int cont = 0;
 
 			while (d.getArmacao()[cont].getNomeArmacao().compareTo(armacaoRemovida) != 0) {
@@ -160,6 +208,13 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a validacao dos dados a fim de serem alterados
+	 * 
+	 * @param novoDado vetor com os novos dados a serem verificados
+	 * @return true caso a alteracao tenha sido sucesso, false caso tenha falhado em
+	 *         algum dado
+	 */
 	public boolean inserirEditarLojas(String[] novoDado) {
 		if (!novoDado[3].matches("[0-9]+") || !novoDado[4].matches("[0-9]+") || !novoDado[5].matches("[0-9]+")) {
 			return false;
@@ -179,6 +234,13 @@ public class ControleDados {
 		return this.d.getLentes();
 	}
 
+	/**
+	 * metodo que faz a validacao dos dados a fim de serem alterados
+	 * 
+	 * @param novoDado vetor com os novos dados a serem verificados
+	 * @return true caso a alteracao tenha sido sucesso, false caso tenha falhado em
+	 *         algum dado
+	 */
 	public boolean inserirEditarLente(String[] novoDado) {
 		if (!novoDado[5].matches("[0-9]+") || !novoDado[6].matches("[0-9.]+") || !novoDado[7].matches("[0-9.]+")
 				|| !novoDado[11].matches("[0-9]+")) {
@@ -194,14 +256,20 @@ public class ControleDados {
 
 	}
 
+	/**
+	 * metodo que faz a remocao dos dados de lentes dos dados salvos
+	 * 
+	 * @param i int que indica a posicao da lente a ser excluida
+	 * @return true caso a remocao tenha sido sucesso
+	 */
 	public boolean removerLente(int i) {
 		String LenteRemovida = d.getLentes()[i].getApelidoLente();
 
-		if (i == (d.getQntLentes() - 1)) { // A lente a ser removida est� no final do array
+		if (i == (d.getQntLentes() - 1)) { // A lente a ser removida esta no final do array
 			d.setQntLentes(d.getQntLentes() - 1);
 			d.getLentes()[d.getQntLentes()] = null;
 			return true;
-		} else { // a lente a ser removido est� no meio do array
+		} else { // a lente a ser removido esta no meio do array
 			int cont = 0;
 
 			while (d.getLentes()[cont].getApelidoLente().compareTo(LenteRemovida) != 0) {
@@ -226,6 +294,13 @@ public class ControleDados {
 		return this.d.getQntVendas();
 	}
 
+	/**
+	 * metodo que faz a validacao dos dados a fim de serem alterados
+	 * 
+	 * @param novoDado vetor com os novos dados a serem verificados
+	 * @return true caso a alteracao tenha sido sucesso, false caso tenha falhado em
+	 *         algum dado
+	 */
 	public boolean inserirEditarVenda(String[] novoDado) {
 		if (!novoDado[8].matches("[0-9.]+")) {
 
@@ -239,6 +314,12 @@ public class ControleDados {
 		}
 	}
 
+	/**
+	 * metodo que faz a remocao dos dados de lentes dos dados salvos
+	 * 
+	 * @param i int que indica a posicao da lente a ser excluida
+	 * @return true caso a remocao tenha sido sucesso
+	 */
 	public boolean removerVenda(int posicao) {
 		String vendaRemovida = d.getVendas()[posicao].getApelidoVenda();
 
