@@ -49,42 +49,49 @@ public class ControleDados {
 		return this.d.getLoja();
 	}
 
-	public Boolean validaCpf(String cpf) {
-		if (cpf.length() == 11 && !cpf.equals("00000000000") && !cpf.equals("11111111111") && !cpf.equals("22222222222")
-				&& !cpf.equals("33333333333") && !cpf.equals("44444444444") && !cpf.equals("55555555555")
-				&& !cpf.equals("66666666666") && !cpf.equals("77777777777") && !cpf.equals("88888888888")
-				&& !cpf.equals("99999999999")) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}
-
 	public boolean inserirEditarFuncionarios(String[] dadosFuncionarios) {
 		if (!dadosFuncionarios[3].matches("[0-9]+") || !dadosFuncionarios[4].matches("[0-9]+")
 				|| !dadosFuncionarios[5].matches("[0-9]+") || !dadosFuncionarios[6].matches("[0-9]+")) {
 			return false;
 		} else {
-			Funcionario p = new Funcionario(dadosFuncionarios[1], dadosFuncionarios[2],
-					Double.parseDouble(dadosFuncionarios[7]), dadosFuncionarios[3],
-					Integer.parseInt(dadosFuncionarios[4]),
-					new Telefone(Integer.parseInt(dadosFuncionarios[5]), Integer.parseInt(dadosFuncionarios[6])));
-			d.inserirEditarFuncionarios(p, Integer.parseInt(dadosFuncionarios[0]));
-			return true;
+			if (Validador.validaCpf(dadosFuncionarios[3]) && Validador.validaTelefone(
+					new Telefone(Integer.parseInt(dadosFuncionarios[5]), Integer.parseInt(dadosFuncionarios[6])))) {
+
+				Funcionario p = new Funcionario(dadosFuncionarios[1], dadosFuncionarios[2],
+						Double.parseDouble(dadosFuncionarios[7]), dadosFuncionarios[3],
+						Integer.parseInt(dadosFuncionarios[4]),
+						new Telefone(Integer.parseInt(dadosFuncionarios[5]), Integer.parseInt(dadosFuncionarios[6])));
+
+				d.inserirEditarFuncionarios(p, Integer.parseInt(dadosFuncionarios[0]));
+
+				return true;
+			} else {
+				return false;
+			}
+
 		}
 	}
 
 	public boolean inserirEditarClientes(String[] dadosClientes) {
-		if (!dadosClientes[3].matches("[0-9]+") || !dadosClientes[4].matches("[0-9]+")
-				|| !dadosClientes[5].matches("[0-9]+") || !dadosClientes[6].matches("[0-9]+")) {
+		if (!dadosClientes[4].matches("[0-9]+") || !dadosClientes[5].matches("[0-9]+")
+				|| !dadosClientes[6].matches("[0-9]+")) {
 			return false;
 		} else {
-			Cliente c = new Cliente(dadosClientes[1], dadosClientes[2], dadosClientes[7],
-					Integer.parseInt(dadosClientes[3]), dadosClientes[4],
-					new Telefone(Integer.parseInt(dadosClientes[5]), Integer.parseInt(dadosClientes[6])));
-			d.inserirEditarClientes(c, Integer.parseInt(dadosClientes[0]));
-			return true;
+
+			if (Validador.validaCpf(dadosClientes[3]) && Validador.validaTelefone(
+					new Telefone(Integer.parseInt(dadosClientes[5]), Integer.parseInt(dadosClientes[6])))) {
+
+				Cliente c = new Cliente(dadosClientes[1], dadosClientes[2], dadosClientes[7],
+						Integer.parseInt(dadosClientes[4]), dadosClientes[3],
+						new Telefone(Integer.parseInt(dadosClientes[5]), Integer.parseInt(dadosClientes[6])));
+
+				d.inserirEditarClientes(c, Integer.parseInt(dadosClientes[0]));
+
+				return true;
+			} else {
+				return false;
+			}
+
 		}
 	}
 
@@ -176,10 +183,17 @@ public class ControleDados {
 		if (!novoDado[3].matches("[0-9]+") || !novoDado[4].matches("[0-9]+") || !novoDado[5].matches("[0-9]+")) {
 			return false;
 		} else {
-			Loja l = new Loja(novoDado[1], novoDado[2], Integer.parseInt(novoDado[3]),
-					new Telefone(Integer.parseInt(novoDado[4]), Integer.parseInt(novoDado[5])));
-			d.inserirEditarLoja(l, Integer.parseInt(novoDado[0]));
-			return true;
+			if (Validador.validaCep(Integer.parseInt(novoDado[3])) && Validador
+					.validaTelefone(new Telefone(Integer.parseInt(novoDado[4]), Integer.parseInt(novoDado[5])))) {
+
+				Loja l = new Loja(novoDado[1], novoDado[2], Integer.parseInt(novoDado[3]),
+						new Telefone(Integer.parseInt(novoDado[4]), Integer.parseInt(novoDado[5])));
+
+				d.inserirEditarLoja(l, Integer.parseInt(novoDado[0]));
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 
@@ -197,11 +211,17 @@ public class ControleDados {
 
 			return false;
 		} else {
-			Lente l = new Lente(Double.parseDouble(novoDado[7]), Double.parseDouble(novoDado[6]),
-					Integer.parseInt(novoDado[5]), novoDado[4], novoDado[8], novoDado[3], novoDado[9],
-					Boolean.parseBoolean(novoDado[10]), novoDado[2], Integer.parseInt(novoDado[11]), novoDado[1]);
-			d.inserirEditarlente(l, Integer.parseInt(novoDado[0]));
-			return true;
+			System.out.println(Integer.parseInt(novoDado[2].substring(0, 2)));
+			if (Validador.validaData(novoDado[2])) {
+
+				Lente l = new Lente(Double.parseDouble(novoDado[7]), Double.parseDouble(novoDado[6]),
+						Integer.parseInt(novoDado[5]), novoDado[4], novoDado[8], novoDado[3], novoDado[9],
+						Boolean.parseBoolean(novoDado[10]), novoDado[2], Integer.parseInt(novoDado[11]), novoDado[1]);
+				d.inserirEditarlente(l, Integer.parseInt(novoDado[0]));
+				return true;
+			} else {
+				return false;
+			}
 		}
 
 	}

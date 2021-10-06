@@ -60,7 +60,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorEnd = new JTextField(dados.getClientes()[pos].getEndereco(), 200);
 			valorDataC = new JTextField(dados.getClientes()[pos].getDataPrimC(), 200);
 			valorsalario = new JTextField(200);
-			valorCPF = new JTextField(String.valueOf(dados.getClientes()[pos].getCPF()), 200);
+			valorCPF = new JTextField(dados.getClientes()[pos].getCPF(), 200);
 			valorID = new JTextField(String.valueOf(dados.getClientes()[pos].getNumID()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getClientes()[pos].getNumTel().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getClientes()[pos].getNumTel().getNumero()), 10);
@@ -70,7 +70,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorsalario = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getSalario()), 200);
 			valorDataC = new JTextField(200);
 			valorEnd = new JTextField(dados.getFuncionarios()[pos].getEndereco(), 200);
-			valorCPF = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getCPF()), 200);
+			valorCPF = new JTextField(dados.getFuncionarios()[pos].getCPF(), 200);
 			valorID = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumID()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumTel().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumTel().getNumero()), 10);
