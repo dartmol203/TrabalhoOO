@@ -211,7 +211,6 @@ public class ControleDados {
 
 			return false;
 		} else {
-			System.out.println(Integer.parseInt(novoDado[2].substring(0, 2)));
 			if (Validador.validaData(novoDado[2])) {
 
 				Lente l = new Lente(Double.parseDouble(novoDado[7]), Double.parseDouble(novoDado[6]),
