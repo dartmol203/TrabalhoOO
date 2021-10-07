@@ -15,7 +15,7 @@ public class ControleFuncionario {
 	/**
 	 * metodo para salvar os dados de Funcionarios
 	 * 
-	 * @param d
+	 * @param d instancia de ControleDados
 	 */
 	public ControleFuncionario(ControleDados d) {
 		this.p = d.getFuncionarios();

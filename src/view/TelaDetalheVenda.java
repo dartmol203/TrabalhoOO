@@ -1,11 +1,5 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento das vendas da loja de �culos, mas com maior especifidade.
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento das vendas realizadas na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheVenda implements ActionListener {
     private JFrame janela;
     private JLabel labelNomeVenda = new JLabel("Nome da Venda: ");
@@ -51,15 +50,15 @@ public class TelaDetalheVenda implements ActionListener {
     private String[] nomeLente = new String[50];
 
     /**
-     * Mostra por meio de uma interface op��es de cadastro e customiza��o das vendas
-     * .Existem duas op��es: (1) Cadastro de uma nova venda (2) Detalhe de venda
+     * Mostra por meio de uma interface opcoes de cadastro e customizacao das vendas
+     * .Existem duas opcoes: (1) Cadastro de uma nova venda (2) Detalhe de venda
      * 
-     * @param op  int que indica op��o selecionada
-     * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+     * @param op  int que indica opcao selecionada
+     * @param d   instancia de ControleDados, responsavel por acessar dados
      *            armazenados na mesma.
-     * @param t   inst�ncia de TelaVenda, respons�vel por acessar dados armazenados
+     * @param t   instancia de TelaVenda, responsavel por acessar dados armazenados
      *            na mesma.
-     * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+     * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
      *            atributo a ser editado ou cadastrado.
      */
 

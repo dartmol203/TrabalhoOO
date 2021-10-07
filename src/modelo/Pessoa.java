@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe  abstrata de armazenamento de dados do compartilhados entre cliente e funcionario
+ * 
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
+ */
 public abstract class Pessoa {
 	protected String nome;
 	protected int numID;

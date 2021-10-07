@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe  de armazenamento de dados da lente
+ * 
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
+ */
 public class Lente {
 
     // declaracoes

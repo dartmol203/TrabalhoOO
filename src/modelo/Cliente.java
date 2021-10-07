@@ -10,6 +10,9 @@ public class Cliente extends Pessoa {
 	private String dataPrimC;
 	private String endereco;
 
+	/**
+	 * construtor padrao da classe
+	 */
 	public Cliente() {
 		super();
 	}

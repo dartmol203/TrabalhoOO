@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import modelo.Telefone;
 
 /** Classe que verifica os dados da classe validador
- * @author Vinicius Assump��o e Andr� Corr�a 
- * @vers�o 1.0
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
  */
 class Testes {
 

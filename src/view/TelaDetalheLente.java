@@ -1,11 +1,5 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento das lentes cadastradas .
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento das vendas realizadas na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheLente implements ActionListener {
     private JFrame janela;
     private JLabel labelApelidoLente = new JLabel("apelido da lente: ");

@@ -1,16 +1,16 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento  de diferentes componentes da loja de �culos.
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcoes disponiveis para customizacao e gerenciamento das diferentes classes relacionadas na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaMenu implements ActionListener {
 
 	private static JFrame janela = new JFrame("Gerenciamento da loja");
@@ -103,10 +103,10 @@ public class TelaMenu implements ActionListener {
 	}
 
 	/**
-	 * Garante que a sele��o dos bot�es do menu estejam funcionando
+	 * Garante que a selecao dos botoes do menu estejam funcionando
 	 * 
 	 * @param args array que recebe dados da linha de comando, o que evita a
-	 *             execu��o em um ambiente equivocado
+	 *             execucao em um ambiente equivocado
 	 */
 	public static void main(String[] args) {
 		TelaMenu menu = new TelaMenu();

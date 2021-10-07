@@ -1,17 +1,16 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento da loja de �culos.
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcoes disponiveis para customizacao da loja de oculos.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaLoja implements ActionListener, ListSelectionListener {
     private JFrame janela;
     private JLabel titulo;
@@ -21,10 +20,10 @@ public class TelaLoja implements ActionListener, ListSelectionListener {
     private String[] listaNomes = new String[50];
 
     /**
-     * Mostra na interface gr�fica os dados de interesse do usu�rio a loja de �culos
+     * Mostra na interface grafica os dados de interesse do usuario a loja de oculos
      * cadastrada.
      * 
-     * @param dado inst�ncia de ControleDados, respons�vel por acessar dados
+     * @param dado instancia de ControleDados, responsavel por acessar dados
      *             armazenados na mesma.
      */
 

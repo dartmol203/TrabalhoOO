@@ -317,7 +317,7 @@ public class ControleDados {
 	/**
 	 * metodo que faz a remocao dos dados de lentes dos dados salvos
 	 * 
-	 * @param i int que indica a posicao da lente a ser excluida
+	 * @param posicao int que indica a posicao da lente a ser excluida
 	 * @return true caso a remocao tenha sido sucesso
 	 */
 	public boolean removerVenda(int posicao) {

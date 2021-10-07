@@ -1,11 +1,5 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento da loja de �culos registrada.
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento da loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheLoja implements ActionListener {
     private JFrame janela;
     private JLabel labelNome = new JLabel("Nome da loja: ");
@@ -35,14 +34,14 @@ public class TelaDetalheLoja implements ActionListener {
     private String s;
 
     /**
-     * Mostra por meio de uma interface gr�fica op��es de cadastro e customiza��o da
+     * Mostra por meio de uma interface grafica opcoes de cadastro e customizacao da
      * loja.
      * 
-     * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+     * @param d   instancia de ControleDados, responsavel por acessar dados
      *            armazenados na mesma.
-     * @param l   inst�ncia de TelaLoja, respons�vel por acessar dados armazenados
+     * @param l   instancia de TelaLoja, responsavel por acessar dados armazenados
      *            na mesma.
-     * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+     * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
      *            atributo a ser editado ou cadastrado.
      */
 

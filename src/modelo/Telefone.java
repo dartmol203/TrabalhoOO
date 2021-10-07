@@ -3,16 +3,16 @@ package modelo;
 /**
  * Classe de armazenamento de dados do telefone
  * 
- * @author Vinicius Assump��o e Andr� Corr�a @vers�o 1.0
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
  */
-
 public class Telefone {
 
 	private int DDD;
 	private int numero;
 
 	/**
-	 * Defini��o de diferentes atributos da classe Telefone
+	 * Definicao de diferentes atributos da classe Telefone
 	 * 
 	 * @param cod int que indica numero do DDD
 	 * @param num int que indica o numero do telefone sem DDD

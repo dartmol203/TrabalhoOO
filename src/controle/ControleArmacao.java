@@ -15,7 +15,7 @@ public class ControleArmacao {
 	/**
 	 * metodo para salvar os dados da armacao
 	 * 
-	 * @param d
+	 * @param d instancia de ControleDados
 	 */
 	public ControleArmacao(ControleDados d) {
 		a = d.getArmacao();

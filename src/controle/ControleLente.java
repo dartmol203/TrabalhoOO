@@ -15,7 +15,7 @@ public class ControleLente {
     /**
      * metodo para salvar os dados de lente
      * 
-     * @param d
+     * @param d instancia de ControleDados 
      */
     public ControleLente(ControleDados d) {
         lentes = d.getLentes();
@@ -25,7 +25,7 @@ public class ControleLente {
     /**
      * metodo que retorna os nomes das lentes em um vetor de Strings
      * 
-     * @return vetor com nomes das lentes
+     * @return array com nomes das lentes
      */
     public String[] getApelidoLente() {
         String[] apelido = new String[qntLentes];

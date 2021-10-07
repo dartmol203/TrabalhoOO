@@ -15,7 +15,7 @@ public class ControleCliente {
 	/**
 	 * metodo para salvar os dados dos clientes
 	 * 
-	 * @param d
+	 * @param d instancia de ControleDados
 	 */
 	public ControleCliente(ControleDados d) {
 		c = d.getClientes();

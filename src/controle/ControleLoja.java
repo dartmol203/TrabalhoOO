@@ -4,9 +4,10 @@ import modelo.Loja;
 import modelo.Telefone;
 
 /**
- * metodo para salvar os dados da loja
+ * Classe de Controle de dados de loja
  * 
- * @param d
+ * @author Andre Correa e Vinicius Assumpcao
+ *
  */
 public class ControleLoja {
     private Loja[] lControl;
@@ -15,7 +16,7 @@ public class ControleLoja {
     /**
      * metodo para salvar os dados da loja
      * 
-     * @param d
+     * @param dados instancia de ControleDados 
      */
     public ControleLoja(ControleDados dados) {
         lControl = dados.getLojas();

@@ -1,5 +1,7 @@
 package view;
 
+
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +13,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento das armacoes da oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheArmacao implements ActionListener {
 
 	private JFrame janela;
@@ -35,16 +42,16 @@ public class TelaDetalheArmacao implements ActionListener {
 	private String s;
 
 	/**
-	 * Mostra por meio de uma interface op��es de cadastro e customiza��o das
-	 * arma��es .Existem duas op��es: (1) Cadastro de uma nova arma��o (2) Detalhe
-	 * de arma��o
+	 * Mostra por meio de uma interface opcoes de cadastro e customizacao das
+	 * armacoes .Existem duas opcoes: (1) Cadastro de uma nova armacao (2) Detalhe
+	 * de armacao
 	 * 
-	 * @param op  int que indica op��o selecionada
-	 * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+	 * @param op  int que indica opcao selecionada
+	 * @param d   instancia de ControleDados, responsavel por acessar dados
 	 *            armazenados na mesma.
-	 * @param t   inst�ncia de TelaArma��o, respons�vel por acessar dados
+	 * @param t   instancia de TelaArmacao, responsavel por acessar dados
 	 *            armazenados na mesma.
-	 * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+	 * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
 	 *            atributo a ser editado ou cadastrado
 	 */
 

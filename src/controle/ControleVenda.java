@@ -16,7 +16,7 @@ public class ControleVenda {
     /**
      * metodo para salvar os dados da venda
      * 
-     * @param d
+     * @param d instancia de controle dados
      */
     public ControleVenda(ControleDados d) {
         vendas = d.getVendas();

@@ -1,17 +1,16 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento dos clientes e funcion�rios registrados da loja de �culos.
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica os clientes e funcionarios na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private JFrame janela;
 	private JLabel titulo;
@@ -25,13 +24,13 @@ public class TelaPessoa implements ActionListener, ListSelectionListener {
 	private String[] listaNomes = new String[50];
 
 	/**
-	 * Mostra na interface gr�fica da op��o selecionada os clientes e funcion�rios
-	 * cadastrados.Existem duas op��es: (1) clientes cadastrados (2) funcionarios
+	 * Mostra na interface grafica da opcaoo selecionada os clientes e funcionarios
+	 * cadastrados.Existem duas opcoes: (1) clientes cadastrados (2) funcionarios
 	 * cadastrados
 	 * 
-	 * @param d  d inst�ncia de ControleDados, respons�vel por acessar dados
+	 * @param d  d instancia de ControleDados, responsavel por acessar dados
 	 *           armazenados na mesma.
-	 * @param op um int que indica a op��o selecionada.
+	 * @param op um int que indica a opcao selecionada.
 	 */
 
 	public void mostrarDados(ControleDados d, int op) {

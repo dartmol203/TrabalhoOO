@@ -3,7 +3,8 @@ package modelo;
 /**
  * Classe de armazenamento de dados da venda
  * 
- * @author Vinicius Assump��o e Andr� Corr�a @vers�o 1.0
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
  */
 
 public class Venda {
@@ -68,16 +69,16 @@ public class Venda {
     }
 
     /**
-     * Defini��o de diferentes atributos da classe venda
+     * Definicao de diferentes atributos da classe venda
      * 
      * @param valorFinal    double que indica valor final da venda
-     * @param idCliente     String que indica identifica��o do cliente relacionado
-     * @param idFuncionario String que indica identifica��o do funcion�rio
+     * @param idCliente     String que indica identificacao do cliente relacionado
+     * @param idFuncionario String que indica identificacao do funcionario
      *                      relacionado
-     * @param idArmacao     String que indica identifica��o da arma��o relacionada
-     * @param apelidoVenda  String que indica identifica��o alternativa da venda
-     * @param idLente       String que indica identifica��o da lente relacionada
-     * @param idVenda       String que indica identifica��o da venda
+     * @param idArmacao     String que indica identificacao da armacao relacionada
+     * @param apelidoVenda  String que indica identificacao alternativa da venda
+     * @param idLente       String que indica identificacao da lente relacionada
+     * @param idVenda       String que indica identificacao da venda
      */
 
     public Venda(double valorFinal, String idCliente, String idFuncionario, String idArmacao, String apelidoVenda,

@@ -1,11 +1,5 @@
 package view;
 
-/**
- * Mostra por meio de uma interface gr�fica as op��es dispon�veis para customiza��o e gerenciamento dos clientes e funcion�rios relacionados a loja de �culos registrada.
- * @autor Vin�cius Assump��o e Andr� Corr�a
- * @vers�o 1.0
- */
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento dos clientes e funcionarios relacionados a loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalhePessoa implements ActionListener {
 
 	private JFrame janela;
@@ -44,16 +43,16 @@ public class TelaDetalhePessoa implements ActionListener {
 	private String s;
 
 	/**
-	 * Mostra por meio de uma interface op��es de cadastro e customiza��o dos
-	 * clientes e funcion�rios .Existem quatro op��es: (1) Cadastro de cliente (2)
-	 * cadastro de funcion�rio (3) detalhe de cliente (4) detalhe de funcion�rio
+	 * Mostra por meio de uma interface opcoes de cadastro e customizacao dos
+	 * clientes e funcionarios .Existem quatro opcoes: (1) Cadastro de cliente (2)
+	 * cadastro de funcionario (3) detalhe de cliente (4) detalhe de funcionario
 	 * 
-	 * @param op  int que indica op��o selecionada
-	 * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+	 * @param op  int que indica opcao selecionada
+	 * @param d   instancia de ControleDados, responsavel por acessar dados
 	 *            armazenados na mesma.
-	 * @param p   inst�ncia de TelaPessoa, respons�vel por acessar dados armazenados
+	 * @param p   instancia de TelaPessoa, responsavel por acessar dados armazenados
 	 *            na mesma.
-	 * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+	 * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
 	 *            atributo a ser editado ou cadastrado
 	 */
 
