@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe  de armazenamento de dados da lente
+ * 
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
+ */
 public class Lente {
 
     // declaracoes
@@ -137,7 +143,7 @@ public class Lente {
     }
 
     // metodo de busca
-    public boolean buscaLenteID(int lenteBuscada) {// Busca identifica��es das lentes
+    public boolean buscaLenteID(int lenteBuscada) {// Busca identificacies das lentes
         if (idLente == lenteBuscada)
             return true;
 

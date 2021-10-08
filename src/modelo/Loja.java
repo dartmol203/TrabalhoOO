@@ -1,5 +1,11 @@
 package modelo;
 
+/**
+ * Classe de dados da loja
+ * 
+ * @author Vinicius Assumpcao e Andre Correa 
+ * @version 1.0
+ */
 public class Loja {
 
     private String nomeLoja;

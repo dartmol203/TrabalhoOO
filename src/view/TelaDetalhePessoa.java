@@ -11,6 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento dos clientes e funcionarios relacionados a loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalhePessoa implements ActionListener {
 
 	private JFrame janela;
@@ -37,6 +42,20 @@ public class TelaDetalhePessoa implements ActionListener {
 	private int opcao;
 	private String s;
 
+	/**
+	 * Mostra por meio de uma interface opcoes de cadastro e customizacao dos
+	 * clientes e funcionarios .Existem quatro opcoes: (1) Cadastro de cliente (2)
+	 * cadastro de funcionario (3) detalhe de cliente (4) detalhe de funcionario
+	 * 
+	 * @param op  int que indica opcao selecionada
+	 * @param d   instancia de ControleDados, responsavel por acessar dados
+	 *            armazenados na mesma.
+	 * @param p   instancia de TelaPessoa, responsavel por acessar dados armazenados
+	 *            na mesma.
+	 * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
+	 *            atributo a ser editado ou cadastrado
+	 */
+
 	public void inserirEditar(int op, ControleDados d, TelaPessoa p, int pos) {
 
 		opcao = op;
@@ -60,7 +79,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorEnd = new JTextField(dados.getClientes()[pos].getEndereco(), 200);
 			valorDataC = new JTextField(dados.getClientes()[pos].getDataPrimC(), 200);
 			valorsalario = new JTextField(200);
-			valorCPF = new JTextField(dados.getClientes()[pos].getCPF(), 200);
+			valorCPF = new JTextField(String.valueOf(dados.getClientes()[pos].getCPF()), 200);
 			valorID = new JTextField(String.valueOf(dados.getClientes()[pos].getNumID()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getClientes()[pos].getNumTel().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getClientes()[pos].getNumTel().getNumero()), 10);
@@ -70,7 +89,7 @@ public class TelaDetalhePessoa implements ActionListener {
 			valorsalario = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getSalario()), 200);
 			valorDataC = new JTextField(200);
 			valorEnd = new JTextField(dados.getFuncionarios()[pos].getEndereco(), 200);
-			valorCPF = new JTextField(dados.getFuncionarios()[pos].getCPF(), 200);
+			valorCPF = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getCPF()), 200);
 			valorID = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumID()), 200);
 			valorDDD = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumTel().getDDD()), 3);
 			valorTelefone = new JTextField(String.valueOf(dados.getFuncionarios()[pos].getNumTel().getNumero()), 10);

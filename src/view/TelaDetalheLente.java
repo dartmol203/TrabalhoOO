@@ -12,6 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento das vendas realizadas na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheLente implements ActionListener {
     private JFrame janela;
     private JLabel labelApelidoLente = new JLabel("apelido da lente: ");
@@ -43,6 +48,19 @@ public class TelaDetalheLente implements ActionListener {
     private int posicao;
     private int opcao;
     private String s;
+
+    /**
+     * Mostra por meio de uma interface op��es de cadastro e customiza��o das lentes
+     * .Existem duas op��es: (1) Cadastro de uma nova lente (2) Detalhe de lente
+     * 
+     * @param op  int que indica op��o selecionada
+     * @param d   inst�ncia de ControleDados, respons�vel por acessar dados
+     *            armazenados na mesma.
+     * @param t   inst�ncia de TelaLente, respons�vel por acessar dados armazenados
+     *            na mesma.
+     * @param pos int respons�vel por guardar a posi��o na array a ser cadastrado do
+     *            atributo a ser editado ou cadastrado
+     */
 
     public void inserirEditar(int op, ControleDados d, TelaLente t, int pos) {
 

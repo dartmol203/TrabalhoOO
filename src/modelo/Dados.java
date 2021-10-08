@@ -1,9 +1,13 @@
 package modelo;
 
-//import java.util.*;
-
+/**
+ * Classe de modelo de armacao
+ * 
+ * @author Andre Correa e Vinicius Assumpcao
+ * @version 1.0
+ */
 public class Dados {
-	// private ArrayList<Loja> lojas = new ArrayList<Loja>();
+
 	private Cliente[] clientes = new Cliente[50];
 	private int qtdClientes = 0;
 	private Funcionario[] funcionarios = new Funcionario[50];
@@ -19,14 +23,17 @@ public class Dados {
 	private Venda[] vendas = new Venda[50];
 	private int qntVendas;
 
+	/**
+	 * metodo para cadastro de dados iniciais
+	 */
 	public void fillWithSomeData() {
 		for (int i = 0; i < 5; i++) {
-			tels[i] = new Telefone((i + 1) * 10, (i + 1) * 100000001);
+			tels[i] = new Telefone((i + 1) * 100, (i + 1) * 1000000);
 			clientes[i] = new Cliente("Cliente" + i, "Endereco" + i, "01/0" + (i + 1) + "/2001", (i + 1) * 123456,
-					(i + 1) + "1234567899", tels[i]);
-			funcionarios[i] = new Funcionario("Funcionario" + i, "Endereco" + i, (i + 1) * 1000, "1234567899" + (i + 1),
+					(i + 1) * 112233, tels[i]);
+			funcionarios[i] = new Funcionario("Funcionario" + i, "Endereco" + i, (i + 1) * 1000, (i + 1) * 654321,
 					(i + 1) * 332211, tels[i]);
-			armacao[i] = new Armacao("Armacao" + i, "Marca" + i, "Material" + i, (i + 1) * 50, (i + 1) * 10,
+			armacao[i] = new Armacao("Armacao" + i, "Persol", "Material" + i, (i + 1) * 50, (i + 1) * 10,
 					(i + 1) * 654321);
 			lentes[i] = new Lente((i + 1) * 0.1, 50.0 * (i + 1), i + 1, "redonda", "hipermetropia", "monofocal", "hoya",
 					true, "03/07/2025", (i + 1) * 654321, "lente" + (i));
@@ -34,7 +41,7 @@ public class Dados {
 					"lente" + (i), i + 1);
 		}
 
-		loja[0] = new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new Telefone(61, 555555555));
+		loja[0] = new Loja("oticas wanderer", "endereco 1 rua 2", 87654321, new Telefone(61, 55555555));
 
 		qtdClientes = 5;
 		qtdFuncionarios = 5;
@@ -54,6 +61,12 @@ public class Dados {
 		this.clientes = clientes;
 	}
 
+	/**
+	 * metodo que altera efetivamente o cliente na lista de dados
+	 * 
+	 * @param c   Cliente a ser inserido na nova posicao
+	 * @param pos posicao que deve ser atualizada
+	 */
 	public void inserirEditarClientes(Cliente c, int pos) {
 		this.clientes[pos] = c;
 		if (pos == qtdClientes)
@@ -76,6 +89,12 @@ public class Dados {
 		this.funcionarios = Funcionarios;
 	}
 
+	/**
+	 * metodo que altera efetivamente o funcionario na lista de dados
+	 * 
+	 * @param p   funcionario a ser inserido na nova posicao
+	 * @param pos posicao que deve ser atualizada
+	 */
 	public void inserirEditarFuncionarios(Funcionario p, int pos) {
 		this.funcionarios[pos] = p;
 		if (pos == qtdFuncionarios)
@@ -98,6 +117,12 @@ public class Dados {
 		this.armacao = armacoes;
 	}
 
+	/**
+	 * metodo que altera efetivamente a armacao na lista de dados
+	 * 
+	 * @param a   armacao a ser inserida na nova posicao
+	 * @param pos posicao que deve ser atualizada
+	 */
 	public void inserirEditarArmacao(Armacao a, int pos) {
 		this.armacao[pos] = a;
 		if (pos == qtdArmacao)
@@ -144,6 +169,12 @@ public class Dados {
 		this.qntLojas = qntLojas;
 	}
 
+	/**
+	 * metodo que altera efetivamente a loja na lista de dados
+	 * 
+	 * @param l   Loja a ser modificada nos dados
+	 * @param pos posicao da loja a ser editada
+	 */
 	public void inserirEditarLoja(Loja l, int pos) {
 		this.loja[pos] = l;
 		if (pos == qntLojas) {
@@ -167,9 +198,15 @@ public class Dados {
 		this.qntLentes = qntLentes;
 	}
 
-	public void inserirEditarlente(Lente l, int parseInt) {
-		this.lentes[parseInt] = l;
-		if (parseInt == qntLentes)
+	/**
+	 * metodo que altera efetivamente a lente na lista de dados
+	 * 
+	 * @param l   Lente a ser editada
+	 * @param pos posicao da lente a ser editada
+	 */
+	public void inserirEditarlente(Lente l, int pos) {
+		this.lentes[pos] = l;
+		if (pos == qntLentes)
 			qntLentes++;
 	}
 
@@ -185,9 +222,15 @@ public class Dados {
 		return vendas;
 	}
 
-	public void inserirEditarVenda(Venda v, int parseInt) {
-		this.vendas[parseInt] = v;
-		if (parseInt == qntVendas)
+	/**
+	 * metodo que altera efetivamente a venda na lista de dados
+	 * 
+	 * @param v   Venda a ser editada na lista de dados
+	 * @param pos posicao da venda a ser editada
+	 */
+	public void inserirEditarVenda(Venda v, int pos) {
+		this.vendas[pos] = v;
+		if (pos == qntVendas)
 			qntVendas++;
 	}
 

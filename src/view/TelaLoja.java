@@ -6,6 +6,11 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcoes disponiveis para customizacao da loja de oculos.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaLoja implements ActionListener, ListSelectionListener {
     private JFrame janela;
     private JLabel titulo;
@@ -13,6 +18,14 @@ public class TelaLoja implements ActionListener, ListSelectionListener {
     private ControleDados dados;
     private JList<String> listaLojasCadastradas;
     private String[] listaNomes = new String[50];
+
+    /**
+     * Mostra na interface grafica os dados de interesse do usuario a loja de oculos
+     * cadastrada.
+     * 
+     * @param dado instancia de ControleDados, responsavel por acessar dados
+     *             armazenados na mesma.
+     */
 
     public void mostrarLoja(ControleDados dado) {
         dados = dado;

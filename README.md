@@ -1,9 +1,8 @@
 # TrabalhoOO
+trabalho OO loja de óculos 
 
-trabalho OO loja de óculos
+dupla T7.1 
 
-dupla T7.1
-
-André Corrêa
+André Corrêa 
 
 Vinicius Assumpção

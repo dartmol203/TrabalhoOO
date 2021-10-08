@@ -12,6 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento das vendas realizadas na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheVenda implements ActionListener {
     private JFrame janela;
     private JLabel labelNomeVenda = new JLabel("Nome da Venda: ");
@@ -44,13 +49,26 @@ public class TelaDetalheVenda implements ActionListener {
     private String[] nomeArmacao = new String[50];
     private String[] nomeLente = new String[50];
 
+    /**
+     * Mostra por meio de uma interface opcoes de cadastro e customizacao das vendas
+     * .Existem duas opcoes: (1) Cadastro de uma nova venda (2) Detalhe de venda
+     * 
+     * @param op  int que indica opcao selecionada
+     * @param d   instancia de ControleDados, responsavel por acessar dados
+     *            armazenados na mesma.
+     * @param t   instancia de TelaVenda, responsavel por acessar dados armazenados
+     *            na mesma.
+     * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
+     *            atributo a ser editado ou cadastrado.
+     */
+
     public void inserirEditar(int op, ControleDados d, TelaVenda t, int pos) {
 
         opcao = op;
         posicao = pos;
         dados = d;
         nomeClientes = new ControleCliente(dados).getNomeCliente();
-        nomeFuncionario = new ControleFuncionario(dados).getNomeProf();
+        nomeFuncionario = new ControleFuncionario(dados).getNomeFuncionario();
         nomeArmacao = new ControleArmacao(dados).getNomeArmacao();
         nomeLente = new ControleLente(dados).getApelidoLente();
 

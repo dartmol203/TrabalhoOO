@@ -11,6 +11,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcees disponiveis para customizacao e gerenciamento da loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaDetalheLoja implements ActionListener {
     private JFrame janela;
     private JLabel labelNome = new JLabel("Nome da loja: ");
@@ -27,6 +32,18 @@ public class TelaDetalheLoja implements ActionListener {
     private static ControleDados dados;
     private int posicao;
     private String s;
+
+    /**
+     * Mostra por meio de uma interface grafica opcoes de cadastro e customizacao da
+     * loja.
+     * 
+     * @param d   instancia de ControleDados, responsavel por acessar dados
+     *            armazenados na mesma.
+     * @param l   instancia de TelaLoja, responsavel por acessar dados armazenados
+     *            na mesma.
+     * @param pos int responsavel por guardar a posicao na array a ser cadastrado do
+     *            atributo a ser editado ou cadastrado.
+     */
 
     public void inserirEditar(ControleDados d, TelaLoja l, int pos) {
 

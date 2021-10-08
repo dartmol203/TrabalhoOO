@@ -1,4 +1,6 @@
+
 package view;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -6,7 +8,13 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcoes disponiveis para customizacao e gerenciamento das vendas realizadas na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaVenda implements ListSelectionListener, ActionListener {
+
     private JFrame janela;
     private JLabel titulo;
     private JButton cadastroVenda;
@@ -14,6 +22,15 @@ public class TelaVenda implements ListSelectionListener, ActionListener {
     private static ControleDados dados;
     private JList<String> listaVendasCadastradas;
     private String[] listaNomes = new String[50];
+
+    /**
+     * Mostra na interface grafica da opcao selecionada as vendas cadastradas de um
+     * produto.Existe uma opcao de escolha: (1)Vendas cadastradas
+     * 
+     * @param d  instancia de ControleDados, responsavel por acessar dados
+     *           armazenados na mesma.
+     * @param op um int que indica a opcao selecionada.
+     */
 
     public void mostrarDadosV(ControleDados d, int op) {
         dados = d;
@@ -64,6 +81,7 @@ public class TelaVenda implements ListSelectionListener, ActionListener {
         }
 
     }
+
     // Captura eventos relacionados aos botoes da interface
 
     public void actionPerformed(ActionEvent e) {

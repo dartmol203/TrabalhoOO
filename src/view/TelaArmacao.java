@@ -1,11 +1,18 @@
 package view;
 
+
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as opcoes disponiveis para customizacao e gerenciamento das armacoes na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaArmacao implements ActionListener, ListSelectionListener {
 
 	private JFrame janela;
@@ -15,6 +22,15 @@ public class TelaArmacao implements ActionListener, ListSelectionListener {
 	private static ControleDados dados;
 	private JList<String> listaArmacoesCadastradas;
 	private String[] listaNomes = new String[50];
+
+	/**
+	 * Mostra na interface grafica da opcao selecionada as armacoes cadastradas
+	 * .Existe uma opcao de escolha: (1)Armacoes cadastradas
+	 * 
+	 * @param d  instancia de ControleDados, responsavel por acessar dados
+	 *           armazenados na mesma.
+	 * @param op int que indica opcao selecionada
+	 */
 
 	public void mostrarDadosA(ControleDados d, int op) {
 		dados = d;

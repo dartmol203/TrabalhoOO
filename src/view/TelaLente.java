@@ -6,6 +6,11 @@ import javax.swing.*;
 import javax.swing.event.*;
 import controle.*;
 
+/**
+ * Mostra por meio de uma interface grafica as lentes na loja de oculos registrada.
+ * @author Vinicius Assumpcao e Andre Correa
+ * @version 1.0
+ */
 public class TelaLente implements ActionListener, ListSelectionListener {
 
     private JFrame janela;
@@ -15,6 +20,14 @@ public class TelaLente implements ActionListener, ListSelectionListener {
     private static ControleDados dados;
     private JList<String> listaLentesCadastradas;
     private String[] listaLentes = new String[50];
+
+    /**
+     * Mostra na interface grafica os dados de interesse do usuario a lente
+     * cadastrada.
+     * 
+     * @param d instancia de ControleDados, responsavel por acessar dados
+     *          armazenados na mesma.
+     */
 
     public void mostrarDadosLentes(ControleDados d) {
         dados = d;

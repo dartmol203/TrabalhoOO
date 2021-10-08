@@ -3,10 +3,21 @@ package controle;
 import modelo.Loja;
 import modelo.Telefone;
 
+/**
+ * Classe de Controle de dados de loja
+ * 
+ * @author Andre Correa e Vinicius Assumpcao
+ *
+ */
 public class ControleLoja {
     private Loja[] lControl;
     private int qntLojas;
 
+    /**
+     * metodo para salvar os dados da loja
+     * 
+     * @param dados instancia de ControleDados 
+     */
     public ControleLoja(ControleDados dados) {
         lControl = dados.getLojas();
         qntLojas = dados.getQntLojas();
@@ -20,6 +31,11 @@ public class ControleLoja {
         this.qntLojas = qntLojas;
     }
 
+    /**
+     * metodo que retorna os nomes das lojas em um vetor de Strings
+     * 
+     * @return vetor com nomes das lojas
+     */
     public String[] getNomeLojas() {
         String[] s = new String[qntLojas];
 
